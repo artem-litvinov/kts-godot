@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwr0r2bikdrbn"]
+
+[ext_resource type="Texture2D" uid="uid://du853s0v8avip" path="res://environment/rpg_summer_tileset/PNG/building_7.png" id="1_o03ey"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
+radius = 42.0
+height = 228.0
+
+[node name="BuildingWell" type="StaticBody2D"]
+
+[node name="BuildingSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -151)
+texture = ExtResource("1_o03ey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -42)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")

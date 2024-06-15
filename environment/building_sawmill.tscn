@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c40h4vd5sj7m2"]
+
+[ext_resource type="Texture2D" uid="uid://cdjqwn8w6nwy" path="res://environment/rpg_summer_tileset/PNG/building_5.png" id="1_fn2pd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
+radius = 113.0
+height = 626.0
+
+[node name="BuildingSawmill" type="StaticBody2D"]
+
+[node name="BuildingSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -246)
+texture = ExtResource("1_fn2pd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -73)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")
