@@ -9,11 +9,6 @@ var idle_anim_sprites
 var running_anim_sprites
 
 
-func _ready() -> void:
-	var l = %AnimationPlayer.get_animation_list()
-	print_debug(l)
-
-
 func setup_cosmetics(sprite_id: String) -> void:
 	sprites_path = SpriteManager.get_sprite_path(sprite_id)
 	idle_anim_sprites = load(sprites_path + IDLE_ANIM_NAME + SPRITE_FILE_EXT)
