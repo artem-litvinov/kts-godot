@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgloaalwpdrht"]
 
-[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://heroes/slime/slime.tscn" id="1_b0xvv"]
 [ext_resource type="Script" path="res://heroes/hero.gd" id="1_ca2va"]
+[ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="3_ehlck"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6g35f"]
-radius = 53.0094
+radius = 80.0
 
 [node name="Hero" type="CharacterBody2D"]
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_ca2va")
 
-[node name="Slime" parent="." instance=ExtResource("1_b0xvv")]
+[node name="HeroCosmetics" parent="." instance=ExtResource("3_ehlck")]
 unique_name_in_owner = true
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -30)
 shape = SubResource("CircleShape2D_6g35f")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -24,7 +24,7 @@ path_desired_distance = 200.0
 target_desired_distance = 200.0
 path_max_distance = 10.0
 avoidance_enabled = true
-radius = 64.0
+radius = 80.0
 max_speed = 300.0
 debug_path_custom_point_size = 10.0
 debug_path_custom_line_width = 5.0
