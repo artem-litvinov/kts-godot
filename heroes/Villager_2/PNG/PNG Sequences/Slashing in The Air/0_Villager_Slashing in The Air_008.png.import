@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chiw8lnywn4ef"
-path="res://.godot/imported/0_Villager_Slashing in The Air_008.png-5ad0b562203bc2ec913f4951baa47f4f.ctex"
+path="res://.godot/imported/0_Villager_Slashing in The Air_008.png-694cb557c6acbd8a262ff5e4e28da161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Slashing in The Air/0_Villager_Slashing in The Air_008.png"
-dest_files=["res://.godot/imported/0_Villager_Slashing in The Air_008.png-5ad0b562203bc2ec913f4951baa47f4f.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Slashing in The Air/0_Villager_Slashing in The Air_008.png"
+dest_files=["res://.godot/imported/0_Villager_Slashing in The Air_008.png-694cb557c6acbd8a262ff5e4e28da161.ctex"]
 
 [params]
 

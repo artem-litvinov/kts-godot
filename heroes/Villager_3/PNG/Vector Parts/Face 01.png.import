@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvrm0y6t8y0sg"
-path="res://.godot/imported/Face 01.png-ea106c777c0f8d2ca66a75faa597e8c8.ctex"
+path="res://.godot/imported/Face 01.png-9984c1831bd6315c73e6e4e81e834b4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_3/PNG/Vector Parts/Face 01.png"
-dest_files=["res://.godot/imported/Face 01.png-ea106c777c0f8d2ca66a75faa597e8c8.ctex"]
+source_file="res://heroes/villager_3/PNG/Vector Parts/Face 01.png"
+dest_files=["res://.godot/imported/Face 01.png-9984c1831bd6315c73e6e4e81e834b4d.ctex"]
 
 [params]
 

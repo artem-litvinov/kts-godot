@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmlpki78nue5y"]
 
-[ext_resource type="Texture2D" uid="uid://ch8iciv6euxcw" path="res://heroes/Villager_1/idle.png" id="1_3ndo0"]
+[ext_resource type="Texture2D" uid="uid://ch8iciv6euxcw" path="res://heroes/villager_1/idle.png" id="1_3ndo0"]
 [ext_resource type="Script" path="res://heroes/hero_cosmetics.gd" id="1_w8xnw"]
 
 [sub_resource type="Animation" id="Animation_7bpd8"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c440mst33jox5"
-path="res://.godot/imported/0_Villager_Idle Blinking_005.png-999c5c7edcd8d01d5a7c602011e75f2c.ctex"
+path="res://.godot/imported/0_Villager_Idle Blinking_005.png-6f995360df3411354ff494dc336e86c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_3/PNG/PNG Sequences/Idle Blinking/0_Villager_Idle Blinking_005.png"
-dest_files=["res://.godot/imported/0_Villager_Idle Blinking_005.png-999c5c7edcd8d01d5a7c602011e75f2c.ctex"]
+source_file="res://heroes/villager_3/PNG/PNG Sequences/Idle Blinking/0_Villager_Idle Blinking_005.png"
+dest_files=["res://.godot/imported/0_Villager_Idle Blinking_005.png-6f995360df3411354ff494dc336e86c4.ctex"]
 
 [params]
 

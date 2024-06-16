@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d15pyjuo3atoa"
-path="res://.godot/imported/0_Villager_Running_005.png-639367df896fe02bcfd06408b7f0d474.ctex"
+path="res://.godot/imported/0_Villager_Running_005.png-a9ec314f045a4ea85b1e75b905113d6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Running/0_Villager_Running_005.png"
-dest_files=["res://.godot/imported/0_Villager_Running_005.png-639367df896fe02bcfd06408b7f0d474.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Running/0_Villager_Running_005.png"
+dest_files=["res://.godot/imported/0_Villager_Running_005.png-a9ec314f045a4ea85b1e75b905113d6d.ctex"]
 
 [params]
 

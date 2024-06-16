@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkn13j7covbem"
-path="res://.godot/imported/0_Villager_Run Throwing_009.png-01ebf76a73c1e8e42dcf2ab453ab3cb8.ctex"
+path="res://.godot/imported/0_Villager_Run Throwing_009.png-4ef6a77829344abaf5c3c204c65c639b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Run Throwing/0_Villager_Run Throwing_009.png"
-dest_files=["res://.godot/imported/0_Villager_Run Throwing_009.png-01ebf76a73c1e8e42dcf2ab453ab3cb8.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Run Throwing/0_Villager_Run Throwing_009.png"
+dest_files=["res://.godot/imported/0_Villager_Run Throwing_009.png-4ef6a77829344abaf5c3c204c65c639b.ctex"]
 
 [params]
 

@@ -17,20 +17,28 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SpriteManager="*res://data/sprite_manager.gd"
+SpriteManager="*res://utils/sprite_manager.gd"
+GameState="*res://data/game_state.gd"
+SceneManager="*res://utils/scene_manager.gd"
+Constants="*res://utils/constants.gd"
+BackendAPI="*res://utils/backend_api.gd"
 
 [display]
 
 window/size/viewport_width=3840
 window/size/viewport_height=2160
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom="res://ui/ui_theme.tres"
 
 [input]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2nxysdratkfy"
-path="res://.godot/imported/0_Villager_Run Slashing_003.png-dc76cef227185941d749f52d402b1eb4.ctex"
+path="res://.godot/imported/0_Villager_Run Slashing_003.png-c4205d95761587b975579cb437a055b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Run Slashing/0_Villager_Run Slashing_003.png"
-dest_files=["res://.godot/imported/0_Villager_Run Slashing_003.png-dc76cef227185941d749f52d402b1eb4.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Run Slashing/0_Villager_Run Slashing_003.png"
+dest_files=["res://.godot/imported/0_Villager_Run Slashing_003.png-c4205d95761587b975579cb437a055b1.ctex"]
 
 [params]
 

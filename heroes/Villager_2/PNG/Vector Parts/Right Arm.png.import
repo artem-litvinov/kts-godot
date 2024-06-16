@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clbo7dclad4uq"
-path="res://.godot/imported/Right Arm.png-a577656dc344ba875ca5cff5d55beeb9.ctex"
+path="res://.godot/imported/Right Arm.png-ad083a99fc1fba29ce0aed473a058b7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/Vector Parts/Right Arm.png"
-dest_files=["res://.godot/imported/Right Arm.png-a577656dc344ba875ca5cff5d55beeb9.ctex"]
+source_file="res://heroes/villager_2/PNG/Vector Parts/Right Arm.png"
+dest_files=["res://.godot/imported/Right Arm.png-ad083a99fc1fba29ce0aed473a058b7b.ctex"]
 
 [params]
 

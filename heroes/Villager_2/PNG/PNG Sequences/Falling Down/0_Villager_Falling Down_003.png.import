@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvelge80t2c8n"
-path="res://.godot/imported/0_Villager_Falling Down_003.png-a003c572acba0190e9ad91541e26f1d6.ctex"
+path="res://.godot/imported/0_Villager_Falling Down_003.png-5303a051c9af9d88ae4995eaebc77426.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Falling Down/0_Villager_Falling Down_003.png"
-dest_files=["res://.godot/imported/0_Villager_Falling Down_003.png-a003c572acba0190e9ad91541e26f1d6.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Falling Down/0_Villager_Falling Down_003.png"
+dest_files=["res://.godot/imported/0_Villager_Falling Down_003.png-5303a051c9af9d88ae4995eaebc77426.ctex"]
 
 [params]
 

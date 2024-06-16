@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://c74sku6bm6yq4"]
+
+[ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_xjqbn"]
+[ext_resource type="Texture2D" uid="uid://r72do1rmifut" path="res://ui/rpg_mmo_ui/Textures/Input Fields/Input_Focus.png" id="2_g6otn"]
+[ext_resource type="Texture2D" uid="uid://gln7tj0u688w" path="res://ui/rpg_mmo_ui/Textures/Input Fields/Input_Background.png" id="3_e2jlj"]
+[ext_resource type="FontFile" uid="uid://bo4luwv62u3k3" path="res://ui/fonts/Dragon Fire Regular.ttf" id="4_4xigv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fx8xn"]
+content_margin_left = 5.0
+content_margin_top = 10.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_xjqbn")
+modulate_color = Color(0.784314, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54al8"]
+texture = ExtResource("1_xjqbn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkj0j"]
+texture = ExtResource("2_g6otn")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pnpy0"]
+content_margin_top = 20.0
+texture = ExtResource("3_e2jlj")
+modulate_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[resource]
+default_font = ExtResource("4_4xigv")
+default_font_size = 60
+Button/styles/normal = SubResource("StyleBoxTexture_fx8xn")
+Button/styles/pressed = SubResource("StyleBoxTexture_54al8")
+LineEdit/styles/focus = SubResource("StyleBoxTexture_rkj0j")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_pnpy0")

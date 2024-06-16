@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b01jtdwtgyq7a"
-path="res://.godot/imported/Sword.png-69d733097ecbb34990131637d4408dc1.ctex"
+path="res://.godot/imported/Sword.png-f56c13e180e7652c66ca7ffd0e8fc599.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_3/PNG/Vector Parts/Sword.png"
-dest_files=["res://.godot/imported/Sword.png-69d733097ecbb34990131637d4408dc1.ctex"]
+source_file="res://heroes/villager_3/PNG/Vector Parts/Sword.png"
+dest_files=["res://.godot/imported/Sword.png-f56c13e180e7652c66ca7ffd0e8fc599.ctex"]
 
 [params]
 

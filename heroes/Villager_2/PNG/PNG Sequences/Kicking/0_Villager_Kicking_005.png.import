@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://din61jet2dpb3"
-path="res://.godot/imported/0_Villager_Kicking_005.png-5a618aafea2ed34ec2a8d243d05b47f3.ctex"
+path="res://.godot/imported/0_Villager_Kicking_005.png-49db0069f61529bfbcb8d1ed8f3031a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Kicking/0_Villager_Kicking_005.png"
-dest_files=["res://.godot/imported/0_Villager_Kicking_005.png-5a618aafea2ed34ec2a8d243d05b47f3.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Kicking/0_Villager_Kicking_005.png"
+dest_files=["res://.godot/imported/0_Villager_Kicking_005.png-49db0069f61529bfbcb8d1ed8f3031a2.ctex"]
 
 [params]
 

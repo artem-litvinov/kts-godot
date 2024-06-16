@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddq5hcssnot3r"
-path="res://.godot/imported/0_Villager_Dying_014.png-13daab1c48c26ddfc70e9d7244c64600.ctex"
+path="res://.godot/imported/0_Villager_Dying_014.png-5c519d3b9906bb8fc41871b5e68023ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/PNG/PNG Sequences/Dying/0_Villager_Dying_014.png"
-dest_files=["res://.godot/imported/0_Villager_Dying_014.png-13daab1c48c26ddfc70e9d7244c64600.ctex"]
+source_file="res://heroes/villager_1/PNG/PNG Sequences/Dying/0_Villager_Dying_014.png"
+dest_files=["res://.godot/imported/0_Villager_Dying_014.png-5c519d3b9906bb8fc41871b5e68023ca.ctex"]
 
 [params]
 

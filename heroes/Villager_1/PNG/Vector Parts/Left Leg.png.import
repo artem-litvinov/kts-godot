@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dldcs8xxenlyn"
-path="res://.godot/imported/Left Leg.png-22bdc02410e3e7c61d64f470f1883fc6.ctex"
+path="res://.godot/imported/Left Leg.png-6d69d7610d818df4103554ef58933711.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/PNG/Vector Parts/Left Leg.png"
-dest_files=["res://.godot/imported/Left Leg.png-22bdc02410e3e7c61d64f470f1883fc6.ctex"]
+source_file="res://heroes/villager_1/PNG/Vector Parts/Left Leg.png"
+dest_files=["res://.godot/imported/Left Leg.png-6d69d7610d818df4103554ef58933711.ctex"]
 
 [params]
 

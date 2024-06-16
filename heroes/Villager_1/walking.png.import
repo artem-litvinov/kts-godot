@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmn1btfwdw4lq"
-path="res://.godot/imported/walking.png-e2504d437abba68f9a51306b8a266b4c.ctex"
+path="res://.godot/imported/walking.png-2db55d4d9f74e586a5c0ec180e53f512.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/walking.png"
-dest_files=["res://.godot/imported/walking.png-e2504d437abba68f9a51306b8a266b4c.ctex"]
+source_file="res://heroes/villager_1/walking.png"
+dest_files=["res://.godot/imported/walking.png-2db55d4d9f74e586a5c0ec180e53f512.ctex"]
 
 [params]
 

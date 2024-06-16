@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyd2x0m3q3yns"
-path="res://.godot/imported/throwing.png-2d698bf2dcbaeeef1a2f9cea4a23c80b.ctex"
+path="res://.godot/imported/throwing.png-9c2852b96ff965347e7f4894a7fe1219.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/throwing.png"
-dest_files=["res://.godot/imported/throwing.png-2d698bf2dcbaeeef1a2f9cea4a23c80b.ctex"]
+source_file="res://heroes/villager_2/throwing.png"
+dest_files=["res://.godot/imported/throwing.png-9c2852b96ff965347e7f4894a7fe1219.ctex"]
 
 [params]
 

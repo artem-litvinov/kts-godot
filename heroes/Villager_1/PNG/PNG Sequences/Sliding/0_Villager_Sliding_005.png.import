@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lnxeajx3dogt"
-path="res://.godot/imported/0_Villager_Sliding_005.png-9ed4cc2159407e20f004b91b0ed23ddb.ctex"
+path="res://.godot/imported/0_Villager_Sliding_005.png-611952119c895c2aeb9c18bba8b3a8e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/PNG/PNG Sequences/Sliding/0_Villager_Sliding_005.png"
-dest_files=["res://.godot/imported/0_Villager_Sliding_005.png-9ed4cc2159407e20f004b91b0ed23ddb.ctex"]
+source_file="res://heroes/villager_1/PNG/PNG Sequences/Sliding/0_Villager_Sliding_005.png"
+dest_files=["res://.godot/imported/0_Villager_Sliding_005.png-611952119c895c2aeb9c18bba8b3a8e9.ctex"]
 
 [params]
 

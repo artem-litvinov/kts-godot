@@ -3,7 +3,7 @@ extends CharacterBody2D
 const speed = 300  # Movement speed
 const random_destination_chance = 0.5  # 50% chance to move to a random point
 const threshold_distance = 100 # Threshold distance to consider the target reached
-const sprite_ids = ["Villager_1", "Villager_2", "Villager_3"]
+const sprite_ids = ["villager_1", "villager_2", "villager_3"]
 
 var buildings: Array[Node] = []
 

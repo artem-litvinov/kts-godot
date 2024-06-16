@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctfryjx0joy4t"
-path="res://.godot/imported/0_Villager_Hurt_005.png-4d4a9e945b810e7600a051cd77148ca7.ctex"
+path="res://.godot/imported/0_Villager_Hurt_005.png-4db9f5295e13da3d6efd7b351805ca0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Hurt/0_Villager_Hurt_005.png"
-dest_files=["res://.godot/imported/0_Villager_Hurt_005.png-4d4a9e945b810e7600a051cd77148ca7.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Hurt/0_Villager_Hurt_005.png"
+dest_files=["res://.godot/imported/0_Villager_Hurt_005.png-4db9f5295e13da3d6efd7b351805ca0f.ctex"]
 
 [params]
 

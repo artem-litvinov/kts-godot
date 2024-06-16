@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p2ir63brj1op"
-path="res://.godot/imported/0_Villager_Slashing_002.png-d4beed36661c5cd21c3d1d13488c68f9.ctex"
+path="res://.godot/imported/0_Villager_Slashing_002.png-d97e0262fd0060e930da8671c31b1286.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/PNG/PNG Sequences/Slashing/0_Villager_Slashing_002.png"
-dest_files=["res://.godot/imported/0_Villager_Slashing_002.png-d4beed36661c5cd21c3d1d13488c68f9.ctex"]
+source_file="res://heroes/villager_1/PNG/PNG Sequences/Slashing/0_Villager_Slashing_002.png"
+dest_files=["res://.godot/imported/0_Villager_Slashing_002.png-d97e0262fd0060e930da8671c31b1286.ctex"]
 
 [params]
 

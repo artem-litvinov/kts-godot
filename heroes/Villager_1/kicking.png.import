@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwk8ydm8eidx6"
-path="res://.godot/imported/kicking.png-ff2d4ac9d13b59ddea891545b00578f4.ctex"
+path="res://.godot/imported/kicking.png-1f6269427fde7e6e3a1ce99394433315.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/kicking.png"
-dest_files=["res://.godot/imported/kicking.png-ff2d4ac9d13b59ddea891545b00578f4.ctex"]
+source_file="res://heroes/villager_1/kicking.png"
+dest_files=["res://.godot/imported/kicking.png-1f6269427fde7e6e3a1ce99394433315.ctex"]
 
 [params]
 

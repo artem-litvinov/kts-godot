@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg1m1fcob8yt7"
-path="res://.godot/imported/sliding.png-9f5a95b81245a25ada80c7d69c3d4f59.ctex"
+path="res://.godot/imported/sliding.png-50e7e1508cd4f86056f56676dbbc478d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/sliding.png"
-dest_files=["res://.godot/imported/sliding.png-9f5a95b81245a25ada80c7d69c3d4f59.ctex"]
+source_file="res://heroes/villager_1/sliding.png"
+dest_files=["res://.godot/imported/sliding.png-50e7e1508cd4f86056f56676dbbc478d.ctex"]
 
 [params]
 

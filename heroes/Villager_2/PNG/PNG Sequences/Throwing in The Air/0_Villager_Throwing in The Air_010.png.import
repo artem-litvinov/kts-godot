@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cag4v4lywn1of"
-path="res://.godot/imported/0_Villager_Throwing in The Air_010.png-0469da9a9f2508db9d777f750bfcbf53.ctex"
+path="res://.godot/imported/0_Villager_Throwing in The Air_010.png-8814f8b4da0e371368b30c615f4343da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Throwing in The Air/0_Villager_Throwing in The Air_010.png"
-dest_files=["res://.godot/imported/0_Villager_Throwing in The Air_010.png-0469da9a9f2508db9d777f750bfcbf53.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Throwing in The Air/0_Villager_Throwing in The Air_010.png"
+dest_files=["res://.godot/imported/0_Villager_Throwing in The Air_010.png-8814f8b4da0e371368b30c615f4343da.ctex"]
 
 [params]
 

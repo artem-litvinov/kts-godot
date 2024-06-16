@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0cy58vtj1vtu"
-path="res://.godot/imported/0_Villager_Jump Start_003.png-8eb0540a698e098c6c6584bc0c82e9b3.ctex"
+path="res://.godot/imported/0_Villager_Jump Start_003.png-2145c84fd5298a856ab1eedac3cc06be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_2/PNG/PNG Sequences/Jump Start/0_Villager_Jump Start_003.png"
-dest_files=["res://.godot/imported/0_Villager_Jump Start_003.png-8eb0540a698e098c6c6584bc0c82e9b3.ctex"]
+source_file="res://heroes/villager_2/PNG/PNG Sequences/Jump Start/0_Villager_Jump Start_003.png"
+dest_files=["res://.godot/imported/0_Villager_Jump Start_003.png-2145c84fd5298a856ab1eedac3cc06be.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm25c5dtmjno0"
-path="res://.godot/imported/0_Villager_Idle_008.png-e66b563d93dce004fbc089e8c69e0e12.ctex"
+path="res://.godot/imported/0_Villager_Idle_008.png-357bea60255bc7402b67211f98005550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_1/PNG/PNG Sequences/Idle/0_Villager_Idle_008.png"
-dest_files=["res://.godot/imported/0_Villager_Idle_008.png-e66b563d93dce004fbc089e8c69e0e12.ctex"]
+source_file="res://heroes/villager_1/PNG/PNG Sequences/Idle/0_Villager_Idle_008.png"
+dest_files=["res://.godot/imported/0_Villager_Idle_008.png-357bea60255bc7402b67211f98005550.ctex"]
 
 [params]
 

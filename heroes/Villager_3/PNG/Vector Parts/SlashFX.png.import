@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhj50sa5vwal"
-path="res://.godot/imported/SlashFX.png-264886f9a7388c194a39f1e0fbd8efaa.ctex"
+path="res://.godot/imported/SlashFX.png-afb31e489b9bada9f72ba75101fa45a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heroes/Villager_3/PNG/Vector Parts/SlashFX.png"
-dest_files=["res://.godot/imported/SlashFX.png-264886f9a7388c194a39f1e0fbd8efaa.ctex"]
+source_file="res://heroes/villager_3/PNG/Vector Parts/SlashFX.png"
+dest_files=["res://.godot/imported/SlashFX.png-afb31e489b9bada9f72ba75101fa45a9.ctex"]
 
 [params]
 
