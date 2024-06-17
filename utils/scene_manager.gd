@@ -1,6 +1,6 @@
 extends Node
 
-const GAME_SCENE_PATH = "res://game.tscn"
+const VILLAGE_SCENE_PATH = "res://village.tscn"
 
 var current_scene = null
 
@@ -10,8 +10,8 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 
-func goto_game():
-	_goto_scene(GAME_SCENE_PATH)
+func goto_village():
+	_goto_scene(VILLAGE_SCENE_PATH)
 
 
 func _goto_scene(path):

@@ -30,4 +30,4 @@ func _on_login_completed(result: Dictionary, error: Error):
 	var world_obj = result.get("world")
 	GameState.initialise_world(world_obj.get("food"), world_obj.get("morale"), world_obj.get("supplies"))
 
-	SceneManager.goto_game()
+	SceneManager.goto_village()
