@@ -19,15 +19,11 @@ func login(username: String) -> void:
 		print("Failed to login: ", error)
 
 
-func _on_login_completed(result: Dictionary, error: Error):
+func _on_login_completed(user: User, error: Error):
 	if error != OK:
 		print("Failed to login: ", error)
 		return
 
-	var user_obj = result.get("user")
-	GameState.initialise_user(user_obj.get("id"), user_obj.get("name"))
-
-	var world_obj = result.get("world")
-	GameState.initialise_world(world_obj.get("food"), world_obj.get("morale"), world_obj.get("supplies"))
+	GameState.initialise_user(user)
 
 	SceneManager.goto_village()

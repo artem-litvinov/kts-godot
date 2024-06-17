@@ -4,11 +4,11 @@ var user: User
 var world: World
 
 
-func initialise_user(_id: String, _name: String):
-	user = User.new(_id, _name)
+func initialise_user(_user: User):
+	user = _user
 	print("Logged in as: " + user.to_string())
 
 
-func initialise_world(food: int, morale: int, supplies: int):
-	world = World.new(food, morale, supplies)
+func initialise_world(_world: World):
+	world = _world
 	print("Inirial world state: " + world.to_string())
