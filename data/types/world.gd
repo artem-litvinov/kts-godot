@@ -8,7 +8,7 @@ var supplies: int
 
 
 func _to_string():
-	return "{ food: " + str(food) + ", morale: " + str(morale) + ", supplies: " + str(supplies) + "}"
+	return "World: food - " + str(food) + ", morale - " + str(morale) + ", supplies - " + str(supplies)
 
 
 static func from_json(json: Dictionary) -> WorldState:

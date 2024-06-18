@@ -5,6 +5,7 @@ const random_destination_chance = 0.5  # 50% chance to move to a random point
 const threshold_distance = 100 # Threshold distance to consider the target reached
 const sprite_ids = ["villager_1", "villager_2", "villager_3"]
 
+var map_ready: bool = false
 var buildings: Array[Node] = []
 
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
@@ -15,7 +16,6 @@ func _ready() -> void:
 	%HeroCosmetics.setup_cosmetics(sprite_id)
 	# Dynamically find all buildings in the "buildings" group
 	buildings = get_tree().get_nodes_in_group("buildings")
-	
 	call_deferred("setup_seeker")
 
 
@@ -45,7 +45,15 @@ func get_random_point() -> Vector2:
 func _physics_process(_delta: float) -> void:
 	update_animations()
 
-	if navigation_agent.is_navigation_finished():
+	# wait for the navigation map to be ready
+	if !map_ready:
+		var map_rid = navigation_agent.get_navigation_map()
+		var iteration_id = NavigationServer2D.map_get_iteration_id(map_rid)
+		map_ready = true if iteration_id > 0 else false
+		return
+
+	# check if the target has been reached
+	if map_ready && navigation_agent.is_navigation_finished():
 		set_new_target()
 		return
 

@@ -7,7 +7,7 @@ var name: String
 
 
 func _to_string():
-	return "{ id: " + id + ", name: " + name + "}"
+	return "User: " + name + " (" + id + ")"
 
 
 static func from_json(json: Dictionary) -> User:
