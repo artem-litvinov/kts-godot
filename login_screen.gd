@@ -30,6 +30,7 @@ func _on_login_completed(user: User, error: Error):
 
 	%ProgressBar.value = 33
 	GameState.initialise_user(user)
+
 	BackendAPI.get_world_state(user.id, _on_get_world_state_completed)
 
 

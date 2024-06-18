@@ -1,11 +1,11 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://c74sku6bm6yq4"]
 
-[ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_xjqbn"]
-[ext_resource type="Texture2D" uid="uid://r72do1rmifut" path="res://ui/rpg_mmo_ui/Textures/Input Fields/Input_Focus.png" id="2_g6otn"]
-[ext_resource type="Texture2D" uid="uid://gln7tj0u688w" path="res://ui/rpg_mmo_ui/Textures/Input Fields/Input_Background.png" id="3_e2jlj"]
-[ext_resource type="FontFile" uid="uid://bo4luwv62u3k3" path="res://ui/fonts/Dragon Fire Regular.ttf" id="4_4xigv"]
-[ext_resource type="Texture2D" uid="uid://ou22cc3r1ng4" path="res://ui/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Background.png" id="4_sjj45"]
-[ext_resource type="Texture2D" uid="uid://dpv7m8c5fy1x" path="res://ui/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Fill.png" id="5_lq58q"]
+[ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/assets/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_xjqbn"]
+[ext_resource type="Texture2D" uid="uid://r72do1rmifut" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Focus.png" id="2_g6otn"]
+[ext_resource type="Texture2D" uid="uid://gln7tj0u688w" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Background.png" id="3_e2jlj"]
+[ext_resource type="FontFile" uid="uid://bo4luwv62u3k3" path="res://ui/assets/fonts/Dragon Fire Regular.ttf" id="4_4xigv"]
+[ext_resource type="Texture2D" uid="uid://ou22cc3r1ng4" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Background.png" id="4_sjj45"]
+[ext_resource type="Texture2D" uid="uid://dpv7m8c5fy1x" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Fill.png" id="5_lq58q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fx8xn"]
 content_margin_left = 5.0

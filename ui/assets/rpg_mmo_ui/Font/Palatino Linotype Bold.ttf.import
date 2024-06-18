@@ -1,0 +1,34 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://cti71m7umcqvv"
+path="res://.godot/imported/Palatino Linotype Bold.ttf-293c84fec0dd50f133bd127eec96f44a.fontdata"
+
+[deps]
+
+source_file="res://ui/assets/rpg_mmo_ui/Font/Palatino Linotype Bold.ttf"
+dest_files=["res://.godot/imported/Palatino Linotype Bold.ttf-293c84fec0dd50f133bd127eec96f44a.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
