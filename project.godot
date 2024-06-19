@@ -20,8 +20,10 @@ config/icon="res://icon.svg"
 SpriteManager="*res://utils/sprite_manager.gd"
 GameState="*res://data/game_state.gd"
 SceneManager="*res://utils/scene_manager.gd"
-Constants="*res://utils/constants.gd"
+Constants="*res://constants/constants.gd"
 BackendAPI="*res://utils/backend_api.gd"
+Mocks="*res://utils/mocks.gd"
+Strings="*res://constants/strings.gd"
 
 [display]
 

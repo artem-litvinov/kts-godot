@@ -1,25 +1,31 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://c74sku6bm6yq4"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c74sku6bm6yq4"]
 
-[ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/assets/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_xjqbn"]
-[ext_resource type="Texture2D" uid="uid://r72do1rmifut" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Focus.png" id="2_g6otn"]
-[ext_resource type="Texture2D" uid="uid://gln7tj0u688w" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Background.png" id="3_e2jlj"]
-[ext_resource type="FontFile" uid="uid://bo4luwv62u3k3" path="res://ui/assets/fonts/Dragon Fire Regular.ttf" id="4_4xigv"]
-[ext_resource type="Texture2D" uid="uid://ou22cc3r1ng4" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Background.png" id="4_sjj45"]
-[ext_resource type="Texture2D" uid="uid://dpv7m8c5fy1x" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Fill.png" id="5_lq58q"]
+[ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/assets/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_n4orv"]
+[ext_resource type="Texture2D" uid="uid://r72do1rmifut" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Focus.png" id="2_dg1u7"]
+[ext_resource type="Texture2D" uid="uid://gln7tj0u688w" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Background.png" id="3_4f7fa"]
+[ext_resource type="Texture2D" uid="uid://b2bv8lpmpr0ar" path="res://ui/assets/rpg_mmo_ui/Textures/General/General_Container_A.png" id="4_6cy3i"]
+[ext_resource type="Texture2D" uid="uid://ou22cc3r1ng4" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Background.png" id="4_y378u"]
+[ext_resource type="Texture2D" uid="uid://dpv7m8c5fy1x" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Fill.png" id="5_s8cub"]
+[ext_resource type="FontFile" uid="uid://dsqk4yn20q81q" path="res://ui/assets/rpg_mmo_ui/Font/Palatino Linotype Regular.ttf" id="6_cnq8k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hj78v"]
+texture = ExtResource("1_n4orv")
+modulate_color = Color(0.639216, 0.231373, 0.168627, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fx8xn"]
-content_margin_left = 5.0
-content_margin_top = 10.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-texture = ExtResource("1_xjqbn")
-modulate_color = Color(0.784314, 0, 0, 1)
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+content_margin_bottom = 25.0
+texture = ExtResource("1_n4orv")
+modulate_color = Color(0.564706, 0.184314, 0.12549, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54al8"]
-texture = ExtResource("1_xjqbn")
+texture = ExtResource("1_n4orv")
+modulate_color = Color(0.45098, 0.133333, 0.101961, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkj0j"]
-texture = ExtResource("2_g6otn")
+texture = ExtResource("2_dg1u7")
 expand_margin_left = 20.0
 expand_margin_top = 20.0
 expand_margin_right = 20.0
@@ -27,22 +33,28 @@ expand_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pnpy0"]
 content_margin_top = 20.0
-texture = ExtResource("3_e2jlj")
+texture = ExtResource("3_4f7fa")
 modulate_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81dms"]
+texture = ExtResource("4_6cy3i")
+modulate_color = Color(0.133333, 0.133333, 0.133333, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2i48y"]
-texture = ExtResource("4_sjj45")
+texture = ExtResource("4_y378u")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m70em"]
-texture = ExtResource("5_lq58q")
+texture = ExtResource("5_s8cub")
 modulate_color = Color(0.784314, 0, 0, 1)
 
 [resource]
-default_font = ExtResource("4_4xigv")
+default_font = ExtResource("6_cnq8k")
 default_font_size = 60
+Button/styles/hover = SubResource("StyleBoxTexture_hj78v")
 Button/styles/normal = SubResource("StyleBoxTexture_fx8xn")
 Button/styles/pressed = SubResource("StyleBoxTexture_54al8")
 LineEdit/styles/focus = SubResource("StyleBoxTexture_rkj0j")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_pnpy0")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_81dms")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_2i48y")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_m70em")

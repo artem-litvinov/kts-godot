@@ -5,6 +5,7 @@ class_name WorldState
 var food: int
 var morale: int
 var supplies: int
+var passed_tutorial: bool
 
 
 func _to_string():
@@ -23,9 +24,10 @@ static func from_json(json: Dictionary) -> WorldState:
 	return state
 
 
-static func from_params(_food: int, _morale: int, _supplies: int) -> WorldState:
+static func from_params(_food: int, _morale: int, _supplies: int, _passed_tutorial) -> WorldState:
 	var state = WorldState.new()
 	state.food = _food
 	state.morale = _morale
 	state.supplies = _supplies
+	state.passed_tutorial = _passed_tutorial
 	return state

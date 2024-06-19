@@ -20,3 +20,10 @@ static func from_json(json: Dictionary) -> User:
 			return null
 
 	return user
+
+
+static func from_params(_id: String, _name: String) -> User:
+	var user = User.new()
+	user.id = _id
+	user.name = _name
+	return user

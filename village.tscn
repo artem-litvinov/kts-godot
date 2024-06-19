@@ -1,5 +1,6 @@
-[gd_scene load_steps=41 format=4 uid="uid://s722qp50ry2b"]
+[gd_scene load_steps=43 format=4 uid="uid://s722qp50ry2b"]
 
+[ext_resource type="Script" path="res://village.gd" id="1_nfrkg"]
 [ext_resource type="Texture2D" uid="uid://c5a5juby65xpe" path="res://environment/rpg_summer_tileset/PNG/land_1.png" id="2_a4vvf"]
 [ext_resource type="Texture2D" uid="uid://b78f4g3gjdhwy" path="res://environment/rpg_summer_tileset/PNG/land_2.png" id="3_gip8d"]
 [ext_resource type="Texture2D" uid="uid://c1kn3mth23yqx" path="res://environment/rpg_summer_tileset/PNG/land_14.png" id="4_a805j"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/building_tavern.tscn" id="19_n0rqf"]
 [ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/building_sawmill.tscn" id="20_p4ns0"]
 [ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/building_well.tscn" id="21_qwmcb"]
+[ext_resource type="PackedScene" uid="uid://bioi4uverc2i2" path="res://ui/components/text_popup.tscn" id="22_5e7o0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xs7y8"]
 texture = ExtResource("2_a4vvf")
@@ -134,8 +136,9 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_outt4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Village" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_nfrkg")
 
 [node name="TileMap" type="Node" parent="."]
 
@@ -173,3 +176,16 @@ position = Vector2(3167, 1407)
 
 [node name="BuildingWell" parent="Buildings" groups=["buildings"] instance=ExtResource("21_qwmcb")]
 position = Vector2(2375, 1516)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextPopup" parent="CanvasLayer" instance=ExtResource("22_5e7o0")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[connection signal="button_pressed" from="CanvasLayer/TextPopup" to="." method="_on_text_popup_button_pressed"]

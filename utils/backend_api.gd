@@ -7,45 +7,6 @@ var _on_get_world_state_callback: Callable
 var _on_get_heroes_callback: Callable
 var _on_generate_hero_callback: Callable
 
-var mock_heroes: Array[Hero] = [
-	Hero.from_params(
-		"1",
-		"Ben",
-		Enums.Gender.MALE,
-		Enums.HeroType.FIGHTER,
-		Enums.HeroTier.S,
-		"Ben description",
-		"villager_1",
-		100,
-		200,
-		200
-	),
-	Hero.from_params(
-		"2",
-		"Alice",
-		Enums.Gender.MALE,
-		Enums.HeroType.ASSASIN,
-		Enums.HeroTier.A,
-		"Alice description",
-		"villager_2",
-		100,
-		200,
-		200
-	),
-	Hero.from_params(
-		"3",
-		"Bob",
-		Enums.Gender.MALE,
-		Enums.HeroType.MAGE,
-		Enums.HeroTier.B,
-		"Bob description",
-		"villager_3",
-		100,
-		200,
-		200
-	),
-]
-
 
 func _make_http_request(
 	url: String,
@@ -140,8 +101,7 @@ func _on_get_world_state_completed(result, response_code, headers, body):
 
 
 func _on_get_world_state_completed_mock():
-	var world_state = WorldState.from_params(20, 50, 100)
-	_on_get_world_state_callback.call(world_state, OK)
+	_on_get_world_state_callback.call(Mocks.mock_world_state, OK)
 
 
 func get_heroes(user_id: String, callback: Callable) -> Error:
@@ -185,7 +145,7 @@ func _on_get_heroes_completed_mock():
 		_on_get_heroes_callback.call([], OK)
 		return
 	else:
-		_on_get_heroes_callback.call(mock_heroes, OK)
+		_on_get_heroes_callback.call(Mocks.mock_heroes, OK)
 
 
 func generate_hero(user_id: String, callback: Callable) -> Error:
@@ -216,4 +176,4 @@ func _on_generate_hero_completed(result, response_code, headers, body):
 
 
 func _on_generate_hero_completed_mock():
-	_on_generate_hero_callback.call(mock_heroes.pick_random(), OK)
+	_on_generate_hero_callback.call(Mocks.mock_heroes.pick_random(), OK)
