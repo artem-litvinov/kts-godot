@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm7ip7afgrrx8"]
+
+[ext_resource type="Script" path="res://environment/building.gd" id="1_5coeb"]
+[ext_resource type="Texture2D" uid="uid://btht8puejdlbm" path="res://environment/assets/rpg_summer_tileset/PNG/decor_3.png" id="1_i4tvv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
+radius = 42.0
+height = 228.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtxtd"]
+size = Vector2(200, 189)
+
+[node name="BuildingMissionsBoard" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_5coeb")
+
+[node name="BuildingSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -100)
+texture = ExtResource("1_i4tvv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -42)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="ClickableArea" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -100)
+shape = SubResource("RectangleShape2D_dtxtd")
+debug_color = Color(0.413994, 0.589862, 0.39438, 0.42)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
