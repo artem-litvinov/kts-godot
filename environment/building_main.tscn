@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://celmdwrxsc17c"]
 
-[ext_resource type="Texture2D" uid="uid://b1sx1md1ksg6j" path="res://environment/rpg_summer_tileset/PNG/building_2.png" id="1_orri8"]
+[ext_resource type="Texture2D" uid="uid://b1sx1md1ksg6j" path="res://environment/assets/rpg_summer_tileset/PNG/building_2.png" id="1_orri8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
 radius = 73.0
