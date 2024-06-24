@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddwxf46xkoy44"]
+
+[ext_resource type="Script" path="res://ui/components/hero_stat_line.gd" id="1_frogx"]
+
+[node name="HeroStatLine" type="HBoxContainer"]
+theme_override_constants/separation = 20
+script = ExtResource("1_frogx")
+
+[node name="StatName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name:"
+
+[node name="StatValue" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Value"

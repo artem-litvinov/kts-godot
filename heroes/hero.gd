@@ -3,7 +3,6 @@ extends CharacterBody2D
 const speed = 300  # Movement speed
 const random_destination_chance = 0.5  # 50% chance to move to a random point
 const threshold_distance = 100 # Threshold distance to consider the target reached
-const sprite_ids = ["villager_1", "villager_2", "villager_3"]
 
 var map_ready: bool = false
 var buildings: Array[Node] = []
@@ -11,9 +10,11 @@ var buildings: Array[Node] = []
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
 
 
+func initialise(hero: Hero):
+	%HeroCosmetics.setup_cosmetics(hero.sprite_id)
+
+
 func _ready() -> void:
-	var sprite_id = sprite_ids.pick_random()
-	%HeroCosmetics.setup_cosmetics(sprite_id)
 	# Dynamically find all buildings in the "buildings" group
 	buildings = get_tree().get_nodes_in_group("buildings")
 	call_deferred("setup_seeker")

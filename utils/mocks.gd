@@ -18,7 +18,7 @@ var mock_heroes: Array[Hero] = [
 	Hero.from_params(
 		"2",
 		"Alice",
-		Enums.Gender.MALE,
+		Enums.Gender.FEMALE,
 		Enums.HeroType.ASSASIN,
 		Enums.HeroTier.A,
 		"Alice description",

@@ -10,7 +10,7 @@ var running_anim_sprites
 
 
 func setup_cosmetics(sprite_id: String) -> void:
-	sprites_path = SpriteManager.get_sprite_path(sprite_id)
+	sprites_path = SpriteManager.get_hero_sprite_path(sprite_id)
 	idle_anim_sprites = load(sprites_path + IDLE_ANIM_NAME + SPRITE_FILE_EXT)
 	running_anim_sprites = load(sprites_path + RUNNING_ANIM_NAME + SPRITE_FILE_EXT)
 
