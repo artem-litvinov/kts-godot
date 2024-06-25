@@ -3,7 +3,7 @@ extends Control
 signal button_pressed
 
 
-func set_hero_data(hero: Hero) -> void:
+func initialize(hero: Hero) -> void:
 	%Name.text = hero.name
 	%Tier.texture = load(SpriteManager.get_tier_sprite_path(hero.tier))
 	%Gender.set_stat_value(str(Enums.Gender.keys()[hero.gender]))

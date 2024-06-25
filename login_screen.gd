@@ -29,7 +29,7 @@ func _on_login_completed(user: User, error: Error):
 		return
 
 	%ProgressBar.value = 33
-	GameState.initialise_user(user)
+	GameState.initialize_user(user)
 
 	BackendAPI.get_world_state(user.id, _on_get_world_state_completed)
 
@@ -42,7 +42,7 @@ func _on_get_world_state_completed(world_state: WorldState, error: Error):
 		return
 
 	%ProgressBar.value = 66
-	GameState.initialise_world_state(world_state)
+	GameState.initialize_world_state(world_state)
 
 	BackendAPI.get_heroes(GameState.user.id, _on_get_heroes_completed)
 
@@ -55,6 +55,6 @@ func _on_get_heroes_completed(heroes: Array[Hero], error: Error):
 		return
 
 	%ProgressBar.value = 100
-	GameState.initialise_heroes(heroes)
+	GameState.initialize_heroes(heroes)
 
 	SceneManager.goto_village()

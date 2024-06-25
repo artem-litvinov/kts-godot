@@ -3,8 +3,7 @@ extends Control
 signal button_pressed
 
 
-func set_text_content(header: String, body: String, button: String) -> void:
-	reset()
+func initialize(header: String, body: String, button: String) -> void:
 	set_header_text(header)
 	set_body_text(body)
 	set_button_text(button)

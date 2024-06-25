@@ -10,7 +10,7 @@ var buildings: Array[Node] = []
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
 
 
-func initialise(hero: Hero):
+func initialize(hero: Hero):
 	%HeroCosmetics.setup_cosmetics(hero.sprite_id)
 
 

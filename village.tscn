@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://s722qp50ry2b"]
+[gd_scene load_steps=43 format=4 uid="uid://s722qp50ry2b"]
 
 [ext_resource type="Script" path="res://village.gd" id="1_nfrkg"]
 [ext_resource type="Texture2D" uid="uid://c5a5juby65xpe" path="res://environment/assets/rpg_summer_tileset/PNG/land_1.png" id="2_a4vvf"]
@@ -22,8 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/building_tavern.tscn" id="19_n0rqf"]
 [ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/building_sawmill.tscn" id="20_p4ns0"]
 [ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/building_well.tscn" id="21_qwmcb"]
-[ext_resource type="PackedScene" uid="uid://bioi4uverc2i2" path="res://ui/components/text_popup.tscn" id="22_5e7o0"]
-[ext_resource type="PackedScene" uid="uid://dw46mkdiuilrn" path="res://ui/components/new_hero_popup.tscn" id="24_xj7je"]
 [ext_resource type="PackedScene" uid="uid://cm7ip7afgrrx8" path="res://environment/building_missions_board.tscn" id="25_a2uw0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xs7y8"]
@@ -183,19 +181,6 @@ position = Vector2(2375, 1516)
 position = Vector2(3389, 300)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextPopup" parent="CanvasLayer" instance=ExtResource("22_5e7o0")]
 unique_name_in_owner = true
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-
-[node name="NewHeroPopup" parent="CanvasLayer" instance=ExtResource("24_xj7je")]
-unique_name_in_owner = true
-visible = false
 
 [connection signal="clicked" from="Buildings/BuildingMissionsBoard" to="." method="_on_building_missions_board_clicked"]
-[connection signal="button_pressed" from="CanvasLayer/NewHeroPopup" to="." method="_on_new_hero_popup_button_pressed"]
