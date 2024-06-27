@@ -3,9 +3,11 @@ extends Node2D
 const HERO_SCENE: PackedScene = preload("res://heroes/hero.tscn")
 const TEXT_POPUP_SCENE: PackedScene = preload("res://ui/components/text_popup.tscn")
 const NEW_HERO_POPUP_SCENE: PackedScene = preload("res://ui/components/new_hero_popup.tscn")
+const BOARD_POPUP_SCENE: PackedScene = preload("res://ui/components/board_popup.tscn")
 
 var text_popup: Control
 var new_hero_popup: Control
+var board_popup: Control
 
 
 func _ready():
@@ -54,16 +56,23 @@ func _on_new_hero_popup_button_pressed() -> void:
 
 
 func _on_building_missions_board_clicked() -> void:
-	_show_text_popup(
-		"Board header",
-		Strings.TUTORIAL_BODY,
-		"Board button",
-		_on_board_button_pressed,
-	)
+	board_popup = BOARD_POPUP_SCENE.instantiate()
+	%CanvasLayer.add_child(board_popup)
+	board_popup.connect("scavenge_mode_selected", _on_scavenge_mode_selected)
+	board_popup.connect("survival_mode_selected", _on_survival_mode_selected)
+	board_popup.connect("close", _on_board_popup_close)
 
 
-func _on_board_button_pressed() -> void:
-	_remove_text_popup()
+func _on_scavenge_mode_selected() -> void:
+	_remove_board_popup()
+
+
+func _on_survival_mode_selected() -> void:
+	_remove_board_popup()
+
+
+func _on_board_popup_close() -> void:
+	_remove_board_popup()
 
 
 # Helpers
@@ -90,3 +99,7 @@ func _show_new_hero_popup(hero: Hero, callback: Callable) -> void:
 func _remove_new_hero_popup() -> void:
 	%CanvasLayer.remove_child(new_hero_popup)
 	new_hero_popup = null
+
+func _remove_board_popup() -> void:
+	%CanvasLayer.remove_child(board_popup)
+	board_popup = null

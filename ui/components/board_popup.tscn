@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1youji68oya3"]
+
+[ext_resource type="PackedScene" uid="uid://daq5hnt53bk5k" path="res://ui/components/board_mode_panel.tscn" id="1_bmyls"]
+[ext_resource type="Script" path="res://ui/components/board_popup.gd" id="1_mn7id"]
+[ext_resource type="Texture2D" uid="uid://7sxfeix0kr5t" path="res://ui/assets/backgrounds/survival_2.png" id="2_vno5p"]
+[ext_resource type="Texture2D" uid="uid://d0hyyuc6ebhxg" path="res://ui/assets/backgrounds/scavenge.png" id="3_xb21e"]
+
+[node name="BoardPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mn7id")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ScavengeModePanel" parent="CenterContainer/HBoxContainer" instance=ExtResource("1_bmyls")]
+unique_name_in_owner = true
+layout_mode = 2
+backgroung_texture = ExtResource("3_xb21e")
+
+[node name="SurvivalModePanel" parent="CenterContainer/HBoxContainer" instance=ExtResource("1_bmyls")]
+unique_name_in_owner = true
+layout_mode = 2
+header_text = "Survival"
+description_text = "Face your enamies head on and gain valuable resources"
+backgroung_texture = ExtResource("2_vno5p")
+
+[connection signal="button_pressed" from="CenterContainer/HBoxContainer/ScavengeModePanel" to="." method="_on_scavenge_mode_panel_button_pressed"]
+[connection signal="button_pressed" from="CenterContainer/HBoxContainer/SurvivalModePanel" to="." method="_on_survival_mode_panel_button_pressed"]

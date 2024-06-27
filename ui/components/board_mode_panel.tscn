@@ -1,0 +1,195 @@
+[gd_scene load_steps=13 format=3 uid="uid://daq5hnt53bk5k"]
+
+[ext_resource type="Script" path="res://ui/components/board_mode_panel.gd" id="1_ry0wu"]
+[ext_resource type="Texture2D" uid="uid://d0hyyuc6ebhxg" path="res://ui/assets/backgrounds/scavenge.png" id="3_cat57"]
+
+[sub_resource type="Animation" id="Animation_1c8gi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/VBoxContainer/MarginContainer/VBoxContainer/DescriptionContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hsg14"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/VBoxContainer/MarginContainer/VBoxContainer/DescriptionContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j42b1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/VBoxContainer/MarginContainer/VBoxContainer/DescriptionContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1t30"]
+_data = {
+"RESET": SubResource("Animation_1c8gi"),
+"fade_in": SubResource("Animation_hsg14"),
+"fade_out": SubResource("Animation_j42b1")
+}
+
+[sub_resource type="Gradient" id="Gradient_amori"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sa671"]
+gradient = SubResource("Gradient_amori")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkowb"]
+texture = SubResource("GradientTexture2D_sa671")
+expand_margin_left = 100.0
+expand_margin_right = 100.0
+expand_margin_bottom = 300.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_qp4yc"]
+offsets = PackedFloat32Array(0.565217, 1)
+colors = PackedColorArray(0, 0, 0, 0.823529, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wpngh"]
+gradient = SubResource("Gradient_qp4yc")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ssoc"]
+texture = SubResource("GradientTexture2D_wpngh")
+expand_margin_left = 100.0
+expand_margin_top = 400.0
+expand_margin_right = 100.0
+expand_margin_bottom = 200.0
+modulate_color = Color(0, 0, 0, 1)
+
+[node name="BoardModePanel" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(830.769, 1476.92)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ry0wu")
+header_text = "Scavenge"
+description_text = "Go out on adventure and try to find valuable loot"
+button_text = "START"
+backgroung_texture = ExtResource("3_cat57")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_j1t30")
+}
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cat57")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+offset_right = 830.769
+offset_bottom = 1476.92
+
+[node name="PanelContainer" type="PanelContainer" parent="Container/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dkowb")
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HeaderText" type="Label" parent="Container/VBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Header"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 2
+
+[node name="DescriptionContainer" type="PanelContainer" parent="Container/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3ssoc")
+
+[node name="DescriptionText" type="Label" parent="Container/VBoxContainer/MarginContainer/VBoxContainer/DescriptionContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Container/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "START
+"
+
+[connection signal="mouse_entered" from="Container" to="." method="_on_container_mouse_entered"]
+[connection signal="mouse_exited" from="Container" to="." method="_on_container_mouse_exited"]
+[connection signal="mouse_entered" from="Container/VBoxContainer" to="." method="_on_v_box_container_mouse_entered"]
+[connection signal="mouse_exited" from="Container/VBoxContainer" to="." method="_on_v_box_container_mouse_exited"]
+[connection signal="pressed" from="Container/VBoxContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
