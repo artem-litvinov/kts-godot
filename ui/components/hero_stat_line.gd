@@ -9,8 +9,8 @@ func _ready() -> void:
 	%StatValue.text = Value
 
 
-func set_stat_name(name: String) -> void:
-	Name = name
+func set_stat_name(_name: String) -> void:
+	Name = _name
 	%StatName.text = Name
 
 

@@ -65,12 +65,14 @@ func move_towards_target() -> void:
 	var direction = global_position.direction_to(navigation_agent.get_next_path_position())
 	navigation_agent.set_velocity(direction * speed)
 
+
 func update_animations() -> void:
 	var moving_right = velocity.x > 0
 	if velocity.length() > 0:
 		%HeroCosmetics.play_running(moving_right)
 	else:
 		%HeroCosmetics.play_idle()
+
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity

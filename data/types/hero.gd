@@ -13,8 +13,10 @@ var attack: int
 var maxHP: int
 var currentHP: int
 
+
 func _to_string() -> String:
 	return "Hero: " + name + " (" + id + ")"
+
 
 static func from_json(json: Dictionary) -> Hero:
 	var hero = Hero.new()

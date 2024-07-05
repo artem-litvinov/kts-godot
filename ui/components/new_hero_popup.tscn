@@ -1,13 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw46mkdiuilrn"]
+[gd_scene load_steps=3 format=3 uid="uid://dw46mkdiuilrn"]
 
 [ext_resource type="Script" path="res://ui/components/new_hero_popup.gd" id="1_6lvam"]
-[ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="2_ooegd"]
-[ext_resource type="Texture2D" uid="uid://cdmktjrcwdpnp" path="res://ui/assets/rpg_mmo_ui/Textures/Lobby/Character Create/Frame/Lobby_CharacterCreate_Frame_Background.png" id="2_wkdok"]
-[ext_resource type="Texture2D" uid="uid://bgnirnu7unxnr" path="res://ui/assets/rpg_mmo_ui/Textures/Miscellaneous/Text Box Icons/Icon_Symbol.png" id="4_yab18"]
-[ext_resource type="PackedScene" uid="uid://ddwxf46xkoy44" path="res://ui/components/hero_stat_line.tscn" id="5_pcphe"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdmj7"]
-texture = ExtResource("2_wkdok")
+[ext_resource type="PackedScene" uid="uid://b2nv7a00yb7ht" path="res://ui/components/hero_display_container.tscn" id="2_kkjt5"]
 
 [node name="NewHeroPopup" type="Control"]
 layout_mode = 3
@@ -62,103 +56,9 @@ text = "New Hero!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Content" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer"]
-layout_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(600, 900)
-layout_mode = 2
-texture = ExtResource("2_wkdok")
-patch_margin_left = 40
-patch_margin_top = 40
-patch_margin_right = 40
-patch_margin_bottom = 40
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(600, 900)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_xdmj7")
-
-[node name="HeroCosmetics" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/PanelContainer" instance=ExtResource("2_ooegd")]
-unique_name_in_owner = true
-position = Vector2(320, 388.5)
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 30
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 60
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="HeroDisplayContainer" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_kkjt5")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 80
-text = "Name"
-
-[node name="Tier" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("4_yab18")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="Gender" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_pcphe")]
-unique_name_in_owner = true
-layout_mode = 2
-Name = "Gender"
-Value = "Male"
-
-[node name="Type" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_pcphe")]
-unique_name_in_owner = true
-layout_mode = 2
-Name = "Type"
-Value = "Fighter"
-
-[node name="Health" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_pcphe")]
-unique_name_in_owner = true
-layout_mode = 2
-Name = "Health"
-Value = "125"
-
-[node name="Attack" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_pcphe")]
-unique_name_in_owner = true
-layout_mode = 2
-Name = "Attack"
-Value = "60"
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer"]
-layout_mode = 2
-
-[node name="Bio" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/MarginContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(1200, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="Footer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

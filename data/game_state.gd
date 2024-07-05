@@ -4,6 +4,7 @@ var user: User
 var world_state: WorldState
 var heroes: Array[Hero]
 
+
 func initialize_user(_user: User) -> void:
 	user = _user
 	print("Logged in as: " + user.to_string())

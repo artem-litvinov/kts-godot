@@ -180,6 +180,35 @@ position = Vector2(2375, 1516)
 [node name="BuildingMissionsBoard" parent="Buildings" groups=["buildings"] instance=ExtResource("25_a2uw0")]
 position = Vector2(3389, 300)
 
+[node name="SpawnPoints" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(350, 787)
+
+[node name="Node2D2" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(922, 1016)
+
+[node name="Node2D3" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(999, 1907)
+
+[node name="Node2D4" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(427, 1661)
+
+[node name="Node2D5" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(1779, 1257)
+
+[node name="Node2D6" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(2492, 860)
+
+[node name="Node2D7" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(3393, 429)
+
+[node name="Node2D8" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(3181, 1573)
+
+[node name="Node2D9" type="Node2D" parent="SpawnPoints" groups=["spawn_points"]]
+position = Vector2(2384, 1657)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
