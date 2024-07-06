@@ -6,6 +6,7 @@ var _on_login_callback: Callable
 var _on_get_world_state_callback: Callable
 var _on_get_heroes_callback: Callable
 var _on_generate_hero_callback: Callable
+var _on_generate_event_callback: Callable
 
 
 func _make_http_request(
@@ -177,3 +178,40 @@ func _on_generate_hero_completed(result, response_code, headers, body):
 
 func _on_generate_hero_completed_mock():
 	_on_generate_hero_callback.call(Mocks.mock_heroes.pick_random(), OK)
+
+
+func generate_event(user_id: String, world: WorldState, hero: Hero, callback: Callable) -> Error:
+	_on_generate_event_callback = callback
+	if USE_MOCK_API:
+		return _make_mock_http_request(_on_generate_event_completed_mock)
+	else:
+		return _make_http_request(
+			Constants.GENERATE_EVENT_ENDPOINT_ADDR,
+			_on_generate_event_completed,
+			HTTPClient.METHOD_POST,
+			JSON.stringify({
+			  "userId": user_id,
+			  "food": world.food,
+			  "morale": world.morale,
+			  "supplies": world.supplies,
+			  "heroId": hero.id,
+			  "currentHp": hero.currentHP,
+			})
+		)
+
+
+func _on_generate_event_completed_mock():
+	_on_generate_event_callback.call(Mocks.mock_event, OK)
+
+
+func _on_generate_event_completed(result, response_code, headers, body):
+	var parse_res = _parse_request(result, response_code, headers, body)
+	var json_obj = parse_res[0]
+	var parse_err = parse_res[1]
+	if parse_err != OK:
+		_on_generate_event_callback.call(null, parse_err)
+
+	var event = Events.AIEvent.from_json(json_obj)
+	if event == null:
+		parse_err = ERR_PARSE_ERROR
+	_on_generate_event_callback.call(event, parse_err)

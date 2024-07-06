@@ -21,6 +21,10 @@ func initialize(heroes: Array[Hero]) -> void:
 		_hero_by_idx[idx] = hero
 
 
+func disable_button() -> void:
+	%Button.disabled = true
+
+
 func _on_hero_option_button_item_selected(index: int) -> void:
 	if index not in _hero_by_idx:
 		_selected_hero = null

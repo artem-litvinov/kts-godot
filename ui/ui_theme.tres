@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://c74sku6bm6yq4"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://c74sku6bm6yq4"]
 
 [ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/assets/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_n4orv"]
 [ext_resource type="Texture2D" uid="uid://r72do1rmifut" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Focus.png" id="2_dg1u7"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ou22cc3r1ng4" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Background.png" id="4_y378u"]
 [ext_resource type="Texture2D" uid="uid://dpv7m8c5fy1x" path="res://ui/assets/rpg_mmo_ui/Textures/Loading Bar/LoadingBar_Fill.png" id="5_s8cub"]
 [ext_resource type="FontFile" uid="uid://dsqk4yn20q81q" path="res://ui/assets/rpg_mmo_ui/Font/Palatino Linotype Regular.ttf" id="6_cnq8k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jlnl"]
+texture = ExtResource("1_n4orv")
+modulate_color = Color(0.270222, 0.270222, 0.270222, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2b47t"]
 
@@ -52,6 +56,7 @@ modulate_color = Color(0.784314, 0, 0, 1)
 [resource]
 default_font = ExtResource("6_cnq8k")
 default_font_size = 60
+Button/styles/disabled = SubResource("StyleBoxTexture_3jlnl")
 Button/styles/focus = SubResource("StyleBoxEmpty_2b47t")
 Button/styles/hover = SubResource("StyleBoxTexture_hj78v")
 Button/styles/normal = SubResource("StyleBoxTexture_fx8xn")

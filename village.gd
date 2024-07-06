@@ -5,6 +5,7 @@ const TEXT_POPUP_SCENE: PackedScene = preload("res://ui/components/text_popup.ts
 const NEW_HERO_POPUP_SCENE: PackedScene = preload("res://ui/components/new_hero_popup.tscn")
 const BOARD_POPUP_SCENE: PackedScene = preload("res://ui/components/board_popup.tscn")
 const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/hero_select_popup.tscn")
+const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/event_popup.tscn")
 
 var _spawn_points: Array[Node]
 var _spawn_index: int = 0
@@ -12,6 +13,9 @@ var _text_popup: Control
 var _new_hero_popup: Control
 var _board_popup: Control
 var _hero_select_popup: Control
+var _event_popup: Control
+
+var _selected_event_hero: Hero
 
 
 func _ready():
@@ -80,15 +84,31 @@ func _on_board_popup_close() -> void:
 	_remove_board_popup()
 
 
-func _on_hero_selected(_hero: Hero) -> void:
+func _on_hero_selected(hero: Hero) -> void:
+	_selected_event_hero = hero
+	BackendAPI.generate_event(GameState.user.id, GameState.world_state, hero, _on_event_generated)
+	_hero_select_popup.disable_button()
+
+
+func _on_event_generated(event: Events.AIEvent, error: Error) -> void:
+	if error != OK:
+		print("Failed to generate event: ", error)
+		_remove_hero_select_popup()
+		return
+
 	_remove_hero_select_popup()
+	_show_event_popup(_selected_event_hero, event)
+
+
+func _on_option_selected(_option: Events.Option) -> void:
+	_remove_event_popup()
 
 
 # Helpers
 # --------------------------------------------------
-func _spawn_hero(hero: Hero, position: Vector2) -> void:
+func _spawn_hero(hero: Hero, hero_position: Vector2) -> void:
 	var new_hero = HERO_SCENE.instantiate()
-	new_hero.global_position = position
+	new_hero.global_position = hero_position
 	new_hero.initialize(hero)
 	add_child(new_hero)
 
@@ -151,3 +171,15 @@ func _show_hero_select_popup() -> void:
 func _remove_hero_select_popup() -> void:
 	%CanvasLayer.remove_child(_hero_select_popup)
 	_hero_select_popup = null
+
+
+func _show_event_popup(hero: Hero, event: Events.AIEvent) -> void:
+	_event_popup = EVENT_POPUP_SCENE.instantiate()
+	_event_popup.initialize(hero, event)
+	%CanvasLayer.add_child(_event_popup)
+	_event_popup.connect("option_selected", _on_option_selected)
+
+
+func _remove_event_popup() -> void:
+	%CanvasLayer.remove_child(_event_popup)
+	_event_popup = null

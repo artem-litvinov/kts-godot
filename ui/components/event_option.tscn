@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr5c7d8exltry"]
+
+[ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/assets/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_mgvvi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pv7de"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+content_margin_bottom = 25.0
+texture = ExtResource("1_mgvvi")
+modulate_color = Color(0.385493, 0.385492, 0.385492, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u48rr"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+content_margin_bottom = 25.0
+texture = ExtResource("1_mgvvi")
+modulate_color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="EventOption" type="Button"]
+theme_override_styles/hover = SubResource("StyleBoxTexture_pv7de")
+theme_override_styles/normal = SubResource("StyleBoxTexture_u48rr")
+toggle_mode = true
+text = "Option 1"
