@@ -23,7 +23,7 @@ func initialize(hero: Hero, event: Events.AIEvent):
 
 		%Button.disabled = true
 		%EventDescription.text = event.description
-		%Hero.initialize(hero.name, hero.attack, hero.currentHP)
+		%Hero.initialize(hero.name, hero.attack, hero.current_hp)
 		%Enemy.initialize(event.enemy.name, event.enemy.attack, event.enemy.hp)
 		var option_idx: int = 0
 		for option in event.options:
@@ -45,7 +45,6 @@ func _on_option_toggled(idx: int, toggled_on: bool):
 
 	var option_idx: int = 0
 	for button in _option_buttons:
-		var text = button.text
 		if idx == option_idx:
 			button.button_pressed = true
 		else:

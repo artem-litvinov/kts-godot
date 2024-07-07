@@ -39,5 +39,5 @@ func _on_hero_option_button_item_selected(index: int) -> void:
 func _on_button_pressed() -> void:
 	if _selected_hero == null:
 		return
-	
-	hero_selected.emit(_selected_hero)
+
+	hero_selected.emit(_selected_hero.id)

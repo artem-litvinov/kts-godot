@@ -1,0 +1,150 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0tar1leffj46"]
+
+[ext_resource type="PackedScene" uid="uid://cujgqt5wgx5ju" path="res://ui/components/evet_results_stat_change.tscn" id="1_ho081"]
+[ext_resource type="Script" path="res://ui/components/event_results_popup.gd" id="1_yq20q"]
+[ext_resource type="Texture2D" uid="uid://c4611xu6nfpyq" path="res://ui/assets/icons/food.png" id="2_rkger"]
+[ext_resource type="Texture2D" uid="uid://booforp8i1cpg" path="res://ui/assets/icons/morale.png" id="3_5vj4o"]
+[ext_resource type="Texture2D" uid="uid://dlchp0sbxhqep" path="res://ui/assets/icons/supplies.png" id="4_l4vsl"]
+
+[node name="EventResultsPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yq20q")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.5
+offset_top = -111.5
+offset_right = 181.5
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Header" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+layout_mode = 2
+alignment = 1
+
+[node name="HeaderText" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Results"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Content" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="ResultsDescription" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1600, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="HeroChanges" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/HeroChanges"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/HeroChanges/MarginContainer"]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/HeroChanges/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 80
+text = "Ben"
+horizontal_alignment = 1
+
+[node name="HeroHealth" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/HeroChanges" instance=ExtResource("1_ho081")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VillageChanges" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/MarginContainer"]
+layout_mode = 2
+
+[node name="VillageLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 80
+text = "Village"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Food" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/HBoxContainer" instance=ExtResource("1_ho081")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("2_rkger")
+
+[node name="Morale" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/HBoxContainer" instance=ExtResource("1_ho081")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("3_5vj4o")
+
+[node name="Supplies" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/HBoxContainer" instance=ExtResource("1_ho081")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("4_l4vsl")
+
+[node name="Footer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Footer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Footer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ACCEPT"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Footer/MarginContainer/Button" to="." method="_on_button_pressed"]

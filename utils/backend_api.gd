@@ -141,7 +141,7 @@ func _on_get_heroes_completed(result, response_code, headers, body):
 
 
 func _on_get_heroes_completed_mock():
-	var username = GameState.user.name
+	var username = GameState.get_user().name
 	if username == "test1":
 		_on_get_heroes_callback.call([], OK)
 		return
@@ -195,7 +195,7 @@ func generate_event(user_id: String, world: WorldState, hero: Hero, callback: Ca
 			  "morale": world.morale,
 			  "supplies": world.supplies,
 			  "heroId": hero.id,
-			  "currentHp": hero.currentHP,
+			  "currentHp": hero.current_hp,
 			})
 		)
 

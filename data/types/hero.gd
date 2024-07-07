@@ -10,8 +10,8 @@ var tier: Enums.HeroTier
 var bio: String
 var sprite_id: String
 var attack: int
-var maxHP: int
-var currentHP: int
+var max_hp: int
+var current_hp: int
 
 
 func _to_string() -> String:
@@ -39,8 +39,8 @@ static func from_params(
 	_bio: String,
 	_sprite_id: String,
 	_attack: int,
-	_maxHP: int,
-	_currentHP: int
+	_max_hp: int,
+	_current_hp: int
 ) -> Hero:
 	var hero = Hero.new()
 	hero.id = _id
@@ -51,6 +51,6 @@ static func from_params(
 	hero.bio = _bio
 	hero.sprite_id = _sprite_id
 	hero.attack = _attack
-	hero.maxHP = _maxHP
-	hero.currentHP = _currentHP
+	hero.max_hp = _max_hp
+	hero.current_hp = _current_hp
 	return hero

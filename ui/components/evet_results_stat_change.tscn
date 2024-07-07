@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cujgqt5wgx5ju"]
+
+[ext_resource type="Script" path="res://ui/components/evet_results_stat_change.gd" id="1_d1xqa"]
+[ext_resource type="Texture2D" uid="uid://b4a6pbu25geiq" path="res://ui/assets/icons/heart.png" id="1_y8wd3"]
+
+[node name="EventResultsStatChange" type="HBoxContainer"]
+theme_override_constants/separation = 30
+script = ExtResource("1_d1xqa")
+icon = ExtResource("1_y8wd3")
+positive_color = Color(4.69275e-07, 0.490135, 9.62615e-07, 1)
+negative_color = Color(0.490196, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_y8wd3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "125 (-15)"

@@ -6,6 +6,7 @@ const NEW_HERO_POPUP_SCENE: PackedScene = preload("res://ui/components/new_hero_
 const BOARD_POPUP_SCENE: PackedScene = preload("res://ui/components/board_popup.tscn")
 const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/hero_select_popup.tscn")
 const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/event_popup.tscn")
+const EVENT_RESULTS_POPUP_SCENE: PackedScene = preload("res://ui/components/event_results_popup.tscn")
 
 var _spawn_points: Array[Node]
 var _spawn_index: int = 0
@@ -14,8 +15,9 @@ var _new_hero_popup: Control
 var _board_popup: Control
 var _hero_select_popup: Control
 var _event_popup: Control
+var _event_results_popup: Control
 
-var _selected_event_hero: Hero
+var _selected_event_hero_id: String
 
 
 func _ready():
@@ -27,10 +29,10 @@ func _ready():
 		GameState.initialize_world_state(Mocks.mock_world_state)
 		GameState.initialize_heroes(Mocks.mock_heroes)
 
-	for hero in GameState.heroes:
+	for hero in GameState.get_heroes():
 		_spawn_hero(hero, _get_spawn_point())
 
-	if !GameState.world_state.passed_tutorial:
+	if !GameState.get_world_state().passed_tutorial:
 		_start_tutorial()
 
 
@@ -48,7 +50,7 @@ func _start_tutorial() -> void:
 func _on_tutorial_button_pressed() -> void:
 	_text_popup.disconnect("button_pressed", _on_tutorial_button_pressed)
 	_text_popup.disable_button()
-	BackendAPI.generate_hero(GameState.user.id, _on_tutorial_hero_generated)
+	BackendAPI.generate_hero(GameState.get_user().id, _on_tutorial_hero_generated)
 
 
 func _on_tutorial_hero_generated(hero: Hero, error: Error) -> void:
@@ -84,9 +86,14 @@ func _on_board_popup_close() -> void:
 	_remove_board_popup()
 
 
-func _on_hero_selected(hero: Hero) -> void:
-	_selected_event_hero = hero
-	BackendAPI.generate_event(GameState.user.id, GameState.world_state, hero, _on_event_generated)
+func _on_hero_selected(hero_id: String) -> void:
+	_selected_event_hero_id = hero_id
+	BackendAPI.generate_event(
+		GameState.get_user().id,
+		GameState.get_world_state(),
+		GameState.get_hero_by_id(hero_id),
+		_on_event_generated,
+	)
 	_hero_select_popup.disable_button()
 
 
@@ -97,11 +104,23 @@ func _on_event_generated(event: Events.AIEvent, error: Error) -> void:
 		return
 
 	_remove_hero_select_popup()
-	_show_event_popup(_selected_event_hero, event)
+	_show_event_popup(GameState.get_hero_by_id(_selected_event_hero_id), event)
 
 
-func _on_option_selected(_option: Events.Option) -> void:
+func _on_option_selected(option: Events.Option) -> void:
 	_remove_event_popup()
+	var results = option.results
+	GameState.update_world_state(results.food_delta, results.morale_delta, results.supplies_delta)
+	GameState.update_hero_by_id(_selected_event_hero_id, results.hp_delta)
+	_show_event_results_popup(
+		GameState.get_world_state(),
+		GameState.get_hero_by_id(_selected_event_hero_id),
+		results,
+	)
+
+
+func _on_event_results_confirmed() -> void:
+	_remove_event_results_popup()
 
 
 # Helpers
@@ -122,6 +141,8 @@ func _get_spawn_point() -> Vector2:
 	return spawn_point.global_position
 
 
+# UI Helpers
+# --------------------------------------------------
 func _show_text_popup(header: String, body: String, button: String, callback: Callable) -> void:
 	_text_popup = TEXT_POPUP_SCENE.instantiate()
 	_text_popup.initialize(header, body, button)
@@ -161,9 +182,7 @@ func _remove_board_popup() -> void:
 
 func _show_hero_select_popup() -> void:
 	_hero_select_popup = HERO_SELECT_POPUP_SCENE.instantiate()
-	var heroes = GameState.heroes
-	print(len(heroes))
-	_hero_select_popup.initialize(GameState.heroes)
+	_hero_select_popup.initialize(GameState.get_heroes())
 	%CanvasLayer.add_child(_hero_select_popup)
 	_hero_select_popup.connect("hero_selected", _on_hero_selected)
 
@@ -183,3 +202,15 @@ func _show_event_popup(hero: Hero, event: Events.AIEvent) -> void:
 func _remove_event_popup() -> void:
 	%CanvasLayer.remove_child(_event_popup)
 	_event_popup = null
+
+
+func _show_event_results_popup(world: WorldState, hero: Hero, results: Events.OptionResults) -> void:
+	_event_results_popup = EVENT_RESULTS_POPUP_SCENE.instantiate()
+	_event_results_popup.initialize(world, hero, results)
+	%CanvasLayer.add_child(_event_results_popup)
+	_event_results_popup.connect("button_pressed", _on_event_results_confirmed)
+
+
+func _remove_event_results_popup() -> void:
+	%CanvasLayer.remove_child(_event_results_popup)
+	_event_results_popup = null

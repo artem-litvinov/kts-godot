@@ -44,7 +44,7 @@ func _on_get_world_state_completed(world_state: WorldState, error: Error):
 	%ProgressBar.value = 66
 	GameState.initialize_world_state(world_state)
 
-	BackendAPI.get_heroes(GameState.user.id, _on_get_heroes_completed)
+	BackendAPI.get_heroes(GameState.get_user().id, _on_get_heroes_completed)
 
 
 func _on_get_heroes_completed(heroes: Array[Hero], error: Error):

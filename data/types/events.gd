@@ -81,35 +81,35 @@ class Option:
 
 class OptionResults:
 	var description: String
-	var hpDelta: int
-	var foodDelta: int
-	var moraleDelta: int
-	var suppliesDelta: int
+	var hp_delta: int
+	var food_delta: int
+	var morale_delta: int
+	var supplies_delta: int
 
 	static func from_json(json: Dictionary) -> OptionResults:
 		var results = OptionResults.new()
 
 		results.description = json["desc"]
-		results.hpDelta = json["htDelta"]
-		results.foodDelta = json["foodDelta"]
-		results.moraleDelta = json["moraleDelta"]
-		results.suppliesDelta = json["suppliesDelta"]
+		results.hp_delta = json["hpDelta"]
+		results.food_delta = json["foodDelta"]
+		results.morale_delta = json["moraleDelta"]
+		results.supplies_delta = json["suppliesDelta"]
 
 		return results
 
 	static func from_params(
 		_description: String,
-		_hpDelta: int,
-		_foodDelta: int,
-		_moraleDelta: int,
-		_suppliesDelta: int,
+		_hp_delta: int,
+		_food_delta: int,
+		_morale_delta: int,
+		_supplies_delta: int,
 	) -> OptionResults:
 		var results = OptionResults.new()
 
 		results.description = _description
-		results.hpDelta = _hpDelta
-		results.foodDelta = _foodDelta
-		results.moraleDelta = _moraleDelta
-		results.suppliesDelta = _suppliesDelta
+		results.hp_delta = _hp_delta
+		results.food_delta = _food_delta
+		results.morale_delta = _morale_delta
+		results.supplies_delta = _supplies_delta
 
 		return results
