@@ -15,19 +15,20 @@ func _to_string():
 static func from_json(json: Dictionary) -> WorldState:
 	var state = WorldState.new()
 
-	for param in json.keys():
-		if param in state:
-			state.set(param, json[param])
-		else:
-			return null
+	state.food = json["food"]
+	state.morale = json["morale"]
+	state.supplies = json["supplies"]
+	state.passed_tutorial = json["passedTutorial"]
 
 	return state
 
 
 static func from_params(_food: int, _morale: int, _supplies: int, _passed_tutorial) -> WorldState:
 	var state = WorldState.new()
+
 	state.food = _food
 	state.morale = _morale
 	state.supplies = _supplies
 	state.passed_tutorial = _passed_tutorial
+
 	return state

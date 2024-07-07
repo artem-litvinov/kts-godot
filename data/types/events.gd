@@ -40,11 +40,9 @@ class Enemy:
 	static func from_json(json: Dictionary) -> Enemy:
 		var enemy = Enemy.new()
 
-		for param in json.keys():
-			if param in enemy:
-				enemy.set(param, json[param])
-			else:
-				return null
+		enemy.name = json["name"]
+		enemy.attack = json["attack"]
+		enemy.hp = json["hp"]
 
 		return enemy
 

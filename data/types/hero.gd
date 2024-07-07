@@ -21,11 +21,16 @@ func _to_string() -> String:
 static func from_json(json: Dictionary) -> Hero:
 	var hero = Hero.new()
 
-	for param in json.keys():
-		if param in hero:
-			hero.set(param, json[param])
-		else:
-			return null
+	hero.id = json["id"]
+	hero.name = json["name"]
+	hero.gender = Enums.Gender[json["gender"]]
+	hero.type = Enums.HeroType[json["type"]]
+	hero.tier = Enums.HeroTier[json["tier"]]
+	hero.bio = json["bio"]
+	hero.sprite_id = json["spriteId"]
+	hero.attack = json["attack"]
+	hero.max_hp = json["maxHp"]
+	hero.current_hp = json["currentHp"]
 
 	return hero
 
@@ -43,6 +48,7 @@ static func from_params(
 	_current_hp: int
 ) -> Hero:
 	var hero = Hero.new()
+
 	hero.id = _id
 	hero.name = _name
 	hero.gender = _gender
@@ -53,4 +59,5 @@ static func from_params(
 	hero.attack = _attack
 	hero.max_hp = _max_hp
 	hero.current_hp = _current_hp
+
 	return hero
