@@ -10,10 +10,11 @@ var _selected_hero: Hero
 
 func _ready() -> void:
 	if use_mocks:
-		initialize(Mocks.mock_heroes)
+		initialize(Strings.SCAVENGE_MISSION_DESC, Mocks.mock_heroes)
 
 
-func initialize(heroes: Array[Hero]) -> void:
+func initialize(description: String, heroes: Array[Hero]) -> void:
+	%Description.text = description
 	for hero in heroes:
 		var tier_texture = load(SpriteManager.get_tier_sprite_path(hero.tier))
 		var idx = %HeroOptionButton.item_count

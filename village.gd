@@ -29,6 +29,8 @@ func _ready():
 		GameState.initialize_world_state(Mocks.mock_world_state)
 		GameState.initialize_heroes(Mocks.mock_heroes)
 
+	update_hud()
+
 	for hero in GameState.get_heroes():
 		_spawn_hero(hero, _get_spawn_point())
 
@@ -75,7 +77,6 @@ func _on_building_missions_board_clicked() -> void:
 
 func _on_scavenge_mode_selected() -> void:
 	_remove_board_popup()
-	_show_hero_select_popup()
 
 
 func _on_survival_mode_selected() -> void:
@@ -86,7 +87,7 @@ func _on_board_popup_close() -> void:
 	_remove_board_popup()
 
 
-func _on_hero_selected(hero_id: String) -> void:
+func _on_scavenge_hero_selected(hero_id: String) -> void:
 	_selected_event_hero_id = hero_id
 	BackendAPI.generate_event(
 		GameState.get_user().id,
@@ -121,10 +122,16 @@ func _on_option_selected(option: Events.Option) -> void:
 
 func _on_event_results_confirmed() -> void:
 	_remove_event_results_popup()
+	update_hud()
 
 
 # Helpers
 # --------------------------------------------------
+func update_hud() -> void:
+	var world_state = GameState.get_world_state()
+	%VillageHUD.update_resources(world_state.food, world_state.morale, world_state.supplies)
+
+
 func _spawn_hero(hero: Hero, hero_position: Vector2) -> void:
 	var new_hero = HERO_SCENE.instantiate()
 	new_hero.global_position = hero_position
@@ -180,11 +187,11 @@ func _remove_board_popup() -> void:
 	_board_popup = null
 
 
-func _show_hero_select_popup() -> void:
+func _show_hero_select_popup(description: String, callback: Callable) -> void:
 	_hero_select_popup = HERO_SELECT_POPUP_SCENE.instantiate()
-	_hero_select_popup.initialize(GameState.get_heroes())
+	_hero_select_popup.initialize(description, GameState.get_heroes())
 	%CanvasLayer.add_child(_hero_select_popup)
-	_hero_select_popup.connect("hero_selected", _on_hero_selected)
+	_hero_select_popup.connect("hero_selected", callback)
 
 
 func _remove_hero_select_popup() -> void:

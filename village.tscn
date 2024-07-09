@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://s722qp50ry2b"]
+[gd_scene load_steps=44 format=4 uid="uid://s722qp50ry2b"]
 
 [ext_resource type="Script" path="res://village.gd" id="1_nfrkg"]
 [ext_resource type="Texture2D" uid="uid://c5a5juby65xpe" path="res://environment/assets/rpg_summer_tileset/PNG/land_1.png" id="2_a4vvf"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/building_tavern.tscn" id="19_n0rqf"]
 [ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/building_sawmill.tscn" id="20_p4ns0"]
 [ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/building_well.tscn" id="21_qwmcb"]
+[ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village_hud.tscn" id="24_knepf"]
 [ext_resource type="PackedScene" uid="uid://cm7ip7afgrrx8" path="res://environment/building_missions_board.tscn" id="25_a2uw0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xs7y8"]
@@ -210,6 +211,9 @@ position = Vector2(3181, 1573)
 position = Vector2(2384, 1657)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="VillageHUD" parent="CanvasLayer" instance=ExtResource("24_knepf")]
 unique_name_in_owner = true
 
 [connection signal="clicked" from="Buildings/BuildingMissionsBoard" to="." method="_on_building_missions_board_clicked"]

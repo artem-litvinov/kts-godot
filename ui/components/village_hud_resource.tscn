@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgc6nui35ux0t"]
+
+[ext_resource type="Script" path="res://ui/components/village_hud_resource.gd" id="1_03rus"]
+[ext_resource type="Texture2D" uid="uid://c4611xu6nfpyq" path="res://ui/assets/icons/food.png" id="2_qm0is"]
+
+[node name="VillageHUDResource" type="HBoxContainer"]
+theme_override_constants/separation = 20
+script = ExtResource("1_03rus")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_qm0is")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "125"
