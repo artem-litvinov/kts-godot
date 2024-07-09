@@ -1,6 +1,6 @@
 extends Node2D
 
-const HERO_SCENE: PackedScene = preload("res://heroes/hero.tscn")
+const HERO_SCENE: PackedScene = preload("res://heroes/village_hero.tscn")
 const TEXT_POPUP_SCENE: PackedScene = preload("res://ui/components/text_popup.tscn")
 const NEW_HERO_POPUP_SCENE: PackedScene = preload("res://ui/components/new_hero_popup.tscn")
 const BOARD_POPUP_SCENE: PackedScene = preload("res://ui/components/board_popup.tscn")
@@ -8,8 +8,6 @@ const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/hero_s
 const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/event_popup.tscn")
 const EVENT_RESULTS_POPUP_SCENE: PackedScene = preload("res://ui/components/event_results_popup.tscn")
 
-var _spawn_points: Array[Node]
-var _spawn_index: int = 0
 var _text_popup: Control
 var _new_hero_popup: Control
 var _board_popup: Control
@@ -17,8 +15,8 @@ var _hero_select_popup: Control
 var _event_popup: Control
 var _event_results_popup: Control
 
-var _selected_event_hero_id: String
-
+var _spawn_points: Array[Node]
+var _spawn_index: int = 0
 
 func _ready():
 	_spawn_points = get_tree().get_nodes_in_group("spawn_points")
@@ -77,10 +75,12 @@ func _on_building_missions_board_clicked() -> void:
 
 func _on_scavenge_mode_selected() -> void:
 	_remove_board_popup()
+	_show_hero_select_popup(Strings.SCAVENGE_MISSION_DESC, _on_scavenge_hero_selected)
 
 
 func _on_survival_mode_selected() -> void:
 	_remove_board_popup()
+	_show_hero_select_popup(Strings.SURVIVAL_MISSION_DESC, _on_survival_hero_selected)
 
 
 func _on_board_popup_close() -> void:
@@ -88,7 +88,7 @@ func _on_board_popup_close() -> void:
 
 
 func _on_scavenge_hero_selected(hero_id: String) -> void:
-	_selected_event_hero_id = hero_id
+	GameState.scavenge_started(hero_id)
 	BackendAPI.generate_event(
 		GameState.get_user().id,
 		GameState.get_world_state(),
@@ -98,6 +98,11 @@ func _on_scavenge_hero_selected(hero_id: String) -> void:
 	_hero_select_popup.disable_button()
 
 
+func _on_survival_hero_selected(hero_id: String) -> void:
+	GameState.survival_started(hero_id)
+	SceneManager.goto_survival()
+
+
 func _on_event_generated(event: Events.AIEvent, error: Error) -> void:
 	if error != OK:
 		print("Failed to generate event: ", error)
@@ -105,17 +110,18 @@ func _on_event_generated(event: Events.AIEvent, error: Error) -> void:
 		return
 
 	_remove_hero_select_popup()
-	_show_event_popup(GameState.get_hero_by_id(_selected_event_hero_id), event)
+	var selected_hero = GameState.get_hero_by_id(GameState.get_selected_hero_id())
+	_show_event_popup(selected_hero, event)
 
 
 func _on_option_selected(option: Events.Option) -> void:
 	_remove_event_popup()
 	var results = option.results
 	GameState.update_world_state(results.food_delta, results.morale_delta, results.supplies_delta)
-	GameState.update_hero_by_id(_selected_event_hero_id, results.hp_delta)
+	GameState.update_hero_by_id(GameState.get_selected_hero_id(), results.hp_delta)
 	_show_event_results_popup(
 		GameState.get_world_state(),
-		GameState.get_hero_by_id(_selected_event_hero_id),
+		GameState.get_hero_by_id(GameState.get_selected_hero_id()),
 		results,
 	)
 

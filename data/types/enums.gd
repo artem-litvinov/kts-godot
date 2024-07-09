@@ -2,6 +2,12 @@ extends Resource
 
 class_name Enums
 
+enum GameMode {
+	VILLAGE,
+	SCAVENGE,
+	SURVIVAL,
+}
+
 enum Gender {
 	MALE,
 	FEMALE,

@@ -1,6 +1,7 @@
 extends Node
 
-const VILLAGE_SCENE_PATH = "res://village.tscn"
+const VILLAGE_SCENE_PATH = "res://levels/village.tscn"
+const SURVIVAL_SCENE_PATH = "res://levels/surival.tscn"
 
 var current_scene = null
 
@@ -12,6 +13,10 @@ func _ready():
 
 func goto_village():
 	_goto_scene(VILLAGE_SCENE_PATH)
+
+
+func goto_survival():
+	_goto_scene(SURVIVAL_SCENE_PATH)
 
 
 func _goto_scene(path):

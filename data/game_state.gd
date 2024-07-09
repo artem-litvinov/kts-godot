@@ -3,6 +3,8 @@ extends Node
 var _user: User
 var _world_state: WorldState
 var _hero_by_id: Dictionary
+var _game_mode: Enums.GameMode = Enums.GameMode.VILLAGE
+var _selected_hero_id: String
 
 
 func get_user() -> User:
@@ -55,3 +57,27 @@ func get_hero_by_id(id: String) -> Hero:
 func update_hero_by_id(id: String, hp_delta: int) -> void:
 	var hero = _hero_by_id[id]
 	hero.current_hp += hp_delta
+
+
+func scavenge_started(hero_id: String) -> void:
+	_selected_hero_id = hero_id
+	_game_mode = Enums.GameMode.SCAVENGE
+
+
+func scavenge_ended() -> void:
+	_selected_hero_id = ""
+	_game_mode = Enums.GameMode.VILLAGE
+
+
+func survival_started(hero_id: String) -> void:
+	_selected_hero_id = hero_id
+	_game_mode = Enums.GameMode.SURVIVAL
+
+
+func survival_ended() -> void:
+	_selected_hero_id = ""
+	_game_mode = Enums.GameMode.VILLAGE
+
+
+func get_selected_hero_id() -> String:
+	return _selected_hero_id
