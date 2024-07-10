@@ -1,0 +1,117 @@
+[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://dt8fmvj0nwc4h"]
+
+[ext_resource type="Texture2D" uid="uid://c5a5juby65xpe" path="res://environment/assets/rpg_summer_tileset/PNG/land_1.png" id="1_t8bov"]
+[ext_resource type="Texture2D" uid="uid://b78f4g3gjdhwy" path="res://environment/assets/rpg_summer_tileset/PNG/land_2.png" id="2_ndf55"]
+[ext_resource type="Texture2D" uid="uid://c1kn3mth23yqx" path="res://environment/assets/rpg_summer_tileset/PNG/land_14.png" id="3_2qbbj"]
+[ext_resource type="Texture2D" uid="uid://deqxqt3by1x6n" path="res://environment/assets/rpg_summer_tileset/PNG/land_15.png" id="4_hnhfx"]
+[ext_resource type="Texture2D" uid="uid://cobo73n3wiecs" path="res://environment/assets/rpg_summer_tileset/PNG/land_16.png" id="5_1pxmk"]
+[ext_resource type="Texture2D" uid="uid://dwmy3ljonfbr5" path="res://environment/assets/rpg_summer_tileset/PNG/land_17.png" id="6_xltim"]
+[ext_resource type="Texture2D" uid="uid://b3joflwmghith" path="res://environment/assets/rpg_summer_tileset/PNG/land_18.png" id="7_r5ko5"]
+[ext_resource type="Texture2D" uid="uid://cjla4ktye0um" path="res://environment/assets/generated/land_6.png" id="8_4q2wu"]
+[ext_resource type="Texture2D" uid="uid://o3yvx4t508jw" path="res://environment/assets/rpg_summer_tileset/PNG/land_3.png" id="9_gi5da"]
+[ext_resource type="Texture2D" uid="uid://5icewjark05s" path="res://environment/assets/rpg_summer_tileset/PNG/land_5.png" id="10_bje8i"]
+[ext_resource type="Texture2D" uid="uid://cp7jdh4ds146l" path="res://environment/assets/rpg_summer_tileset/PNG/land_6.png" id="11_vcpue"]
+[ext_resource type="Texture2D" uid="uid://cp4q38oim80b3" path="res://environment/assets/rpg_summer_tileset/PNG/land_7.png" id="12_4j7ix"]
+[ext_resource type="Texture2D" uid="uid://bdtugxeuxmwa4" path="res://environment/assets/rpg_summer_tileset/PNG/land_9.png" id="13_l45ya"]
+[ext_resource type="Texture2D" uid="uid://b1abweu1a3emo" path="res://environment/assets/rpg_summer_tileset/PNG/land_10.png" id="14_hor27"]
+[ext_resource type="Texture2D" uid="uid://ckl708r3l10r1" path="res://environment/assets/rpg_summer_tileset/PNG/land_11.png" id="15_lsxfw"]
+[ext_resource type="Texture2D" uid="uid://be63brgx40dmm" path="res://environment/assets/rpg_summer_tileset/PNG/land_12.png" id="16_xtma5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xs7y8"]
+texture = ExtResource("1_t8bov")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_256fj"]
+texture = ExtResource("2_ndf55")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oq8n2"]
+texture = ExtResource("3_2qbbj")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4veh5"]
+texture = ExtResource("4_hnhfx")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjrs3"]
+texture = ExtResource("5_1pxmk")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgxca"]
+texture = ExtResource("6_xltim")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecqlq"]
+texture = ExtResource("7_r5ko5")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7h36d"]
+texture = ExtResource("8_4q2wu")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pea2v"]
+texture = ExtResource("9_gi5da")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jax6y"]
+texture = ExtResource("10_bje8i")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpxvy"]
+texture = ExtResource("11_vcpue")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xus8n"]
+texture = ExtResource("12_4j7ix")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqng0"]
+texture = ExtResource("13_l45ya")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekf7r"]
+texture = ExtResource("14_hor27")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kmscy"]
+texture = ExtResource("15_lsxfw")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3f8"]
+texture = ExtResource("16_xtma5")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_xs7y8")
+sources/1 = SubResource("TileSetAtlasSource_256fj")
+sources/2 = SubResource("TileSetAtlasSource_pea2v")
+sources/3 = SubResource("TileSetAtlasSource_jax6y")
+sources/4 = SubResource("TileSetAtlasSource_lpxvy")
+sources/5 = SubResource("TileSetAtlasSource_xus8n")
+sources/6 = SubResource("TileSetAtlasSource_nqng0")
+sources/7 = SubResource("TileSetAtlasSource_ekf7r")
+sources/8 = SubResource("TileSetAtlasSource_kmscy")
+sources/9 = SubResource("TileSetAtlasSource_5c3f8")
+sources/10 = SubResource("TileSetAtlasSource_oq8n2")
+sources/11 = SubResource("TileSetAtlasSource_4veh5")
+sources/12 = SubResource("TileSetAtlasSource_xjrs3")
+sources/13 = SubResource("TileSetAtlasSource_qgxca")
+sources/14 = SubResource("TileSetAtlasSource_ecqlq")
+sources/15 = SubResource("TileSetAtlasSource_7h36d")

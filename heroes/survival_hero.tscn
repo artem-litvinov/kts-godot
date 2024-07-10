@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce0ehfno5oemd"]
+
+[ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="1_1iyqo"]
+[ext_resource type="Script" path="res://heroes/survival_hero.gd" id="1_n1hig"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5m80h"]
+radius = 213.0
+height = 576.0
+
+[node name="SurvivalHero" type="CharacterBody2D"]
+script = ExtResource("1_n1hig")
+
+[node name="HeroCosmetics" parent="." instance=ExtResource("1_1iyqo")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5m80h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
