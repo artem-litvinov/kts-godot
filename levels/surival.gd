@@ -10,3 +10,7 @@ func _ready() -> void:
 
 	var hero = GameState.get_hero_by_id(GameState.get_selected_hero_id())
 	%SurvivalHero.initialize(hero)
+
+
+func _process(delta: float) -> void:
+	%MistParallaxBackground.scroll_base_offset -= Vector2(100, 0) * delta
