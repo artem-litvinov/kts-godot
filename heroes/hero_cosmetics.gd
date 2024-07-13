@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterCosmetics
 
 const IDLE_ANIM_NAME = "idle"
 const RUNNING_ANIM_NAME = "running"
