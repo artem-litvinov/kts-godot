@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 
 func initialize(hero: Hero):
-	%HeroCosmetics.setup_cosmetics(hero.sprite_id)
+	%HeroCosmetics.initialize(hero.sprite_id)
 
 
 func _physics_process(_delta: float):

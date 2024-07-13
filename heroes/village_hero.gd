@@ -11,7 +11,7 @@ var buildings: Array[Node] = []
 
 
 func initialize(hero: Hero):
-	%HeroCosmetics.setup_cosmetics(hero.sprite_id)
+	%HeroCosmetics.initialize(hero.sprite_id)
 
 
 func _ready() -> void:

@@ -9,7 +9,7 @@ func initialize(hero: Hero, compact: bool) -> void:
 	%Health.set_stat_value(str(hero.max_hp))
 	%Attack.set_stat_value(str(hero.attack))
 	%Bio.text = hero.bio
-	%HeroCosmetics.setup_cosmetics(hero.sprite_id)
+	%HeroCosmetics.initialize(hero.sprite_id)
 	%HeroCosmetics.play_idle()
 
 	if compact:
