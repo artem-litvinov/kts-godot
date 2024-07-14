@@ -7,6 +7,7 @@ class_name SurvivalFollowerEnemy
 @export var speed: float
 
 @export_category("Area Attack")
+@export var area_attack_cooldown_sec: float
 @export var area_damage: float
 @export var area_knockback_force: float
 @export var area_stun_time: float
@@ -15,40 +16,33 @@ class_name SurvivalFollowerEnemy
 @export var cosmetics: CharacterCosmetics
 @export var health_component: HealthComponent
 @export var hitbox_component: HitboxComponent
+@export var damage_area_component: DamageAreaComponent
 
 var _player: CharacterBody2D
-var _hitboxes_within_damage_area: Array[HitboxComponent]
 
 
 func _ready() -> void:
 	_player = get_tree().get_first_node_in_group("player")
+	health_component.initialize(max_hp)
+	damage_area_component.initialize(
+		area_attack_cooldown_sec,
+		Attack.from_params(
+			area_damage,
+			area_knockback_force,
+			global_position,
+			area_stun_time,
+		),
+	)
 
 
 func _physics_process(_delta: float):
 	if !_player:
 		return
 
-	_deal_area_attack()
-
 	var direction = global_position.direction_to(_player.global_position)
 	velocity = direction * speed
 	move_and_slide()
 	_update_animations()
-
-
-func _deal_area_attack() -> void:
-	var attack = _build_area_attack(global_position)
-	for hitbox in _hitboxes_within_damage_area:
-		hitbox.hit(attack)
-
-
-func _build_area_attack(attack_position: Vector2) -> Attack:
-	return Attack.from_params(
-		area_damage,
-		area_knockback_force,
-		attack_position,
-		area_stun_time,
-	)
 
 
 func _update_animations() -> void:
@@ -71,8 +65,3 @@ func _on_health_component_health_depleted() -> void:
 
 func _on_death_finished() -> void:
 	queue_free()
-
-
-func _on_damage_area_entered(area: Area2D) -> void:
-	if area is HitboxComponent:
-		_hitboxes_within_damage_area.append(area)

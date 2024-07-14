@@ -15,7 +15,7 @@ func initialize(sprite_id: String) -> void:
 	sprites_path = SpriteManager.get_sprite_path(sprite_id)
 	idle_anim_sprite = load(sprites_path + IDLE_ANIM_NAME + SPRITE_FILE_EXT)
 	running_anim_sprite = load(sprites_path + RUNNING_ANIM_NAME + SPRITE_FILE_EXT)
-	hurt_anim_sprite = load(sprites_path + RUNNING_ANIM_NAME + SPRITE_FILE_EXT)
+	hurt_anim_sprite = load(sprites_path + HURT_ANIM_NAME + SPRITE_FILE_EXT)
 
 
 func play_idle() -> void:

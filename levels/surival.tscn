@@ -54,8 +54,9 @@ cosmetics = NodePath("HeroCosmetics")
 health_component = NodePath("HealthComponent")
 hitbox_component = NodePath("HitboxComponent")
 
-[node name="SurvivalFlyingEnemy" parent="." node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component") instance=ExtResource("6_ag42w")]
+[node name="SurvivalFlyingEnemy" parent="." node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component", "damage_area_component") instance=ExtResource("6_ag42w")]
 position = Vector2(1535, 803)
 cosmetics = NodePath("FlyingEnemyCosmetics")
 health_component = NodePath("HealthComponent")
 hitbox_component = NodePath("HitboxComponent")
+damage_area_component = NodePath("DamageAreaComponent")
