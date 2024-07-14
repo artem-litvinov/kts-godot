@@ -5,7 +5,7 @@ class_name Events
 
 class AIEvent:
 	var description: String
-	var enemy: Enemy
+	var enemy: EventEnemy
 	var options: Array[Option]
 
 	func _to_string():
@@ -15,14 +15,14 @@ class AIEvent:
 		var event = AIEvent.new()
 
 		event.description = json["eventSetup"]["eventStory"]
-		event.enemy = Enemy.from_json(json["eventSetup"]["enemy"])
+		event.enemy = EventEnemy.from_json(json["eventSetup"]["enemy"])
 		event.options = []
 		for option in json["options"]:
 			event.options.append(Option.from_json(option))
 
 		return event
 
-	static func from_params(_description: String, _enemy: Enemy, _options: Array[Option]) -> AIEvent:
+	static func from_params(_description: String, _enemy: EventEnemy, _options: Array[Option]) -> AIEvent:
 		var event = AIEvent.new()
 
 		event.description = _description
@@ -32,13 +32,13 @@ class AIEvent:
 		return event
 
 
-class Enemy:
+class EventEnemy:
 	var name: String
 	var attack: int
 	var hp: int
 
-	static func from_json(json: Dictionary) -> Enemy:
-		var enemy = Enemy.new()
+	static func from_json(json: Dictionary) -> EventEnemy:
+		var enemy = EventEnemy.new()
 
 		enemy.name = json["name"]
 		enemy.attack = json["attack"]
@@ -46,8 +46,8 @@ class Enemy:
 
 		return enemy
 
-	static func from_params(_name: String, _attack: int, _hp: int) -> Enemy:
-		var enemy = Enemy.new()
+	static func from_params(_name: String, _attack: int, _hp: int) -> EventEnemy:
+		var enemy = EventEnemy.new()
 
 		enemy.name = _name
 		enemy.attack = _attack

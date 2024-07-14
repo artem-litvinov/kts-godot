@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b113pdpi7a1jh"]
 
-[ext_resource type="Script" path="res://enemies/flying_enemy_cosmetics.gd" id="1_dolp2"]
+[ext_resource type="Script" path="res://enemies/cosmetics/flying_enemy_cosmetics.gd" id="1_dolp2"]
 [ext_resource type="Texture2D" uid="uid://d0l8q2ebu1atp" path="res://sprites/flying_monster_3/idle.png" id="2_1cct3"]
 
 [sub_resource type="Animation" id="Animation_7bpd8"]
@@ -180,6 +180,7 @@ script = ExtResource("1_dolp2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(-50, -32)
 texture = ExtResource("2_1cct3")
 hframes = 18
 

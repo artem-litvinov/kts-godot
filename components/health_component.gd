@@ -4,17 +4,19 @@ class_name HealthComponent
 
 signal health_depleted
 
-@export var max_health: float
-
-var health: float 
+var _health: float 
 
 
-func _ready() -> void:
-	health = max_health
+func initialize(max_health: float) -> void:
+	_health = max_health
+
+
+func get_health() -> float:
+	return _health
 
 
 func take_damage(dmg_amount: float) -> void:
-	health -= dmg_amount
+	_health -= dmg_amount
 
-	if health <= 0:
+	if _health <= 0:
 		health_depleted.emit()

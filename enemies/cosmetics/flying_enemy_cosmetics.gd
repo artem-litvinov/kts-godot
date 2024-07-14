@@ -2,17 +2,20 @@ extends CharacterCosmetics
 
 const IDLE_ANIM_NAME = "idle"
 const HURT_ANIM_NAME = "hurt"
+const DEAD_ANIM_NAME = "smoke"
 const SPRITE_FILE_EXT = ".png"
+const AVAILABE_SPRITE_IDS: Array[String] = ["flying_monster_3"]
 
-var sprites_path: String
 var idle_anim_sprite: Texture
 var hurt_anim_sprite: Texture
+var dead_anim_sprite: Texture
 
 
-func initialize(sprite_id: String) -> void:
-	sprites_path = SpriteManager.get_sprite_path(sprite_id)
+func _ready() -> void:
+	var sprites_path = SpriteManager.get_sprite_path(AVAILABE_SPRITE_IDS.pick_random())
 	idle_anim_sprite = load(sprites_path + IDLE_ANIM_NAME + SPRITE_FILE_EXT)
 	hurt_anim_sprite = load(sprites_path + HURT_ANIM_NAME + SPRITE_FILE_EXT)
+	dead_anim_sprite = load(sprites_path + DEAD_ANIM_NAME + SPRITE_FILE_EXT)
 
 
 func play_idle() -> void:
@@ -29,3 +32,9 @@ func play_running(moving_right: bool) -> void:
 func play_hurt() -> void:
 	%Sprite2D.texture = hurt_anim_sprite
 	%AnimationPlayer.play(HURT_ANIM_NAME)
+
+
+func play_dead(callback: Callable) -> void:
+	%Sprite2D.texture = dead_anim_sprite
+	%AnimationPlayer.play(DEAD_ANIM_NAME)
+	%AnimationPlayer.animation_finished.connect(callback)

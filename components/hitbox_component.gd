@@ -1,6 +1,8 @@
 extends Area2D
 
-signal  got_hit(attack)
+class_name HitboxComponent
+
+signal got_hit(attack)
 
 
 func hit(attack: Attack):
