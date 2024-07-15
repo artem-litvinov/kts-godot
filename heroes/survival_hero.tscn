@@ -22,17 +22,14 @@ health_component = NodePath("HealthComponent")
 hitbox_component = NodePath("HitboxComponent")
 
 [node name="HeroCosmetics" parent="." instance=ExtResource("1_1iyqo")]
-unique_name_in_owner = true
 position = Vector2(0, -90)
 scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_vc16f")]
-unique_name_in_owner = true
 
 [node name="HitboxComponent" parent="." instance=ExtResource("4_dym87")]
-unique_name_in_owner = true
 position = Vector2(0, -84)
 collision_layer = 2
 collision_mask = 32
