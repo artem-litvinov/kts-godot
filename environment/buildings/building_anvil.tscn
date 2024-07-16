@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://dicgtdt3cmbaa"]
+
+[ext_resource type="Texture2D" uid="uid://dldeto304hhwf" path="res://environment/assets/medieval_city/anvil_2.png" id="1_8a1jj"]
+[ext_resource type="Texture2D" uid="uid://7gas7mu5j26m" path="res://environment/assets/medieval_city/anvil_1.png" id="2_7785q"]
+[ext_resource type="Texture2D" uid="uid://de3psdt2g41lr" path="res://environment/assets/medieval_city/anvil_3.png" id="3_x0klt"]
+[ext_resource type="Texture2D" uid="uid://dyskgvmr4bo6x" path="res://environment/assets/medieval_city/anvil_4.png" id="4_j0gy2"]
+[ext_resource type="Texture2D" uid="uid://dmqrc27b5u212" path="res://environment/assets/medieval_city/anvil_5.png" id="5_g0vbh"]
+[ext_resource type="Texture2D" uid="uid://b7g8xn2fyjqu1" path="res://environment/assets/medieval_city/anvil_6.png" id="6_maxns"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
+radius = 63.0
+height = 376.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_moe8s"]
+radius = 57.0001
+height = 216.0
+
+[node name="BuildingHouse" type="StaticBody2D"]
+
+[node name="AnvilBuilding" type="Sprite2D" parent="."]
+position = Vector2(0, -335)
+texture = ExtResource("1_8a1jj")
+
+[node name="BuildingSprite3" type="Sprite2D" parent="."]
+position = Vector2(-344, -23)
+texture = ExtResource("2_7785q")
+
+[node name="BuildingSprite2" type="Sprite2D" parent="."]
+position = Vector2(371, -133)
+texture = ExtResource("3_x0klt")
+
+[node name="BuildingSprite4" type="Sprite2D" parent="."]
+position = Vector2(-13, 63)
+texture = ExtResource("4_j0gy2")
+
+[node name="BuildingSprite5" type="Sprite2D" parent="."]
+position = Vector2(250, 15)
+texture = ExtResource("5_g0vbh")
+
+[node name="BuildingSprite6" type="Sprite2D" parent="."]
+position = Vector2(-344, -172)
+texture = ExtResource("6_maxns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -39)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(321, 14)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 60)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-344, 19)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_moe8s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 69)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_moe8s")
