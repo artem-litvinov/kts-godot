@@ -1,19 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://d36wxn4t87ivu"]
 
-[ext_resource type="Texture2D" uid="uid://bf68uv33wbgyn" path="res://environment/assets/rpg_summer_tileset/PNG/building_6.png" id="1_i7hxs"]
+[ext_resource type="Texture2D" uid="uid://c1rknmitoilom" path="res://environment/assets/medieval_city/barack_1.png" id="1_jsmbd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
 radius = 63.0
-height = 288.0
+height = 376.0
 
 [node name="BuildingHouse" type="StaticBody2D"]
 
 [node name="BuildingSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -291)
-texture = ExtResource("1_i7hxs")
+position = Vector2(0, -259)
+texture = ExtResource("1_jsmbd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -39)
+position = Vector2(0, -39)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wrk64")
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm7ip7afgrrx8"]
 
-[ext_resource type="Script" path="res://environment/building.gd" id="1_5coeb"]
+[ext_resource type="Script" path="res://environment/buildings/building.gd" id="1_5coeb"]
 [ext_resource type="Texture2D" uid="uid://btht8puejdlbm" path="res://environment/assets/rpg_summer_tileset/PNG/decor_3.png" id="1_i4tvv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]

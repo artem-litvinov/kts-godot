@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://levels/village.gd" id="1_nfrkg"]
 [ext_resource type="TileSet" uid="uid://dt8fmvj0nwc4h" path="res://tilesets/background_tileset.tres" id="2_xm5mc"]
-[ext_resource type="PackedScene" uid="uid://d36wxn4t87ivu" path="res://environment/building_house.tscn" id="17_ggkpj"]
+[ext_resource type="PackedScene" uid="uid://d36wxn4t87ivu" path="res://environment/buildings/building_house.tscn" id="17_ggkpj"]
 [ext_resource type="Texture2D" uid="uid://bgy8st6f2rhf" path="res://environment/assets/transparent.png" id="17_u04ww"]
-[ext_resource type="PackedScene" uid="uid://celmdwrxsc17c" path="res://environment/building_main.tscn" id="18_u6oos"]
-[ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/building_tavern.tscn" id="19_n0rqf"]
-[ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/building_sawmill.tscn" id="20_p4ns0"]
-[ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/building_well.tscn" id="21_qwmcb"]
+[ext_resource type="PackedScene" uid="uid://celmdwrxsc17c" path="res://environment/buildings/building_main.tscn" id="18_u6oos"]
+[ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/buildings/building_tavern.tscn" id="19_n0rqf"]
+[ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/buildings/building_sawmill.tscn" id="20_p4ns0"]
+[ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/buildings/building_well.tscn" id="21_qwmcb"]
 [ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village_hud.tscn" id="24_knepf"]
-[ext_resource type="PackedScene" uid="uid://cm7ip7afgrrx8" path="res://environment/building_missions_board.tscn" id="25_a2uw0"]
+[ext_resource type="PackedScene" uid="uid://cm7ip7afgrrx8" path="res://environment/buildings/building_missions_board.tscn" id="25_a2uw0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_c7e7p"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
