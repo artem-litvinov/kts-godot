@@ -24,7 +24,12 @@ func play_idle() -> void:
 
 
 func play_running(moving_right: bool) -> void:
-	%Sprite2D.flip_h = !moving_right
+	if moving_right:
+		%Sprite2D.flip_h = false
+		%Sprite2D.position.x = -50
+	else:
+		%Sprite2D.flip_h = true
+		%Sprite2D.position.x = +50
 	%Sprite2D.texture = idle_anim_sprite
 	%AnimationPlayer.play(IDLE_ANIM_NAME)
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SurvivalWeapon" load_steps=5 format=3 uid="uid://dc0sj304v7yr4"]
+
+[ext_resource type="PackedScene" uid="uid://daqaf7v82qplk" path="res://weapons/projectiles/magic_missile.tscn" id="1_c4pvs"]
+[ext_resource type="Script" path="res://data/types/survival/survival_weapon.gd" id="2_rcbka"]
+[ext_resource type="Resource" uid="uid://csbuuqhddmo28" path="res://weapons/resources/magic_wand_stats.tres" id="3_246w8"]
+[ext_resource type="PackedScene" uid="uid://dwwtlkbbnvcma" path="res://weapons/ranged_weapon_instance.tscn" id="4_f2m4l"]
+
+[resource]
+script = ExtResource("2_rcbka")
+name = "Magic Wand"
+description = "Fires a magic missile at the nearest enemy."
+stats = ExtResource("3_246w8")
+weapon_scene = ExtResource("4_f2m4l")
+projectile_scene = ExtResource("1_c4pvs")

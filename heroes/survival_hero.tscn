@@ -9,9 +9,8 @@
 radius = 53.0
 height = 174.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8wl82"]
-radius = 30.0
-height = 76.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1arf"]
+radius = 27.0
 
 [node name="SurvivalHero" type="CharacterBody2D" node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component")]
 collision_mask = 201
@@ -39,8 +38,8 @@ shape = SubResource("CapsuleShape2D_ddhir")
 debug_color = Color(0.954313, 0.21537, 0, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -31)
-shape = SubResource("CapsuleShape2D_8wl82")
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_n1arf")
 
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
 [connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]

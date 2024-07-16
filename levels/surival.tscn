@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://c7vls4wnn32mj"]
+[gd_scene load_steps=11 format=4 uid="uid://c7vls4wnn32mj"]
 
 [ext_resource type="Script" path="res://levels/surival.gd" id="1_idlsi"]
+[ext_resource type="Script" path="res://data/types/survival/survival_weapon.gd" id="2_iynyf"]
 [ext_resource type="TileSet" uid="uid://dt8fmvj0nwc4h" path="res://tilesets/background_tileset.tres" id="2_swotv"]
+[ext_resource type="Resource" uid="uid://dc0sj304v7yr4" path="res://weapons/resources/magic_wand.tres" id="3_ju0a8"]
 [ext_resource type="Shader" uid="uid://cmfxa0sx16pb" path="res://shaders/surival_noise.tres" id="3_pyscs"]
 [ext_resource type="PackedScene" uid="uid://ce0ehfno5oemd" path="res://heroes/survival_hero.tscn" id="3_vft2w"]
 [ext_resource type="Shader" uid="uid://cq6s7isdn5y0n" path="res://shaders/surival_mist.tres" id="3_vpirw"]
@@ -17,6 +19,7 @@ shader = ExtResource("3_vpirw")
 y_sort_enabled = true
 script = ExtResource("1_idlsi")
 use_mocks = true
+weapon_list = Array[ExtResource("2_iynyf")]([ExtResource("3_ju0a8")])
 
 [node name="MainParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -38,6 +41,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MistParallaxBackground" type="ParallaxBackground" parent="."]
 unique_name_in_owner = true
+layer = 128
 
 [node name="MistParallaxLayer" type="ParallaxLayer" parent="MistParallaxBackground"]
 motion_mirroring = Vector2(5000, 4600)
@@ -56,6 +60,13 @@ hitbox_component = NodePath("HitboxComponent")
 
 [node name="SurvivalFlyingEnemy" parent="." node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component", "damage_area_component") instance=ExtResource("6_ag42w")]
 position = Vector2(1535, 803)
+cosmetics = NodePath("FlyingEnemyCosmetics")
+health_component = NodePath("HealthComponent")
+hitbox_component = NodePath("HitboxComponent")
+damage_area_component = NodePath("DamageAreaComponent")
+
+[node name="SurvivalFlyingEnemy2" parent="." node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component", "damage_area_component") instance=ExtResource("6_ag42w")]
+position = Vector2(-1010, 198)
 cosmetics = NodePath("FlyingEnemyCosmetics")
 health_component = NodePath("HealthComponent")
 hitbox_component = NodePath("HitboxComponent")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SurvivalWeaponStats" load_steps=2 format=3 uid="uid://csbuuqhddmo28"]
+
+[ext_resource type="Script" path="res://data/types/survival/survival_weapon_stats.gd" id="1_lbpfx"]
+
+[resource]
+script = ExtResource("1_lbpfx")
+damage = 60.0
+knockback = 0.0
+stun_time = 0.0
+cooldown = 1.0
+range = 900
+piercing = 0
+projectile_count = 3
+projectile_speed = 1000
