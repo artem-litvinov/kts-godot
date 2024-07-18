@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://btyikipi2gc86"]
+
+[ext_resource type="Texture2D" uid="uid://b052o55nq4cuk" path="res://environment/assets/medieval_city/bar_1.png" id="1_s082h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
+radius = 63.0
+height = 376.0
+
+[node name="BuildingHouse" type="StaticBody2D"]
+
+[node name="BuildingSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -200)
+texture = ExtResource("1_s082h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -59)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 60)

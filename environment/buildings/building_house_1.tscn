@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7u6icsnqsvtt"]
+
+[ext_resource type="Texture2D" uid="uid://5jli6drsg2bb" path="res://environment/assets/rpg_summer_tileset/PNG/building_3.png" id="1_20a1p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
+radius = 63.0
+height = 534.0
+
+[node name="BuildingHouse" type="StaticBody2D"]
+
+[node name="BuildingSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -252)
+texture = ExtResource("1_20a1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -39)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 60)
