@@ -14,7 +14,7 @@ func set_projectile(projectile: PackedScene) -> void:
 
 func attack() -> bool:
 	var enemies_in_range = _weapon_radius.get_overlapping_bodies()
-	if enemies_in_range.size() <= 0:
+	if enemies_in_range.size() < 1:
 		return false
 
 	# starting with -1 to simplify the code and get 0 index on the first iteration
@@ -22,7 +22,6 @@ func attack() -> bool:
 	for _i in range(0, _weapon_stats.projectile_count):
 		index = get_next_enemy_index(enemies_in_range, index)
 		var target_enemy: PhysicsBody2D = enemies_in_range[index]
-		print(target_enemy.global_position)
 		_pivot_point.look_at(target_enemy.global_position)
 
 		var new_projectile: Projectile = _projectile.instantiate()

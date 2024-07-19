@@ -9,8 +9,9 @@
 radius = 53.0
 height = 174.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n1arf"]
-radius = 27.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oiwji"]
+radius = 15.0
+height = 58.0
 
 [node name="SurvivalHero" type="CharacterBody2D" node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component")]
 collision_mask = 201
@@ -25,6 +26,7 @@ position = Vector2(0, -90)
 scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_vc16f")]
 
@@ -38,8 +40,10 @@ shape = SubResource("CapsuleShape2D_ddhir")
 debug_color = Color(0.954313, 0.21537, 0, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_n1arf")
+position = Vector2(0, -15)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oiwji")
 
+[connection signal="death_finished" from="HeroCosmetics" to="." method="_on_cosmetics_death_finished"]
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
 [connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]

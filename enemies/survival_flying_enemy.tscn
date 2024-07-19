@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crfgc7butkacm" path="res://components/damage_area_component.tscn" id="5_d8iey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gsbb6"]
-radius = 65.0077
+radius = 52.0865
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtdm8"]
 radius = 47.0744
@@ -55,5 +55,6 @@ debug_color = Color(0.547466, 0.403213, 1, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lswhv")
 
+[connection signal="death_finished" from="FlyingEnemyCosmetics" to="." method="_on_cosmetics_death_finished"]
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
 [connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]

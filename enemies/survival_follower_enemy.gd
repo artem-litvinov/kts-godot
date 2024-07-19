@@ -19,6 +19,7 @@ class_name SurvivalFollowerEnemy
 @export var damage_area_component: DamageAreaComponent
 
 var _player: CharacterBody2D
+var _knockback: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
@@ -36,11 +37,13 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float):
-	if !_player:
-		return
+	var direction = Vector2.ZERO
 
-	var direction = global_position.direction_to(_player.global_position)
-	velocity = direction * speed
+	if _player:
+		direction = global_position.direction_to(_player.global_position)
+
+	velocity = direction * speed + _knockback
+	_knockback = lerp(_knockback, Vector2.ZERO, 0.1)
 	move_and_slide()
 	_update_animations()
 
@@ -55,13 +58,13 @@ func _update_animations() -> void:
 
 func _on_hitbox_component_got_hit(attack: Attack) -> void:
 	health_component.take_damage(attack.damage)
-	velocity = (global_position - attack.position).normalized() * attack.knockback_force
+	_knockback = (global_position - attack.position).normalized() * attack.knockback_force
 	cosmetics.play_hurt()
 
 
 func _on_health_component_health_depleted() -> void:
-	cosmetics.play_dead(_on_death_finished)
+	cosmetics.play_dead()
 
 
-func _on_death_finished() -> void:
+func _on_cosmetics_death_finished() -> void:
 	queue_free()

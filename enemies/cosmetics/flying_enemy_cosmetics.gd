@@ -1,8 +1,15 @@
 extends CharacterCosmetics
 
+signal death_finished
+
 const IDLE_ANIM_NAME = "idle"
 const HURT_ANIM_NAME = "hurt"
 const DEAD_ANIM_NAME = "smoke"
+const BLOCKING_ANIMATIONS: Array[String] = [
+	HURT_ANIM_NAME,
+	DEAD_ANIM_NAME,
+]
+
 const SPRITE_FILE_EXT = ".png"
 const AVAILABE_SPRITE_IDS: Array[String] = ["flying_monster_3"]
 
@@ -19,11 +26,17 @@ func _ready() -> void:
 
 
 func play_idle() -> void:
+	if %AnimationPlayer.current_animation in BLOCKING_ANIMATIONS:
+		return
+
 	%Sprite2D.texture = idle_anim_sprite
 	%AnimationPlayer.play(IDLE_ANIM_NAME)
 
 
 func play_running(moving_right: bool) -> void:
+	if %AnimationPlayer.current_animation in BLOCKING_ANIMATIONS:
+		return
+
 	if moving_right:
 		%Sprite2D.flip_h = false
 		%Sprite2D.position.x = -50
@@ -35,11 +48,27 @@ func play_running(moving_right: bool) -> void:
 
 
 func play_hurt() -> void:
+	if %AnimationPlayer.current_animation == DEAD_ANIM_NAME:
+		return
+
+	if %AnimationPlayer.is_playing():
+		%AnimationPlayer.stop()
+
 	%Sprite2D.texture = hurt_anim_sprite
 	%AnimationPlayer.play(HURT_ANIM_NAME)
 
 
-func play_dead(callback: Callable) -> void:
+func play_dead() -> void:
+	if %AnimationPlayer.current_animation == DEAD_ANIM_NAME:
+		return
+
+	if %AnimationPlayer.is_playing():
+		%AnimationPlayer.stop()
+
 	%Sprite2D.texture = dead_anim_sprite
 	%AnimationPlayer.play(DEAD_ANIM_NAME)
-	%AnimationPlayer.animation_finished.connect(callback)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == DEAD_ANIM_NAME:
+		death_finished.emit()

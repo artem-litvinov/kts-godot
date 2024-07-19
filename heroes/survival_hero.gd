@@ -32,12 +32,14 @@ func _update_animations() -> void:
 func _on_hitbox_component_got_hit(attack: Variant) -> void:
 	health_component.take_damage(attack.damage)
 	cosmetics.play_hurt()
-	print(health_component.get_health())
 
 
 func _on_health_component_health_depleted() -> void:
-	cosmetics.play_dead(_on_death_finished)
+	cosmetics.play_dead()
 
 
-func _on_death_finished() -> void:
+func _on_cosmetics_death_finished() -> void:
+	var camera = %Camera2D
+	remove_child(camera)
+	get_tree().root.add_child(camera)
 	queue_free()

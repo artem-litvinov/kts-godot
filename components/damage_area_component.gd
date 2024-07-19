@@ -25,6 +25,9 @@ func _physics_process(delta: float) -> void:
 			_remaining_cooldown = 0
 		return
 
+	if _hitboxes_within_area.size() < 1:
+		return
+
 	_attack.position = global_position
 	for hitbox in _hitboxes_within_area:
 		hitbox.hit(_attack)

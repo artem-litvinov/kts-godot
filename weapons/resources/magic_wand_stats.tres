@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_lbpfx")
 damage = 60.0
-knockback = 0.0
+knockback = 500.0
 stun_time = 0.0
 cooldown = 1.0
 range = 900
 piercing = 0
-projectile_count = 3
+projectile_count = 1
 projectile_speed = 1000
