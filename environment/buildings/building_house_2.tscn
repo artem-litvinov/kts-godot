@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt4cwnm5kon1h"]
+
+[ext_resource type="Texture2D" uid="uid://dhnjtabqfbgph" path="res://environment/assets/medieval_city/barack_2.png" id="1_esehf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrk64"]
+radius = 63.0
+height = 284.0
+
+[node name="BuildingHouse" type="StaticBody2D"]
+
+[node name="BuildingSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -182)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_esehf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -39)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wrk64")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 60)
