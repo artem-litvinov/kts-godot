@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://dt8fmvj0nwc4h"]
+[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://dt8fmvj0nwc4h"]
 
 [ext_resource type="Texture2D" uid="uid://c5a5juby65xpe" path="res://environment/assets/rpg_summer_tileset/PNG/land_1.png" id="1_t8bov"]
 [ext_resource type="Texture2D" uid="uid://b78f4g3gjdhwy" path="res://environment/assets/rpg_summer_tileset/PNG/land_2.png" id="2_ndf55"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dwmy3ljonfbr5" path="res://environment/assets/rpg_summer_tileset/PNG/land_17.png" id="6_xltim"]
 [ext_resource type="Texture2D" uid="uid://b3joflwmghith" path="res://environment/assets/rpg_summer_tileset/PNG/land_18.png" id="7_r5ko5"]
 [ext_resource type="Texture2D" uid="uid://cjla4ktye0um" path="res://environment/assets/generated/land_6.png" id="8_4q2wu"]
+[ext_resource type="Texture2D" uid="uid://cagihy0r80aht" path="res://tilesets/assets/toxic_cave_tileset.png" id="9_4jkpx"]
 [ext_resource type="Texture2D" uid="uid://o3yvx4t508jw" path="res://environment/assets/rpg_summer_tileset/PNG/land_3.png" id="9_gi5da"]
 [ext_resource type="Texture2D" uid="uid://5icewjark05s" path="res://environment/assets/rpg_summer_tileset/PNG/land_5.png" id="10_bje8i"]
 [ext_resource type="Texture2D" uid="uid://cp7jdh4ds146l" path="res://environment/assets/rpg_summer_tileset/PNG/land_6.png" id="11_vcpue"]
@@ -56,6 +57,59 @@ texture_region_size = Vector2i(256, 256)
 texture = ExtResource("8_4q2wu")
 texture_region_size = Vector2i(256, 256)
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0sq5"]
+texture = ExtResource("9_4jkpx")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pea2v"]
 texture = ExtResource("9_gi5da")
@@ -115,3 +169,4 @@ sources/12 = SubResource("TileSetAtlasSource_xjrs3")
 sources/13 = SubResource("TileSetAtlasSource_qgxca")
 sources/14 = SubResource("TileSetAtlasSource_ecqlq")
 sources/15 = SubResource("TileSetAtlasSource_7h36d")
+sources/16 = SubResource("TileSetAtlasSource_k0sq5")
