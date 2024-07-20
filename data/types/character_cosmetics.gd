@@ -19,5 +19,5 @@ func play_hurt() -> void:
 	pass
 
 
-func play_dead(_callback: Callable) -> void:
+func play_dead() -> void:
 	pass
