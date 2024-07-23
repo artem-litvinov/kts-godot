@@ -5,7 +5,7 @@ const random_destination_chance = 0.5  # 50% chance to move to a random point
 const threshold_distance = 100 # Threshold distance to consider the target reached
 
 var map_ready: bool = false
-var buildings: Array[Node] = []
+var spawn_points: Array[Node] = []
 
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
 
@@ -15,8 +15,8 @@ func initialize(hero: Hero):
 
 
 func _ready() -> void:
-	# Dynamically find all buildings in the "buildings" group
-	buildings = get_tree().get_nodes_in_group("buildings")
+	# Dynamically find all spawn_point in the "spawn_points" group
+	spawn_points = get_tree().get_nodes_in_group("spawn_points")
 	call_deferred("setup_seeker")
 
 
@@ -27,14 +27,8 @@ func setup_seeker():
 
 
 func set_new_target() -> void:
-	var new_target: Vector2
-	if randf() < random_destination_chance || buildings.size() == 0:
-		# Move to a random point on the map
-		new_target = get_random_point()
-	else:
-		# Move to a random building
-		var random_building = buildings[randi() % buildings.size()]
-		new_target = random_building.position + Vector2(0, 60)
+	var random_spawn_point = spawn_points[randi() % spawn_points.size()]
+	var new_target = random_spawn_point.position + Vector2(0, 60)
 	navigation_agent.set_target_position(new_target)
 
 
