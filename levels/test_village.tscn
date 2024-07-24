@@ -172,7 +172,6 @@ y_sort_enabled = true
 position = Vector2(1578, 1251)
 
 [node name="BuildingHouse3" parent="Buildings" groups=["buildings"] instance=ExtResource("13_c57th")]
-y_sort_enabled = true
 position = Vector2(2320, 1824)
 
 [node name="DecorObjects" type="Node2D" parent="."]
@@ -474,37 +473,30 @@ position = Vector2(1380, 633)
 texture = ExtResource("16_pnfa6")
 
 [node name="Tree" parent="DecorObjects" instance=ExtResource("43_i8c5e")]
-y_sort_enabled = true
 position = Vector2(859, 1091)
 scale = Vector2(0.7, 0.7)
 
 [node name="Tree3" parent="DecorObjects" instance=ExtResource("43_i8c5e")]
-y_sort_enabled = true
 position = Vector2(1210, 1104)
 scale = Vector2(0.7, 0.7)
 
 [node name="Tree4" parent="DecorObjects" instance=ExtResource("43_i8c5e")]
-y_sort_enabled = true
 position = Vector2(1229, 1301)
 scale = Vector2(0.7, 0.7)
 
 [node name="Tree5" parent="DecorObjects" instance=ExtResource("43_i8c5e")]
-y_sort_enabled = true
 position = Vector2(841, 1306)
 scale = Vector2(0.7, 0.7)
 
 [node name="Tree2" parent="DecorObjects" instance=ExtResource("43_vlab4")]
-y_sort_enabled = true
 position = Vector2(1049, 1229)
 scale = Vector2(0.7, 0.7)
 
 [node name="Stone" parent="DecorObjects" instance=ExtResource("43_q72e8")]
-y_sort_enabled = true
 position = Vector2(2450, 1741)
 scale = Vector2(0.7, 0.7)
 
 [node name="Stone2" parent="DecorObjects" instance=ExtResource("43_6m8iq")]
-y_sort_enabled = true
 position = Vector2(2534, 1952)
 
 [node name="StreeLamp" parent="DecorObjects" instance=ExtResource("43_lmq8n")]
