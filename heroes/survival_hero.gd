@@ -12,6 +12,7 @@ var xp: int = 0
 
 @onready var camera: Camera2D = %Camera2D
 @onready var pickup_area: Area2D = %PickupArea
+@onready var xp_magnet_area: Area2D = %XPMagnetArea
 
 
 func initialize(hero: Hero):
@@ -38,6 +39,11 @@ func _on_pickup_area_entered(area: Area2D) -> void:
 	if area is XPDropInstance:
 		xp += area.amount
 		area.queue_free()
+
+
+func _on_xp_magnet_area_entered(area: Area2D) -> void:
+	if area is XPDropInstance:
+		area.magnetize()
 
 
 func _on_hitbox_component_got_hit(attack: Attack) -> void:

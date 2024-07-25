@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce0ehfno5oemd"]
+[gd_scene load_steps=9 format=3 uid="uid://ce0ehfno5oemd"]
 
 [ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="1_1iyqo"]
 [ext_resource type="Script" path="res://heroes/survival_hero.gd" id="1_n1hig"]
@@ -16,6 +16,9 @@ height = 58.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ts24s"]
 radius = 12.0
 height = 52.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ioahg"]
+radius = 500.0
 
 [node name="SurvivalHero" type="CharacterBody2D" node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component")]
 collision_mask = 201
@@ -60,7 +63,15 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ts24s")
 debug_color = Color(0.0865046, 0.648897, 3.85046e-07, 0.42)
 
+[node name="XPMagnetArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="XPMagnetArea"]
+shape = SubResource("CircleShape2D_ioahg")
+
 [connection signal="death_finished" from="HeroCosmetics" to="." method="_on_cosmetics_death_finished"]
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
 [connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]
 [connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_entered"]
+[connection signal="area_entered" from="XPMagnetArea" to="." method="_on_xp_magnet_area_entered"]

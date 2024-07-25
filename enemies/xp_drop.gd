@@ -5,7 +5,7 @@ class_name XPDropInstance
 
 var amount: int
 
-var _collected: bool = true
+var _is_magnetized: bool = false
 
 @onready var _player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 
@@ -15,8 +15,12 @@ func initialize(drop: XPDrop):
 	$Sprite2D.modulate = drop.color
 
 
+func magnetize() -> void:
+	_is_magnetized = true
+
+
 func _physics_process(delta: float) -> void:
-	if !_collected:
+	if !_is_magnetized:
 		return
 
 	var direction = Vector2.ZERO
