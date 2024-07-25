@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="XPDrop" load_steps=2 format=3 uid="uid://4cbhtrrylewu"]
+
+[ext_resource type="Script" path="res://data/types/survival/xp_drop.gd" id="1_bx3vx"]
+
+[resource]
+script = ExtResource("1_bx3vx")
+amount = 100
+color = Color(0, 0.601205, 0, 1)

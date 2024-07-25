@@ -74,11 +74,8 @@ offset_right = 5000.0
 offset_bottom = 4600.0
 metadata/_edit_use_anchors_ = true
 
-[node name="SurvivalHero" parent="." node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component") groups=["player"] instance=ExtResource("3_vft2w")]
+[node name="SurvivalHero" parent="." groups=["player"] instance=ExtResource("3_vft2w")]
 unique_name_in_owner = true
-cosmetics = NodePath("HeroCosmetics")
-health_component = NodePath("HealthComponent")
-hitbox_component = NodePath("HitboxComponent")
 
 [node name="Path2D" type="Path2D" parent="SurvivalHero"]
 curve = SubResource("Curve2D_ib0fy")

@@ -8,6 +8,11 @@ extends CharacterBody2D
 @export var health_component: HealthComponent
 @export var hitbox_component: HitboxComponent
 
+var xp: int = 0
+
+@onready var camera: Camera2D = %Camera2D
+@onready var pickup_area: Area2D = %PickupArea
+
 
 func initialize(hero: Hero):
 	cosmetics.initialize(hero.sprite_id)
@@ -29,7 +34,13 @@ func _update_animations() -> void:
 		cosmetics.play_idle()
 
 
-func _on_hitbox_component_got_hit(attack: Variant) -> void:
+func _on_pickup_area_entered(area: Area2D) -> void:
+	if area is XPDropInstance:
+		xp += area.amount
+		area.queue_free()
+
+
+func _on_hitbox_component_got_hit(attack: Attack) -> void:
 	health_component.take_damage(attack.damage)
 	cosmetics.play_hurt()
 
@@ -39,7 +50,6 @@ func _on_health_component_health_depleted() -> void:
 
 
 func _on_cosmetics_death_finished() -> void:
-	var camera = %Camera2D
 	remove_child(camera)
 	get_tree().root.add_child(camera)
 	queue_free()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cahnyk0c57t48"]
+[gd_scene load_steps=10 format=3 uid="uid://cahnyk0c57t48"]
 
 [ext_resource type="Script" path="res://enemies/survival_follower_enemy.gd" id="1_yl257"]
+[ext_resource type="Resource" uid="uid://4cbhtrrylewu" path="res://enemies/resources/common_xp_drop.tres" id="2_8xlcc"]
 [ext_resource type="PackedScene" uid="uid://b113pdpi7a1jh" path="res://enemies/cosmetics/flying_enemy_cosmetics.tscn" id="2_h1uht"]
 [ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="3_183uh"]
 [ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="4_8ipih"]
@@ -22,6 +23,7 @@ motion_mode = 1
 script = ExtResource("1_yl257")
 max_hp = 100.0
 speed = 300.0
+xp_drop = ExtResource("2_8xlcc")
 area_attack_cooldown_sec = 0.5
 area_damage = 5.0
 cosmetics = NodePath("FlyingEnemyCosmetics")

@@ -1,10 +1,12 @@
 extends CharacterBody2D
-
 class_name SurvivalFollowerEnemy
+
+const XP_DROP_SCENE = preload("res://enemies/xp_drop.tscn")
 
 @export_category("General")
 @export var max_hp: float
 @export var speed: float
+@export var xp_drop: XPDrop
 
 @export_category("Area Attack")
 @export var area_attack_cooldown_sec: float
@@ -20,6 +22,7 @@ class_name SurvivalFollowerEnemy
 
 var _player: CharacterBody2D
 var _knockback: Vector2 = Vector2.ZERO
+var _is_dead: bool = false
 
 
 func _ready() -> void:
@@ -37,6 +40,9 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float):
+	if _is_dead:
+		return
+
 	var direction = Vector2.ZERO
 
 	if _player:
@@ -64,7 +70,12 @@ func _on_hitbox_component_got_hit(attack: Attack) -> void:
 
 func _on_health_component_health_depleted() -> void:
 	cosmetics.play_dead()
+	_is_dead = true
 
 
 func _on_cosmetics_death_finished() -> void:
+	var drop_instance = XP_DROP_SCENE.instantiate()
+	drop_instance.initialize(xp_drop)
+	drop_instance.global_position = global_position
+	get_parent().add_child(drop_instance)
 	queue_free()
