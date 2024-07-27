@@ -51,15 +51,7 @@ func _physics_process(_delta: float):
 	velocity = direction * speed + _knockback
 	_knockback = lerp(_knockback, Vector2.ZERO, 0.1)
 	move_and_slide()
-	_update_animations()
-
-
-func _update_animations() -> void:
-	if velocity.length() > 0:
-		var moving_right = velocity.x > 0
-		cosmetics.play_running(moving_right)
-	else:
-		cosmetics.play_idle()
+	cosmetics.play_movement_animations(velocity)
 
 
 func _on_hitbox_component_got_hit(attack: Attack) -> void:

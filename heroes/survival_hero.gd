@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export_category("General")
 @export var speed: float = 600
+@export var xp_magnet_radius = 500
 
 @onready var camera: Camera2D = %Camera2D
 @onready var cosmetics: CharacterCosmetics = %HeroCosmetics
@@ -10,6 +11,10 @@ extends CharacterBody2D
 @onready var leveling_component: LevelingComponent = %LevelingComponent
 @onready var xp_magnet_component: XPMagnetComponent = %XPMagnetComponent
 @onready var pickup_area_component: PickupAreaComponent = %PickupAreaComponent
+
+
+func _ready() -> void:
+	xp_magnet_component.set_radius(xp_magnet_radius)
 
 
 func initialize(hero: Hero):
@@ -21,15 +26,7 @@ func _physics_process(_delta: float):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed
 	move_and_slide()
-	_update_animations()
-
-
-func _update_animations() -> void:
-	if velocity.length() > 0:
-		var moving_right = velocity.x > 0
-		cosmetics.play_running(moving_right)
-	else:
-		cosmetics.play_idle()
+	cosmetics.play_movement_animations(velocity)
 
 
 func _on_hitbox_component_got_hit(attack: Attack) -> void:
