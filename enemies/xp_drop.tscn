@@ -9,7 +9,7 @@ height = 40.0
 
 [node name="XPDrop" type="Area2D"]
 z_index = -1
-collision_layer = 64
+collision_layer = 256
 script = ExtResource("1_2pvxy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

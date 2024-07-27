@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce0ehfno5oemd"]
+[gd_scene load_steps=11 format=3 uid="uid://ce0ehfno5oemd"]
 
 [ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="1_1iyqo"]
 [ext_resource type="Script" path="res://heroes/survival_hero.gd" id="1_n1hig"]
 [ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="3_vc16f"]
 [ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="4_dym87"]
+[ext_resource type="PackedScene" uid="uid://ds6r72iincwyv" path="res://components/xp_magnet_component.tscn" id="5_axcmw"]
+[ext_resource type="PackedScene" uid="uid://cwi6cfhc6ii6g" path="res://components/pickup_area_component.tscn" id="5_fslfd"]
+[ext_resource type="PackedScene" uid="uid://depd3kkwpjdgo" path="res://components/leveling_component.tscn" id="7_0eyy8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddhir"]
 radius = 18.0
@@ -13,22 +16,17 @@ height = 64.0
 radius = 15.0
 height = 58.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ts24s"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cohh"]
 radius = 12.0
 height = 52.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ioahg"]
-radius = 500.0
-
-[node name="SurvivalHero" type="CharacterBody2D" node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component")]
+[node name="SurvivalHero" type="CharacterBody2D"]
 collision_mask = 201
 motion_mode = 1
 script = ExtResource("1_n1hig")
-cosmetics = NodePath("HeroCosmetics")
-health_component = NodePath("HealthComponent")
-hitbox_component = NodePath("HitboxComponent")
 
 [node name="HeroCosmetics" parent="." instance=ExtResource("1_1iyqo")]
+unique_name_in_owner = true
 position = Vector2(0, -90)
 scale = Vector2(0.3, 0.3)
 
@@ -36,8 +34,10 @@ scale = Vector2(0.3, 0.3)
 unique_name_in_owner = true
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_vc16f")]
+unique_name_in_owner = true
 
 [node name="HitboxComponent" parent="." instance=ExtResource("4_dym87")]
+unique_name_in_owner = true
 position = Vector2(0, -84)
 collision_layer = 2
 collision_mask = 32
@@ -53,25 +53,23 @@ position = Vector2(0, -9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oiwji")
 
-[node name="PickupArea" type="Area2D" parent="."]
+[node name="PickupAreaComponent" parent="." node_paths=PackedStringArray("leveling_component") instance=ExtResource("5_fslfd")]
 unique_name_in_owner = true
-collision_mask = 64
+leveling_component = NodePath("../LevelingComponent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupAreaComponent"]
 position = Vector2(0, -9)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ts24s")
+shape = SubResource("CapsuleShape2D_7cohh")
 debug_color = Color(0.0865046, 0.648897, 3.85046e-07, 0.42)
 
-[node name="XPMagnetArea" type="Area2D" parent="."]
+[node name="XPMagnetComponent" parent="." instance=ExtResource("5_axcmw")]
 unique_name_in_owner = true
-collision_mask = 64
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="XPMagnetArea"]
-shape = SubResource("CircleShape2D_ioahg")
+[node name="LevelingComponent" parent="." instance=ExtResource("7_0eyy8")]
+unique_name_in_owner = true
 
 [connection signal="death_finished" from="HeroCosmetics" to="." method="_on_cosmetics_death_finished"]
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
 [connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]
-[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_entered"]
-[connection signal="area_entered" from="XPMagnetArea" to="." method="_on_xp_magnet_area_entered"]
+[connection signal="leveled_up" from="LevelingComponent" to="." method="_on_leveled_up"]

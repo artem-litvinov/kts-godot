@@ -3,16 +3,13 @@ extends CharacterBody2D
 @export_category("General")
 @export var speed: float = 600
 
-@export_category("Components")
-@export var cosmetics: CharacterCosmetics
-@export var health_component: HealthComponent
-@export var hitbox_component: HitboxComponent
-
-var xp: int = 0
-
 @onready var camera: Camera2D = %Camera2D
-@onready var pickup_area: Area2D = %PickupArea
-@onready var xp_magnet_area: Area2D = %XPMagnetArea
+@onready var cosmetics: CharacterCosmetics = %HeroCosmetics
+@onready var health_component: HealthComponent = %HealthComponent
+@onready var hitbox_component: HitboxComponent = %HitboxComponent
+@onready var leveling_component: LevelingComponent = %LevelingComponent
+@onready var xp_magnet_component: XPMagnetComponent = %XPMagnetComponent
+@onready var pickup_area_component: PickupAreaComponent = %PickupAreaComponent
 
 
 func initialize(hero: Hero):
@@ -35,17 +32,6 @@ func _update_animations() -> void:
 		cosmetics.play_idle()
 
 
-func _on_pickup_area_entered(area: Area2D) -> void:
-	if area is XPDropInstance:
-		xp += area.amount
-		area.queue_free()
-
-
-func _on_xp_magnet_area_entered(area: Area2D) -> void:
-	if area is XPDropInstance:
-		area.magnetize()
-
-
 func _on_hitbox_component_got_hit(attack: Attack) -> void:
 	health_component.take_damage(attack.damage)
 	cosmetics.play_hurt()
@@ -59,3 +45,7 @@ func _on_cosmetics_death_finished() -> void:
 	remove_child(camera)
 	get_tree().root.add_child(camera)
 	queue_free()
+
+
+func _on_leveled_up(current_level: int) -> void:
+	print("level up ", current_level)
