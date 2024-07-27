@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccgn6hxiv4pab"]
+
+[ext_resource type="Texture2D" uid="uid://byc0pnpg35il6" path="res://environment/assets/rpg_summer_tileset/PNG/stones_4.png" id="1_tfcpw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lw2i8"]
+radius = 34.0
+height = 158.0
+
+[node name="Stone" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -66)
+texture = ExtResource("1_tfcpw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -47)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lw2i8")
