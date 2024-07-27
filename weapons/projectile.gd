@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	position += direction * weapon_stats.projectile_speed * delta
 
 	_travel_distance += weapon_stats.projectile_speed * delta
-	if _travel_distance > weapon_stats.range:
+	if _travel_distance > weapon_stats.reach:
 		queue_free()
 
 
