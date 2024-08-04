@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bf6xugnea62ii"]
+[gd_scene load_steps=53 format=4 uid="uid://bf6xugnea62ii"]
 
 [ext_resource type="Script" path="res://levels/village.gd" id="1_7pjmp"]
 [ext_resource type="Texture2D" uid="uid://dghy73qsi32vl" path="res://environment/assets/collision_tile.png" id="2_1xrl8"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://btyikipi2gc86" path="res://environment/buildings/building_bar.tscn" id="10_ku3cj"]
 [ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village_hud.tscn" id="10_mutah"]
 [ext_resource type="PackedScene" uid="uid://di4c13w0crkie" path="res://environment/buildings/building_tower.tscn" id="12_ww2ud"]
-[ext_resource type="PackedScene" path="res://environment/buildings/building_house_2.tscn" id="13_c57th"]
+[ext_resource type="PackedScene" uid="uid://dt4cwnm5kon1h" path="res://environment/buildings/building_house_2.tscn" id="13_c57th"]
 [ext_resource type="PackedScene" uid="uid://b7u6icsnqsvtt" path="res://environment/buildings/building_house_1.tscn" id="13_uq4sd"]
 [ext_resource type="Texture2D" uid="uid://ewhsdfg344n1" path="res://environment/assets/rpg_summer_tileset/PNG/decor_1.png" id="14_s8ha6"]
 [ext_resource type="Texture2D" uid="uid://bp3oj8252wome" path="res://environment/assets/rpg_summer_tileset/PNG/decor_15.png" id="15_10ojm"]
@@ -44,6 +44,10 @@
 [ext_resource type="PackedScene" uid="uid://dn14dp0apf07u" path="res://environment/objects/street_lamp.tscn" id="43_lmq8n"]
 [ext_resource type="PackedScene" uid="uid://b6f4j2ipvf4j4" path="res://environment/objects/stone.tscn" id="43_q72e8"]
 [ext_resource type="PackedScene" uid="uid://chijgcay8yi67" path="res://environment/objects/tree_2.tscn" id="43_vlab4"]
+[ext_resource type="Script" path="res://audio/sound_pool.gd" id="45_77p24"]
+[ext_resource type="Script" path="res://audio/sound_wave.gd" id="46_yt8e5"]
+[ext_resource type="AudioStream" uid="uid://cvsjot3akruoo" path="res://audio/assets/village_ambience/village_forest_music_ambience.wav" id="47_3wokf"]
+[ext_resource type="AudioStream" uid="uid://c5s4ivfgq7syi" path="res://audio/assets/village_ambience/village_forest_ambience.wav" id="48_ikh5v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3q417"]
 texture = ExtResource("2_1xrl8")
@@ -541,5 +545,29 @@ offset_top = 2061.0
 offset_right = -1613.0
 offset_bottom = 2061.0
 metadata/_edit_use_anchors_ = true
+
+[node name="VillageAmbienceSoundPool" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("45_77p24")
+
+[node name="SoundWave" type="Node" parent="VillageAmbienceSoundPool"]
+script = ExtResource("46_yt8e5")
+player_count = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VillageAmbienceSoundPool/SoundWave"]
+stream = ExtResource("47_3wokf")
+volume_db = -15.0
+
+[node name="VillageEnvironmentAmbienceSoundPool" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("45_77p24")
+
+[node name="SoundWave" type="Node" parent="VillageEnvironmentAmbienceSoundPool"]
+script = ExtResource("46_yt8e5")
+player_count = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VillageEnvironmentAmbienceSoundPool/SoundWave"]
+stream = ExtResource("48_ikh5v")
+volume_db = -5.0
 
 [connection signal="clicked" from="Buildings/BuildingMissionsBoard" to="." method="_on_building_missions_board_clicked"]

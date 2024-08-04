@@ -35,6 +35,13 @@ func _ready():
 	if !GameState.get_world_state().passed_tutorial:
 		_start_tutorial()
 
+	# SoundManager setup
+	if SoundManager.instance:
+		SoundManager.instance.add_sound_pool("VillageAmbienceSoundPool", %VillageAmbienceSoundPool)	
+		SoundManager.instance.play_pool("VillageAmbienceSoundPool")
+		SoundManager.instance.add_sound_pool("VillageEnvironmentAmbienceSoundPool", %VillageEnvironmentAmbienceSoundPool)	
+		SoundManager.instance.play_pool("VillageEnvironmentAmbienceSoundPool") 
+
 
 func _start_tutorial() -> void:
 	_show_text_popup(
@@ -43,7 +50,6 @@ func _start_tutorial() -> void:
 		Strings.TUTORIAL_BUTTON,
 		_on_tutorial_button_pressed,
 	)
-
 
 # Callbacks
 # --------------------------------------------------
