@@ -39,6 +39,8 @@ func _ready():
 	if SoundManager.instance:
 		SoundManager.instance.add_sound_pool("VillageAmbienceSoundPool", %VillageAmbienceSoundPool)	
 		SoundManager.instance.play_pool("VillageAmbienceSoundPool")
+		SoundManager.instance.add_sound_pool("VillageEnvironmentAmbienceSoundPool", %VillageEnvironmentAmbienceSoundPool)	
+		SoundManager.instance.play_pool("VillageEnvironmentAmbienceSoundPool") 
 
 
 func _start_tutorial() -> void:
