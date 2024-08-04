@@ -1,5 +1,4 @@
--extends Resource
-
+extends Resource
 class_name WorldState
 
 var food: int
