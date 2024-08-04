@@ -1,6 +1,6 @@
 extends Node
 
-const USE_MOCK_API = true
+const USE_MOCK_API = false
 
 var _on_login_callback: Callable
 var _on_get_world_state_callback: Callable
