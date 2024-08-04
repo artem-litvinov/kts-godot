@@ -65,10 +65,9 @@ func _on_login_completed(result, response_code, headers, body):
 	if parse_err != OK:
 		_on_login_callback.call(null, parse_err)
 
-	# TODO: remove once API is updated
-	json_obj = json_obj.get("user", {})
+	var user_json = json_obj.get("user", {})
 
-	var user = User.from_json(json_obj)
+	var user = User.from_json(user_json)
 	if user == null:
 		parse_err = ERR_PARSE_ERROR
 	_on_login_callback.call(user, parse_err)
@@ -94,6 +93,8 @@ func _on_get_world_state_completed(result, response_code, headers, body):
 	var parse_err = parse_res[1]
 	if parse_err != OK:
 		_on_get_world_state_callback.call(null, parse_err)
+
+	var world_json = json_obj["world"]
 
 	var world_state = WorldState.from_json(json_obj)
 	if world_state == null:
