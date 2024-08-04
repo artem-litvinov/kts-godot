@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://btyikipi2gc86" path="res://environment/buildings/building_bar.tscn" id="10_ku3cj"]
 [ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village_hud.tscn" id="10_mutah"]
 [ext_resource type="PackedScene" uid="uid://di4c13w0crkie" path="res://environment/buildings/building_tower.tscn" id="12_ww2ud"]
-[ext_resource type="PackedScene" uid="uid://dt4cwnm5kon1h" path="res://environment/buildings/building_house_2.tscn" id="13_c57th"]
+[ext_resource type="PackedScene" path="res://environment/buildings/building_house_2.tscn" id="13_c57th"]
 [ext_resource type="PackedScene" uid="uid://b7u6icsnqsvtt" path="res://environment/buildings/building_house_1.tscn" id="13_uq4sd"]
 [ext_resource type="Texture2D" uid="uid://ewhsdfg344n1" path="res://environment/assets/rpg_summer_tileset/PNG/decor_1.png" id="14_s8ha6"]
 [ext_resource type="Texture2D" uid="uid://bp3oj8252wome" path="res://environment/assets/rpg_summer_tileset/PNG/decor_15.png" id="15_10ojm"]
