@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ce0ehfno5oemd"]
+[gd_scene load_steps=15 format=3 uid="uid://ce0ehfno5oemd"]
 
 [ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="1_1iyqo"]
 [ext_resource type="Script" path="res://heroes/survival_hero.gd" id="1_n1hig"]
@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="4_dym87"]
 [ext_resource type="PackedScene" uid="uid://ds6r72iincwyv" path="res://components/xp_magnet_component.tscn" id="5_axcmw"]
 [ext_resource type="PackedScene" uid="uid://cwi6cfhc6ii6g" path="res://components/pickup_area_component.tscn" id="5_fslfd"]
-[ext_resource type="PackedScene" uid="uid://depd3kkwpjdgo" path="res://components/leveling_component.tscn" id="7_0eyy8"]
+[ext_resource type="PackedScene" uid="uid://depd3kkwpjdgo" path="res://components/survival_hero_leveling_component.tscn" id="7_0eyy8"]
+[ext_resource type="PackedScene" uid="uid://sk1suw7s3w4f" path="res://components/survival_hero_level_up_component.tscn" id="7_0lfs4"]
+[ext_resource type="PackedScene" uid="uid://cqmglawqks0x7" path="res://components/survival_hero_weapons_component.tscn" id="8_a0irb"]
+[ext_resource type="PackedScene" uid="uid://b4asdwogfs4jj" path="res://components/survival_hero_upgrades_component.tscn" id="11_dyowf"]
+[ext_resource type="PackedScene" uid="uid://chwviewl3o6pk" path="res://components/survival_hero_stats_component.tscn" id="12_kapue"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddhir"]
 radius = 18.0
@@ -33,6 +37,10 @@ scale = Vector2(0.3, 0.3)
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 
+[node name="HeroHUDLayer" type="CanvasLayer" parent="Camera2D"]
+unique_name_in_owner = true
+layer = 128
+
 [node name="HealthComponent" parent="." instance=ExtResource("3_vc16f")]
 unique_name_in_owner = true
 
@@ -55,7 +63,7 @@ shape = SubResource("CapsuleShape2D_oiwji")
 
 [node name="PickupAreaComponent" parent="." node_paths=PackedStringArray("leveling_component") instance=ExtResource("5_fslfd")]
 unique_name_in_owner = true
-leveling_component = NodePath("../LevelingComponent")
+leveling_component = NodePath("../SurvivalHeroLevelingComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupAreaComponent"]
 position = Vector2(0, -9)
@@ -66,10 +74,28 @@ debug_color = Color(0.0865046, 0.648897, 3.85046e-07, 0.42)
 [node name="XPMagnetComponent" parent="." instance=ExtResource("5_axcmw")]
 unique_name_in_owner = true
 
-[node name="LevelingComponent" parent="." instance=ExtResource("7_0eyy8")]
+[node name="SurvivalHeroStatsComponent" parent="." instance=ExtResource("12_kapue")]
 unique_name_in_owner = true
+
+[node name="SurvivalHeroLevelingComponent" parent="." instance=ExtResource("7_0eyy8")]
+unique_name_in_owner = true
+
+[node name="SurvivalHeroLevelUpComponent" parent="." node_paths=PackedStringArray("hud_layer", "hero", "leveling_component", "weapons_component", "upgrades_component") instance=ExtResource("7_0lfs4")]
+unique_name_in_owner = true
+hud_layer = NodePath("../Camera2D/HeroHUDLayer")
+hero = NodePath("..")
+leveling_component = NodePath("../SurvivalHeroLevelingComponent")
+weapons_component = NodePath("../SurvivalHeroWeaponsComponent")
+upgrades_component = NodePath("../SurvivalHeroUpgradesComponent")
+
+[node name="SurvivalHeroWeaponsComponent" parent="." instance=ExtResource("8_a0irb")]
+unique_name_in_owner = true
+
+[node name="SurvivalHeroUpgradesComponent" parent="." node_paths=PackedStringArray("hero_stats_component") instance=ExtResource("11_dyowf")]
+unique_name_in_owner = true
+hero_stats_component = NodePath("../SurvivalHeroStatsComponent")
 
 [connection signal="death_finished" from="HeroCosmetics" to="." method="_on_cosmetics_death_finished"]
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
 [connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]
-[connection signal="leveled_up" from="LevelingComponent" to="." method="_on_leveled_up"]
+[connection signal="stats_changed" from="SurvivalHeroStatsComponent" to="." method="_on_stats_changed"]

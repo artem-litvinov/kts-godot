@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bedro7dq5ytti"]
+
+[ext_resource type="Script" path="res://ui/components/ui_hero_level_up_popup.gd" id="1_11ek3"]
+[ext_resource type="PackedScene" uid="uid://025pshy40vv7" path="res://ui/components/ui_hero_upgrade_container.tscn" id="1_w0v41"]
+[ext_resource type="PackedScene" uid="uid://c8n23jephgpu" path="res://ui/components/ui_weapon_upgrade_container.tscn" id="3_1kyoa"]
+
+[node name="UIHeroLevelUpPopup" type="Control"]
+process_mode = 3
+z_index = 128
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_11ek3")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level up!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradesContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="UIHeroUpgradeContainer" parent="CenterContainer/VBoxContainer/UpgradesContainer" instance=ExtResource("1_w0v41")]
+layout_mode = 2
+
+[node name="UIWeaponUpgradeContainer" parent="CenterContainer/VBoxContainer/UpgradesContainer" instance=ExtResource("3_1kyoa")]
+layout_mode = 2
+
+[node name="UIHeroUpgradeContainer2" parent="CenterContainer/VBoxContainer/UpgradesContainer" instance=ExtResource("1_w0v41")]
+layout_mode = 2

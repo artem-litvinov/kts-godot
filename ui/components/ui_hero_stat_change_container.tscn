@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1hjryxfin3o7"]
+
+[ext_resource type="Script" path="res://ui/components/ui_hero_stat_change_container.gd" id="1_4qh7n"]
+
+[node name="UIHeroStatChangeContainer" type="HBoxContainer"]
+theme_override_constants/separation = 20
+script = ExtResource("1_4qh7n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Stat name"
+
+[node name="Colon" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = ":
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Delta" type="Label" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "10"
+
+[node name="Units" type="Label" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "%"

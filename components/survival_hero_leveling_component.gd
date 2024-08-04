@@ -1,5 +1,5 @@
 extends Node2D
-class_name LevelingComponent
+class_name SurvivalHeroLevelingComponent
 
 signal leveled_up(current_level: int)
 

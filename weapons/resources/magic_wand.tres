@@ -1,14 +1,40 @@
-[gd_resource type="Resource" script_class="SurvivalWeapon" load_steps=5 format=3 uid="uid://dc0sj304v7yr4"]
+[gd_resource type="Resource" script_class="SurvivalWeapon" load_steps=8 format=3 uid="uid://dc0sj304v7yr4"]
 
 [ext_resource type="PackedScene" uid="uid://daqaf7v82qplk" path="res://weapons/projectiles/magic_missile.tscn" id="1_c4pvs"]
 [ext_resource type="Script" path="res://data/types/survival/survival_weapon.gd" id="2_rcbka"]
 [ext_resource type="Resource" uid="uid://csbuuqhddmo28" path="res://weapons/resources/magic_wand_stats.tres" id="3_246w8"]
-[ext_resource type="PackedScene" uid="uid://dwwtlkbbnvcma" path="res://weapons/ranged_weapon_instance.tscn" id="4_f2m4l"]
+[ext_resource type="Script" path="res://data/types/survival/survival_weapon_stats.gd" id="3_hf63l"]
+[ext_resource type="PackedScene" uid="uid://dwwtlkbbnvcma" path="res://weapons/survival_ranged_weapon_instance.tscn" id="4_f2m4l"]
+
+[sub_resource type="Resource" id="Resource_tjko0"]
+script = ExtResource("3_hf63l")
+damage = 60.0
+knockback = 500.0
+stun_time = 0.0
+cooldown = 0.9
+reach = 1000.0
+piercing = 0
+projectile_count = 2
+projectile_speed = 900.0
+
+[sub_resource type="Resource" id="Resource_fnc55"]
+script = ExtResource("3_hf63l")
+damage = 60.0
+knockback = 500.0
+stun_time = 0.0
+cooldown = 0.8
+reach = 1000.0
+piercing = 1
+projectile_count = 3
+projectile_speed = 900.0
 
 [resource]
 script = ExtResource("2_rcbka")
+id = "magic_wand"
 name = "Magic Wand"
 description = "Fires a magic missile at the nearest enemy."
-stats = ExtResource("3_246w8")
+level = 0
+max_level = 3
+stats_per_level = Array[ExtResource("3_hf63l")]([ExtResource("3_246w8"), SubResource("Resource_tjko0"), SubResource("Resource_fnc55")])
 weapon_scene = ExtResource("4_f2m4l")
 projectile_scene = ExtResource("1_c4pvs")

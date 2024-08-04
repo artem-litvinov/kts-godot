@@ -27,7 +27,7 @@ var _is_dead: bool = false
 
 func _ready() -> void:
 	_player = get_tree().get_first_node_in_group("player")
-	health_component.initialize(max_hp)
+	health_component.initialize(max_hp, max_hp)
 	damage_area_component.initialize(
 		area_attack_cooldown_sec,
 		Attack.from_params(

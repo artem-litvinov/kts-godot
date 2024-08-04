@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name SurvivalHero
 
 @export_category("General")
 @export var speed: float = 600
@@ -8,9 +9,13 @@ extends CharacterBody2D
 @onready var cosmetics: CharacterCosmetics = %HeroCosmetics
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var hitbox_component: HitboxComponent = %HitboxComponent
-@onready var leveling_component: LevelingComponent = %LevelingComponent
 @onready var xp_magnet_component: XPMagnetComponent = %XPMagnetComponent
 @onready var pickup_area_component: PickupAreaComponent = %PickupAreaComponent
+@onready var stats_component: SurvivalHeroStatsComponent = %SurvivalHeroStatsComponent
+@onready var leveling_component: SurvivalHeroLevelingComponent = %SurvivalHeroLevelingComponent
+@onready var level_up_component: SurvivalHeroLevelUpComponent = %SurvivalHeroLevelUpComponent
+@onready var weapons_component: SurvivalHeroWeaponsComponent = %SurvivalHeroWeaponsComponent
+@onready var upgrades_component: SurvivalHeroUpgradesComponent = %SurvivalHeroUpgradesComponent
 
 
 func _ready() -> void:
@@ -18,13 +23,15 @@ func _ready() -> void:
 
 
 func initialize(hero: Hero):
+	stats_component.initialize(hero)
+	health_component.initialize(hero.max_hp, hero.current_hp)
+	weapons_component.initialize(stats_component)
 	cosmetics.initialize(hero.sprite_id)
-	health_component.initialize(hero.current_hp)
 
 
 func _physics_process(_delta: float):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * speed
+	velocity = direction * (speed + (speed / 100 * stats_component.speed_modifier)) 
 	move_and_slide()
 	cosmetics.play_movement_animations(velocity)
 
@@ -44,5 +51,6 @@ func _on_cosmetics_death_finished() -> void:
 	queue_free()
 
 
-func _on_leveled_up(current_level: int) -> void:
-	print("level up ", current_level)
+func _on_stats_changed(stats: SurvivalHeroStatsComponent) -> void:
+	health_component.set_max_health(stats.max_hp)
+	xp_magnet_component.set_pct_radius_modifier(stats.xp_magnet_area_modifier)

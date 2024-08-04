@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://depd3kkwpjdgo"]
+
+[ext_resource type="Script" path="res://components/survival_hero_leveling_component.gd" id="1_j7w2s"]
+
+[node name="SurvivalHeroLevelingComponent" type="Node2D"]
+script = ExtResource("1_j7w2s")

@@ -63,7 +63,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MistParallaxBackground" type="ParallaxBackground" parent="."]
 unique_name_in_owner = true
-layer = 128
+layer = 100
 
 [node name="MistParallaxLayer" type="ParallaxLayer" parent="MistParallaxBackground"]
 motion_mirroring = Vector2(5000, 4600)

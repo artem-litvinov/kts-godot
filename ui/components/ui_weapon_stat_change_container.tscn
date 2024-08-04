@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmvatr5yqxka3"]
+
+[ext_resource type="Script" path="res://ui/components/ui_weapon_stat_change_container.gd" id="1_c3cq4"]
+
+[node name="UIWeaponStatChangeContainer" type="HBoxContainer"]
+theme_override_constants/separation = 20
+script = ExtResource("1_c3cq4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Stat name"
+
+[node name="Colon" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = ":
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BeforeValue" type="Label" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "100"
+
+[node name="Arrow" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "->"
+
+[node name="AfterValue" type="Label" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "200
+"
