@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://q4ub5mpnruef"]
+
+[sub_resource type="GDScript" id="GDScript_1pi4f"]
+script/source = "extends Node
+class_name SoundQueue
+
+@export var player_count: int = 1  # Number of AudioStreamPlayers to create
+
+var players: Array[AudioStreamPlayer] = []
+var current_player_index: int = 0
+
+func _ready():
+	# Initialize AudioStreamPlayers based on player_count
+	for i in range(player_count):
+		var player = AudioStreamPlayer.new()
+		add_child(player)
+		players.append(player)
+
+func _get_configuration_warnings():
+	if players.size() == 0:
+		return [\"No AudioStreamPlayer instances found. Please adjust the player_count.\"]
+	return []
+
+func play_sound():
+	# Check if there are any players to play sound
+	if players.size() == 0:
+		print(\"No AudioStreamPlayers available.\")
+		return
+
+	# Play sound if the current player is not already playing
+	var current_player = players[current_player_index]
+	if not current_player.playing:
+		current_player.play()
+	
+	# Move to the next player in the queue
+	current_player_index = (current_player_index + 1) % players.size()
+"
+
+[node name="SoundWave" type="Node"]
+script = SubResource("GDScript_1pi4f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

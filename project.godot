@@ -24,6 +24,7 @@ Constants="*res://constants/constants.gd"
 BackendAPI="*res://utils/backend_api.gd"
 Mocks="*res://utils/mocks.gd"
 Strings="*res://constants/strings.gd"
+SoundManager="*res://audio/sound_manager.tscn"
 
 [display]
 
