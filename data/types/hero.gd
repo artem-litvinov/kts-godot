@@ -23,11 +23,11 @@ static func from_json(json: Dictionary) -> Hero:
 
 	hero.id = json["id"]
 	hero.name = json["name"]
-	hero.gender = Enums.Gender[json["gender"]]
-	hero.type = Enums.HeroType[json["type"]]
-	hero.tier = Enums.HeroTier[json["tier"]]
+	hero.gender = int(json["gender"]) as Enums.Gender
+	hero.type = int(json["type"]) as Enums.HeroType
+	hero.tier = int(json["tier"]) as Enums.HeroTier
 	hero.bio = json["bio"]
-	hero.sprite_id = json["spriteId"]
+	hero.sprite_id = json["chibiId"]
 	hero.attack = json["attack"]
 	hero.max_hp = json["maxHp"]
 	hero.current_hp = json["currentHp"]

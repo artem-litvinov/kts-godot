@@ -8,6 +8,8 @@ const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/hero_s
 const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/event_popup.tscn")
 const EVENT_RESULTS_POPUP_SCENE: PackedScene = preload("res://ui/components/event_results_popup.tscn")
 
+@export var use_mocks: bool = false 
+
 var _text_popup: Control
 var _new_hero_popup: Control
 var _board_popup: Control
@@ -22,7 +24,7 @@ func _ready():
 	_spawn_points = get_tree().get_nodes_in_group("spawn_points")
 	_spawn_points.shuffle()
 
-	if OS.is_debug_build():
+	if use_mocks:
 		GameState.initialize_user(Mocks.mock_user)
 		GameState.initialize_world_state(Mocks.mock_world_state)
 		GameState.initialize_heroes(Mocks.mock_heroes)

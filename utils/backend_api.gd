@@ -96,7 +96,7 @@ func _on_get_world_state_completed(result, response_code, headers, body):
 
 	var world_json = json_obj["world"]
 
-	var world_state = WorldState.from_json(json_obj)
+	var world_state = WorldState.from_json(world_json)
 	if world_state == null:
 		parse_err = ERR_PARSE_ERROR
 	_on_get_world_state_callback.call(world_state, parse_err)
@@ -113,10 +113,9 @@ func get_heroes(user_id: String, callback: Callable) -> Error:
 		return _make_mock_http_request(_on_get_heroes_completed_mock)
 	else:
 		return _make_http_request(
-			Constants.GET_HEROES_ENDPOINT_ADDR,
+			Constants.GET_HEROES_ENDPOINT_ADDR + '/?userId=' + user_id,
 			_on_get_heroes_completed,
-			HTTPClient.METHOD_POST,
-			JSON.stringify({ "userId": user_id }),
+			HTTPClient.METHOD_GET,
 		)
 
 
@@ -127,7 +126,7 @@ func _on_get_heroes_completed(result, response_code, headers, body):
 	if parse_err != OK:
 		_on_get_heroes_callback.call(null, parse_err)
 
-	var heroes = []
+	var heroes: Array[Hero] = []
 	for hero_json in json_obj.get("heroes", []):
 		var hero = Hero.from_json(hero_json)
 
