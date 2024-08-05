@@ -179,7 +179,7 @@ script = ExtResource("1_dolp2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-50, -32)
+position = Vector2(-25, -16)
 texture = ExtResource("2_1cct3")
 hframes = 18
 

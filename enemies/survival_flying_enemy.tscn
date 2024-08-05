@@ -32,7 +32,7 @@ hitbox_component = NodePath("HitboxComponent")
 damage_area_component = NodePath("DamageAreaComponent")
 
 [node name="FlyingEnemyCosmetics" parent="." instance=ExtResource("2_h1uht")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.6, 0.6)
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_183uh")]
 unique_name_in_owner = true
