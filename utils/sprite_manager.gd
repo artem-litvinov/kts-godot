@@ -1,9 +1,26 @@
 extends Node
 
 const _sprite_path_by_id = {
+	# Heroes
+	"amazon_warrior_1": "res://sprites/amazon_warrior_1/",
+	"amazon_warrior_2": "res://sprites/amazon_warrior_2/",
+	"amazon_warrior_3": "res://sprites/amazon_warrior_3/",
+	"anubis": "res://sprites/anubis/",
+	"archer_1": "res://sprites/archer_guy/",
+	"assasin_guy": "res://sprites/assasin_guy/",
+	"barbarian_warrior": "res://sprites/barbarian_warrior/",
+	"black_ninja": "res://sprites/black_ninja/",
+	"black_wizard": "res://sprites/black_wizard/",
+	"blacksmith_guy": "res://sprites/blacksmith_guy/",
+	"chibi_prisoner_guy": "res://sprites/chibi_prisoner_guy/",
+	"citizen-women_1": "res://sprites/citizen_women_1/",
+	"citizen-women_2": "res://sprites/citizen_women_2/",
+	"citizen-women_3": "res://sprites/citizen_women_3/",
 	"villager_1": "res://sprites/villager_1/",
 	"villager_2": "res://sprites/villager_2/",
 	"villager_3": "res://sprites/villager_3/",
+
+	# Enemies
 	"flying_monster_1": "res://sprites/flying_monster_1/",
 	"flying_monster_2": "res://sprites/flying_monster_2/",
 	"flying_monster_3": "res://sprites/flying_monster_3/",
