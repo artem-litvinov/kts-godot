@@ -1,7 +1,10 @@
 extends Node
 
 const _sprite_path_by_id = {
-    // Heroes
+    # Heroes
+	"elf_archer_1": "res://sprites/archer_1/",
+	"elf_archer_2": "res://sprites/archer_2/",
+	"elf_archer_3": "res://sprites/archer_3/",
     "amazon_warrior_1": "res://sprites/amazon_warrior_1/",
     "amazon_warrior_2": "res://sprites/amazon_warrior_2/",
     "amazon_warrior_3": "res://sprites/amazon_warrior_3/",
@@ -23,9 +26,6 @@ const _sprite_path_by_id = {
     "dark_elves_2": "res://sprites/dark_elf_2/",
     "dark_elves_3": "res://sprites/dark_elf_3/",
     "devil_masked_guy": "res://sprites/devil_masked_guy/",
-	"elf_archer_1": "res://sprites/archer_1/",
-	"elf_archer_2": "res://sprites/archer_2/",
-	"elf_archer_3": "res://sprites/archer_3/",
     "egyptian_mummy": "res://sprites/egyptian_mummy/",
     "egyptian_sentry": "res://sprites/egyptian_sentry/",
     "fallen_angels_1": "res://sprites/fallen_angel_1/",
@@ -37,12 +37,15 @@ const _sprite_path_by_id = {
     "knight_1": "res://sprites/knight_1/",
     "knight_2": "res://sprites/knight_2/",
     "knight_3": "res://sprites/knight_3/",
+    "medieval_commander": "res://sprites/medieval_commander/",
     "medieval_hooded_girl": "res://sprites/medieval_hooded_girl/",
     "medieval_king": "res://sprites/medieval_king/",
     "medieval_knight": "res://sprites/medieval_knight/",
     "medieval_mage": "res://sprites/medieval_mage/",
     "medieval_sergeant": "res://sprites/medieval_sergeant/",
     "medieval_thug": "res://sprites/medieval_thug/",
+    "medieval_warrior_girl": "res://sprites/medieval_warrior_girl/",
+    "medieval_warrior": "res://sprites/medieval_warrior/",
     "medusa_1": "res://sprites/medusa_1/",
     "medusa_2": "res://sprites/medusa_2/",
     "medusa_3": "res://sprites/medusa_3/",
@@ -53,9 +56,9 @@ const _sprite_path_by_id = {
     "pyromancer_2": "res://sprites/pyromancer_2/",
     "pyromancer_3": "res://sprites/pyromancer_3/",
     "romanian_settler": "res://sprites/romanian_settler/",
-    "shamans_1": "res://sprites/shaman_1/",
     "shaman_2": "res://sprites/shaman_2/",
     "shaman_3": "res://sprites/shaman_3/",
+    "shamans_1": "res://sprites/shaman_1/",
     "templar_knight": "res://sprites/templar_knight/",
     "very_heavy_armored_frontier_defender": "res://sprites/very_heavy_armored_frontier_defender/",
     "viking_1": "res://sprites/viking_1/",
@@ -68,7 +71,7 @@ const _sprite_path_by_id = {
     "white_ninja": "res://sprites/white_ninja/",
     "witch_1": "res://sprites/witch_1/",
     "witch_2": "res://sprites/witch_2/",
-    "witch_3": "res://sprites/witch_3/"
+    "witch_3": "res://sprites/witch_3/",
 
 	# Enemies
 	"flying_monster_1": "res://sprites/flying_monster_1/",
