@@ -16,7 +16,7 @@ class AIEvent:
 
 		event.description = json["eventSetup"]["eventStory"]
 		event.enemy = EventEnemy.from_json(json["eventSetup"]["enemy"])
-		event.options = []
+		event.options = [] as Array[Option]
 		for option in json["options"]:
 			event.options.append(Option.from_json(option))
 
@@ -63,8 +63,8 @@ class Option:
 	static func from_json(json: Dictionary) -> Option:
 		var option = Option.new()
 
-		option.description = json["optioin"]
-		option.results = OptionResults.from_json(json["results"])
+		option.description = json["option"]
+		option.results = OptionResults.from_json(json["result"])
 
 		return option
 

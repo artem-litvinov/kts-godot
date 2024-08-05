@@ -157,7 +157,7 @@ func generate_hero(user_id: String, callback: Callable) -> Error:
 	else:
 		return _make_http_request(
 			Constants.GENERATE_HERO_ENDPOINT_ADDR,
-			_on_generate_hero_completed_mock,
+			_on_generate_hero_completed,
 			HTTPClient.METHOD_POST,
 			JSON.stringify({ "userId": user_id }),
 		)
@@ -170,7 +170,9 @@ func _on_generate_hero_completed(result, response_code, headers, body):
 	if parse_err != OK:
 		_on_generate_hero_callback.call(null, parse_err)
 
-	var hero = Hero.from_json(json_obj)
+	var hero_json = json_obj["hero"]
+
+	var hero = Hero.from_json(hero_json)
 	if hero == null:
 		parse_err = ERR_PARSE_ERROR
 	_on_generate_hero_callback.call(hero, parse_err)
