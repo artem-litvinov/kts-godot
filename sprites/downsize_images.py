@@ -23,6 +23,10 @@ def process_folders(root_folder, folder_match):
             try:
                 with Image.open(img_path) as image:
                     width, height = image.size
+                    if height < 900:
+                        print(f"Skipping image {img_path} with height {height}")
+                        continue
+
                     new_size = (width // 2, height // 2)
                     resized_image = image.resize(new_size, Image.Resampling.LANCZOS)
                     resized_image.save(img_path)
