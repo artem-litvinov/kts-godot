@@ -2,9 +2,6 @@ extends Node
 
 const _sprite_path_by_id = {
     # Heroes
-	"elf_archer_1": "res://sprites/archer_1/",
-	"elf_archer_2": "res://sprites/archer_2/",
-	"elf_archer_3": "res://sprites/archer_3/",
     "amazon_warrior_1": "res://sprites/amazon_warrior_1/",
     "amazon_warrior_2": "res://sprites/amazon_warrior_2/",
     "amazon_warrior_3": "res://sprites/amazon_warrior_3/",
@@ -28,6 +25,9 @@ const _sprite_path_by_id = {
     "devil_masked_guy": "res://sprites/devil_masked_guy/",
     "egyptian_mummy": "res://sprites/egyptian_mummy/",
     "egyptian_sentry": "res://sprites/egyptian_sentry/",
+    "elf_archer_1": "res://sprites/archer_1/",
+    "elf_archer_2": "res://sprites/archer_2/",
+    "elf_archer_3": "res://sprites/archer_3/",
     "fallen_angels_1": "res://sprites/fallen_angel_1/",
     "fallen_angels_2": "res://sprites/fallen_angel_2/",
     "fallen_angels_3": "res://sprites/fallen_angel_3/",
