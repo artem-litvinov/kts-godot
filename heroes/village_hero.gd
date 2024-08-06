@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 300  # Movement speed
+const speed = 200  # Movement speed
 const random_destination_chance = 0.5  # 50% chance to move to a random point
 const threshold_distance = 100 # Threshold distance to consider the target reached
 

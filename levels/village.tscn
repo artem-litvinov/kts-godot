@@ -584,3 +584,4 @@ stream = ExtResource("48_1dh30")
 volume_db = -5.0
 
 [connection signal="clicked" from="Buildings/BuildingMissionsBoard" to="." method="_on_building_missions_board_clicked"]
+[connection signal="clicked" from="Buildings/BuildingBar" to="." method="_on_building_bar_clicked"]

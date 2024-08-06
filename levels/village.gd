@@ -20,6 +20,7 @@ var _event_results_popup: Control
 var _spawn_points: Array[Node]
 var _spawn_index: int = 0
 
+
 func _ready():
 	_spawn_points = get_tree().get_nodes_in_group("spawn_points")
 	_spawn_points.shuffle()
@@ -33,9 +34,6 @@ func _ready():
 
 	for hero in GameState.get_heroes():
 		_spawn_hero(hero, _get_spawn_point())
-
-	#if !GameState.get_world_state().passed_tutorial:
-		#_start_tutorial()
 
 	# SoundManager setup
 	if SoundManager.instance:
@@ -53,8 +51,14 @@ func _start_tutorial() -> void:
 		_on_tutorial_button_pressed,
 	)
 
+
 # Callbacks
 # --------------------------------------------------
+func _on_building_bar_clicked() -> void:
+	if !GameState.get_world_state().passed_tutorial:
+		_start_tutorial()
+
+
 func _on_tutorial_button_pressed() -> void:
 	_text_popup.disconnect("button_pressed", _on_tutorial_button_pressed)
 	_text_popup.disable_button()
