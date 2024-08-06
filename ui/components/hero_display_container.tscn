@@ -63,6 +63,7 @@ stretch_mode = 5
 
 [node name="Gender" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_lrmwr")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 Name = "Gender"
 Value = "Male"
