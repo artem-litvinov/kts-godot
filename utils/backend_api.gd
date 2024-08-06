@@ -212,6 +212,7 @@ func _on_generate_event_completed(result, response_code, headers, body):
 	var parse_err = parse_res[1]
 	if parse_err != OK:
 		_on_generate_event_callback.call(null, parse_err)
+		return
 
 	var event = Events.AIEvent.from_json(json_obj)
 	if event == null:

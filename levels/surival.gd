@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var use_mocks: bool
-@export var weapon_list: Array[SurvivalWeapon]
 
 
 func _ready() -> void:

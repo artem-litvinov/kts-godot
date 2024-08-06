@@ -34,8 +34,8 @@ func _ready():
 	for hero in GameState.get_heroes():
 		_spawn_hero(hero, _get_spawn_point())
 
-	if !GameState.get_world_state().passed_tutorial:
-		_start_tutorial()
+	#if !GameState.get_world_state().passed_tutorial:
+		#_start_tutorial()
 
 	# SoundManager setup
 	if SoundManager.instance:
@@ -83,6 +83,7 @@ func _on_building_missions_board_clicked() -> void:
 
 func _on_scavenge_mode_selected() -> void:
 	_remove_board_popup()
+	%EventBackground.show()
 	_show_hero_select_popup(Strings.SCAVENGE_MISSION_DESC, _on_scavenge_hero_selected)
 
 
@@ -136,6 +137,7 @@ func _on_option_selected(option: Events.Option) -> void:
 
 func _on_event_results_confirmed() -> void:
 	_remove_event_results_popup()
+	%EventBackground.hide()
 	update_hud()
 
 

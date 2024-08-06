@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://bf6xugnea62ii"]
+[gd_scene load_steps=54 format=4 uid="uid://bf6xugnea62ii"]
 
 [ext_resource type="Script" path="res://levels/village.gd" id="1_h64nn"]
 [ext_resource type="TileSet" uid="uid://8spsg6ca8qgu" path="res://tilesets/village_background_tileset.tres" id="2_y6koq"]
@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://dn14dp0apf07u" path="res://environment/objects/street_lamp.tscn" id="43_g4glo"]
 [ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village_hud.tscn" id="44_sqnxk"]
 [ext_resource type="Script" path="res://audio/sound_pool.gd" id="45_mx386"]
+[ext_resource type="Texture2D" uid="uid://dqant7wson5q2" path="res://ui/assets/backgrounds/event-background.png" id="45_sv7hc"]
 [ext_resource type="Script" path="res://audio/sound_wave.gd" id="46_n7uje"]
 [ext_resource type="AudioStream" uid="uid://cvsjot3akruoo" path="res://audio/assets/village_ambience/village_forest_music_ambience.wav" id="47_k2ar1"]
 [ext_resource type="AudioStream" uid="uid://c5s4ivfgq7syi" path="res://audio/assets/village_ambience/village_forest_ambience.wav" id="48_1dh30"]
@@ -545,6 +546,18 @@ offset_top = 2061.0
 offset_right = -1613.0
 offset_bottom = 2061.0
 metadata/_edit_use_anchors_ = true
+
+[node name="EventBackground" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_sv7hc")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="VillageAmbienceSoundPool" type="Node" parent="."]
 unique_name_in_owner = true

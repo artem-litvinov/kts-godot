@@ -15,7 +15,11 @@ class AIEvent:
 		var event = AIEvent.new()
 
 		event.description = json["eventSetup"]["eventStory"]
-		event.enemy = EventEnemy.from_json(json["eventSetup"]["enemy"])
+
+		var enemy_json = json["eventSetup"].get("enemy", null)
+		if enemy_json:
+			event.enemy = EventEnemy.from_json(enemy_json)
+
 		event.options = [] as Array[Option]
 		for option in json["options"]:
 			event.options.append(Option.from_json(option))
@@ -88,10 +92,10 @@ class OptionResults:
 		var results = OptionResults.new()
 
 		results.description = json["desc"]
-		results.hp_delta = json["hpDelta"]
-		results.food_delta = json["foodDelta"]
-		results.morale_delta = json["moraleDelta"]
-		results.supplies_delta = json["suppliesDelta"]
+		results.hp_delta = json.get("hpDelta", 0)
+		results.food_delta = json.get("foodDelta", 0)
+		results.morale_delta = json.get("moraleDelta", 0)
+		results.supplies_delta = json.get("suppliesDelta", 0)
 
 		return results
 

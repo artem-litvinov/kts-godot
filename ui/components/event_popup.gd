@@ -23,8 +23,13 @@ func initialize(hero: Hero, event: Events.AIEvent):
 
 		%Button.disabled = true
 		%EventDescription.text = event.description
-		%Hero.initialize(hero.name, hero.attack, hero.current_hp)
-		%Enemy.initialize(event.enemy.name, event.enemy.attack, event.enemy.hp)
+
+		if event.enemy:
+			%Hero.initialize(hero.name, hero.attack, hero.current_hp)
+			%Enemy.initialize(event.enemy.name, event.enemy.attack, event.enemy.hp)
+		else:
+			%FightersContainer.hide()
+
 		var option_idx: int = 0
 		for option in event.options:
 			var option_button = EVENT_OPTION_SCENE.instantiate()
