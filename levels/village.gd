@@ -106,7 +106,7 @@ func _on_building_missions_board_clicked() -> void:
 
 func _on_scavenge_mode_selected() -> void:
 	_remove_board_popup()
-	%EventBackground.show()
+	%ScavengeEventBackground.show()
 	_show_hero_select_popup(Strings.SCAVENGE_MISSION_DESC, _on_scavenge_hero_selected)
 
 
