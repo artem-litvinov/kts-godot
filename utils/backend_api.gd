@@ -187,18 +187,21 @@ func generate_event(user_id: String, world: WorldState, hero: Hero, callback: Ca
 	if USE_MOCK_API:
 		return _make_mock_http_request(_on_generate_event_completed_mock)
 	else:
+		var body: Dictionary = {
+		  "userId": user_id,
+		  "food": world.food,
+		  "morale": world.morale,
+		  "supplies": world.supplies,
+		}
+		if hero:
+			body.heroId = hero.id
+			body.currentHp = hero.current_hp
+
 		return _make_http_request(
 			Constants.GENERATE_EVENT_ENDPOINT_ADDR,
 			_on_generate_event_completed,
 			HTTPClient.METHOD_POST,
-			JSON.stringify({
-			  "userId": user_id,
-			  "food": world.food,
-			  "morale": world.morale,
-			  "supplies": world.supplies,
-			  "heroId": hero.id,
-			  "currentHp": hero.current_hp,
-			})
+			JSON.stringify(body)
 		)
 
 

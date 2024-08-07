@@ -32,8 +32,8 @@ func initialize(hero: Hero, event: Events.AIEvent):
 
 		var option_idx: int = 0
 		for option in event.options:
-			var option_button = EVENT_OPTION_SCENE.instantiate()
-			option_button.text = option.description
+			var option_button: EventOptionButton = EVENT_OPTION_SCENE.instantiate()
+			option_button.set_text_autowrap(option.description)
 			var callback: Callable = func(toggled_on: bool):
 				_on_option_toggled(option_idx, toggled_on)
 			option_button.connect("toggled", callback)

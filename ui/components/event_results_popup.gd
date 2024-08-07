@@ -15,8 +15,13 @@ func _ready() -> void:
 
 func initialize(world: WorldState, hero: Hero, results: Events.OptionResults):
 	%ResultsDescription.text = results.description
-	%HeroName.text = hero.name
-	%HeroHealth.initialize(hero.current_hp, results.hp_delta)
+
+	if hero:
+		%HeroName.text = hero.name
+		%HeroHealth.initialize(hero.current_hp, results.hp_delta)
+	else:
+		%HeroChanges.hide()
+
 	%Food.initialize(world.food, results.food_delta)
 	%Morale.initialize(world.morale, results.morale_delta)
 	%Supplies.initialize(world.supplies, results.supplies_delta)

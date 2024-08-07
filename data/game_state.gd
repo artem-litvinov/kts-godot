@@ -51,12 +51,22 @@ func add_hero(hero: Hero) -> void:
 
 
 func get_hero_by_id(id: String) -> Hero:
-	return _hero_by_id[id]
+	return _hero_by_id.get(id)
 
 
 func update_hero_by_id(id: String, hp_delta: int) -> void:
 	var hero = _hero_by_id[id]
 	hero.current_hp += hp_delta
+
+
+func village_event_started() -> void:
+	_selected_hero_id = ""
+	_game_mode = Enums.GameMode.VILLAGE_EVENT
+
+
+func village_event_ended() -> void:
+	_selected_hero_id = ""
+	_game_mode = Enums.GameMode.VILLAGE
 
 
 func scavenge_started(hero_id: String) -> void:

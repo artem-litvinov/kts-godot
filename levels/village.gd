@@ -81,6 +81,25 @@ func _on_new_hero_popup_button_pressed() -> void:
 	_remove_new_hero_popup()
 
 
+func _on_building_tavern_clicked() -> void:
+	%VillageEventBackground.show()
+	GameState.village_event_started()
+	BackendAPI.generate_event(
+		GameState.get_user().id,
+		GameState.get_world_state(),
+		null,
+		_on_village_event_generated,
+	)
+
+
+func _on_village_event_generated(event: Events.AIEvent, error: Error) -> void:
+	if error != OK:
+		print("Failed to generate event: ", error)
+		return
+
+	_show_event_popup(null, event)
+
+
 func _on_building_missions_board_clicked() -> void:
 	_show_board_popup()
 
@@ -131,7 +150,8 @@ func _on_option_selected(option: Events.Option) -> void:
 	_remove_event_popup()
 	var results = option.results
 	GameState.update_world_state(results.food_delta, results.morale_delta, results.supplies_delta)
-	GameState.update_hero_by_id(GameState.get_selected_hero_id(), results.hp_delta)
+	if results.hp_delta and GameState.get_selected_hero_id():
+		GameState.update_hero_by_id(GameState.get_selected_hero_id(), results.hp_delta)
 	_show_event_results_popup(
 		GameState.get_world_state(),
 		GameState.get_hero_by_id(GameState.get_selected_hero_id()),
@@ -141,7 +161,8 @@ func _on_option_selected(option: Events.Option) -> void:
 
 func _on_event_results_confirmed() -> void:
 	_remove_event_results_popup()
-	%EventBackground.hide()
+	%ScavengeEventBackground.hide()
+	%VillageEventBackground.hide()
 	update_hud()
 
 

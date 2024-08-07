@@ -4,6 +4,7 @@ class_name Enums
 
 enum GameMode {
 	VILLAGE,
+	VILLAGE_EVENT,
 	SCAVENGE,
 	SURVIVAL,
 }
