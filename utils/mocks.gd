@@ -11,6 +11,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.S,
 		"Ben description",
 		"villager_1",
+		"https://cdn.pixabay.com/photo/2023/07/30/00/12/cat-8157889_1280.png",
 		100,
 		200,
 		200
@@ -23,6 +24,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.A,
 		"Alice description",
 		"villager_2",
+		"https://cdn.shopify.com/s/files/1/0673/5325/files/LadyDinahs_Cat_Cafe_Alice-Block_2048x.jpg",
 		100,
 		200,
 		200
@@ -35,6 +37,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.B,
 		"Bob description",
 		"villager_3",
+		"https://res.cloudinary.com/demo/image/upload/s--1tQspuaM--/c_imagga_crop/kitten.jpg",
 		100,
 		200,
 		200

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2nv7a00yb7ht"]
+[gd_scene load_steps=8 format=3 uid="uid://b2nv7a00yb7ht"]
 
 [ext_resource type="Script" path="res://ui/components/hero_display_container.gd" id="1_gxmu3"]
 [ext_resource type="Texture2D" uid="uid://cdmktjrcwdpnp" path="res://ui/assets/rpg_mmo_ui/Textures/Lobby/Character Create/Frame/Lobby_CharacterCreate_Frame_Background.png" id="1_pecw1"]
 [ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="2_lbfvb"]
 [ext_resource type="Texture2D" uid="uid://bgnirnu7unxnr" path="res://ui/assets/rpg_mmo_ui/Textures/Miscellaneous/Text Box Icons/Icon_Symbol.png" id="3_0ad0o"]
 [ext_resource type="PackedScene" uid="uid://ddwxf46xkoy44" path="res://ui/components/hero_stat_line.tscn" id="4_lrmwr"]
+[ext_resource type="Texture2D" uid="uid://cjla4ktye0um" path="res://environment/assets/generated/land_6.png" id="6_6pffp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdmj7"]
 texture = ExtResource("1_pecw1")
@@ -98,3 +99,7 @@ theme_override_font_sizes/font_size = 40
 text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("6_6pffp")
