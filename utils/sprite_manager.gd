@@ -78,6 +78,9 @@ const _sprite_path_by_id = {
 	"flying_monster_2": "res://sprites/flying_monster_2/",
 	"flying_monster_3": "res://sprites/flying_monster_3/",
 	"flying_monster_4": "res://sprites/flying_monster_4/",
+	"regular_skeleton_1": "res://sprites/regular_skeleton_1/",
+	"regular_skeleton_2": "res://sprites/regular_skeleton_2/",
+	"regular_skeleton_3": "res://sprites/regular_skeleton_3/",
 }
 
 const _tier_sprite_mapping = {
