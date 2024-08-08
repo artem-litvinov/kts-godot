@@ -22,20 +22,19 @@ func _start_spawners():
 
 	for config in current_config.enemy_configs:
 		var interval = 1.0 / config.number_per_second
-		for i in range(config.number_per_second):
-			var spawn_timer = Timer.new()
-			spawn_timer.set_wait_time(interval)
-			spawn_timer.connect("timeout", _spawn_enemy.bind(config.enemy_scene))
-			add_child(spawn_timer)
-			spawn_timer.start(i * interval)  # Stagger the start times
-			enemy_spawn_timers.append(spawn_timer)
+		var spawn_timer = Timer.new()
+		spawn_timer.set_wait_time(interval)
+		spawn_timer.connect("timeout", _spawn_enemy.bind(config.enemy_scene))
+		add_child(spawn_timer)
+		spawn_timer.start()
+		enemy_spawn_timers.append(spawn_timer)
 
 
 func _spawn_enemy(enemy_scene: PackedScene):
 	var enemy_instance = enemy_scene.instantiate()
 	spawn_path.progress_ratio = randf()
 	enemy_instance.global_position = spawn_path.global_position
-	add_child(enemy_instance)
+	get_parent().add_child(enemy_instance)
 
 
 func _on_minute_passed():

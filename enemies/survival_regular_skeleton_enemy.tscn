@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbuquny6t5xv"]
+[gd_scene load_steps=10 format=3 uid="uid://dbuquny6t5xv"]
 
 [ext_resource type="Script" path="res://enemies/survival_follower_enemy.gd" id="1_lclx3"]
 [ext_resource type="Resource" uid="uid://4cbhtrrylewu" path="res://enemies/resources/common_xp_drop.tres" id="2_jox31"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="4_13ayp"]
 [ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="5_kdd5h"]
 [ext_resource type="PackedScene" uid="uid://crfgc7butkacm" path="res://components/damage_area_component.tscn" id="6_qugan"]
-[ext_resource type="PackedScene" uid="uid://ce0ehfno5oemd" path="res://heroes/survival_hero.tscn" id="8_qk086"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3334w"]
 radius = 12.0
@@ -66,10 +65,6 @@ debug_color = Color(0.547466, 0.403213, 1, 0.42)
 position = Vector2(0, -5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_omakl")
-
-[node name="SurvivalHero" parent="." instance=ExtResource("8_qk086")]
-visible = false
-position = Vector2(0, -4)
 
 [connection signal="death_finished" from="RegularSkeletonEnemyCosmetics" to="." method="_on_cosmetics_death_finished"]
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
