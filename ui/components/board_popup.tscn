@@ -29,12 +29,14 @@ alignment = 1
 [node name="ScavengeModePanel" parent="CenterContainer/HBoxContainer" instance=ExtResource("1_bmyls")]
 unique_name_in_owner = true
 layout_mode = 2
+header_text = "Raid"
+description_text = "Embark on a mission to scout for valuable treasures."
 
 [node name="SurvivalModePanel" parent="CenterContainer/HBoxContainer" instance=ExtResource("1_bmyls")]
 unique_name_in_owner = true
 layout_mode = 2
 header_text = "Survival"
-description_text = "Face your enamies head on and gain valuable resources"
+description_text = "Face your enemies and collect valuable resources."
 backgroung_texture = ExtResource("2_vno5p")
 
 [connection signal="button_pressed" from="CenterContainer/HBoxContainer/ScavengeModePanel" to="." method="_on_scavenge_mode_panel_button_pressed"]
