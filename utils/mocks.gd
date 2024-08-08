@@ -11,7 +11,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.S,
 		"Ben description",
 		"villager_1",
-		"https://cdn.pixabay.com/photo/2023/07/30/00/12/cat-8157889_1280.png",
+		"https://static.vecteezy.com/system/resources/thumbnails/027/192/627/small_2x/a-white-cat-with-big-eyes-on-a-transparent-background-ai-generated-png.png",
 		100,
 		200,
 		200
@@ -24,7 +24,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.A,
 		"Alice description",
 		"villager_2",
-		"https://cdn.shopify.com/s/files/1/0673/5325/files/LadyDinahs_Cat_Cafe_Alice-Block_2048x.jpg",
+		"https://static.vecteezy.com/system/resources/thumbnails/021/830/103/small/realistic-cute-cat-cartoon-style-digital-artwork-free-png.png",
 		100,
 		200,
 		200
@@ -37,7 +37,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.B,
 		"Bob description",
 		"villager_3",
-		"https://res.cloudinary.com/demo/image/upload/s--1tQspuaM--/c_imagga_crop/kitten.jpg",
+		"https://png.pngtree.com/png-clipart/20220620/ourmid/pngtree-pink-cute-cat-icon-animal-png-yuri-png-image_5230763.png",
 		100,
 		200,
 		200

@@ -2,6 +2,13 @@ extends Control
 
 signal button_pressed
 
+@export var use_mocks: bool = false
+
+
+func _ready() -> void:
+	if use_mocks:
+		initialize(Mocks.mock_heroes.pick_random())
+
 
 func initialize(hero: Hero) -> void:
 	%HeroDisplayContainer.initialize(hero, false)
