@@ -81,6 +81,9 @@ const _sprite_path_by_id = {
 	"regular_skeleton_1": "res://sprites/regular_skeleton_1/",
 	"regular_skeleton_2": "res://sprites/regular_skeleton_2/",
 	"regular_skeleton_3": "res://sprites/regular_skeleton_3/",
+	"skull_1": "res://sprites/skull_1/",
+	"skull_2": "res://sprites/skull_2/",
+	"skull_3": "res://sprites/skull_3/",
 }
 
 const _tier_sprite_mapping = {

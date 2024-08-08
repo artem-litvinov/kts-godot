@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://615ls04y8kws"]
+
+[ext_resource type="Script" path="res://enemies/survival_follower_enemy.gd" id="1_qqimq"]
+[ext_resource type="Resource" uid="uid://4cbhtrrylewu" path="res://enemies/resources/common_xp_drop.tres" id="2_eguye"]
+[ext_resource type="PackedScene" uid="uid://dld5p1f2c3lmy" path="res://enemies/cosmetics/skull_enemy_cosmetics.tscn" id="4_5231p"]
+[ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="4_u3d8n"]
+[ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="5_gsejv"]
+[ext_resource type="PackedScene" uid="uid://crfgc7butkacm" path="res://components/damage_area_component.tscn" id="6_d7ea6"]
+[ext_resource type="PackedScene" uid="uid://ce0ehfno5oemd" path="res://heroes/survival_hero.tscn" id="7_mns6v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3334w"]
+radius = 12.0
+height = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xels5"]
+radius = 11.0
+height = 54.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omakl"]
+height = 50.0
+
+[node name="SurvivalSkullEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component", "damage_area_component")]
+collision_layer = 8
+collision_mask = 201
+motion_mode = 1
+script = ExtResource("1_qqimq")
+max_hp = 100.0
+speed = 300.0
+xp_drop = ExtResource("2_eguye")
+area_attack_cooldown_sec = 0.5
+area_damage = 5.0
+cosmetics = NodePath("SkullEnemyCosmetics")
+health_component = NodePath("HealthComponent")
+hitbox_component = NodePath("HitboxComponent")
+damage_area_component = NodePath("DamageAreaComponent")
+
+[node name="SkullEnemyCosmetics" parent="." instance=ExtResource("4_5231p")]
+position = Vector2(0, -81)
+scale = Vector2(0.6, 0.6)
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_u3d8n")]
+unique_name_in_owner = true
+
+[node name="HitboxComponent" parent="." instance=ExtResource("5_gsejv")]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3334w")
+debug_color = Color(0.954313, 0.21537, 0, 0.42)
+
+[node name="DamageAreaComponent" parent="." instance=ExtResource("6_d7ea6")]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAreaComponent"]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xels5")
+debug_color = Color(0.547466, 0.403213, 1, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_omakl")
+
+[node name="SurvivalHero" parent="." instance=ExtResource("7_mns6v")]
+visible = false
+position = Vector2(0, -4)
+
+[connection signal="death_finished" from="SkullEnemyCosmetics" to="." method="_on_cosmetics_death_finished"]
+[connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
+[connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]
