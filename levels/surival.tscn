@@ -12,25 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dbuquny6t5xv" path="res://enemies/survival_regular_skeleton_enemy.tscn" id="6_jp8m6"]
 [ext_resource type="PackedScene" uid="uid://615ls04y8kws" path="res://enemies/survival_skull_enemy.tscn" id="7_hjiuc"]
 
-[sub_resource type="Resource" id="Resource_kaluk"]
-script = ExtResource("6_i8g11")
-number_per_second = 1.0
-enemy_scene = ExtResource("6_ag42w")
-
-[sub_resource type="Resource" id="Resource_mv14s"]
-script = ExtResource("6_i8g11")
-number_per_second = 1.0
-enemy_scene = ExtResource("6_jp8m6")
-
-[sub_resource type="Resource" id="Resource_hkvxi"]
-script = ExtResource("6_i8g11")
-number_per_second = 1.0
-enemy_scene = ExtResource("7_hjiuc")
-
-[sub_resource type="Resource" id="Resource_ypa3r"]
-script = ExtResource("5_p7uwj")
-enemy_configs = Array[ExtResource("6_i8g11")]([SubResource("Resource_kaluk"), SubResource("Resource_mv14s"), SubResource("Resource_hkvxi")])
-
 [sub_resource type="Resource" id="Resource_nm5e3"]
 script = ExtResource("6_i8g11")
 number_per_second = 1.0
@@ -54,6 +35,25 @@ enemy_scene = ExtResource("6_jp8m6")
 script = ExtResource("5_p7uwj")
 enemy_configs = Array[ExtResource("6_i8g11")]([SubResource("Resource_fbvtk"), SubResource("Resource_a3e3v")])
 
+[sub_resource type="Resource" id="Resource_kaluk"]
+script = ExtResource("6_i8g11")
+number_per_second = 1.0
+enemy_scene = ExtResource("6_ag42w")
+
+[sub_resource type="Resource" id="Resource_mv14s"]
+script = ExtResource("6_i8g11")
+number_per_second = 1.0
+enemy_scene = ExtResource("6_jp8m6")
+
+[sub_resource type="Resource" id="Resource_hkvxi"]
+script = ExtResource("6_i8g11")
+number_per_second = 1.0
+enemy_scene = ExtResource("7_hjiuc")
+
+[sub_resource type="Resource" id="Resource_ypa3r"]
+script = ExtResource("5_p7uwj")
+enemy_configs = Array[ExtResource("6_i8g11")]([SubResource("Resource_kaluk"), SubResource("Resource_mv14s"), SubResource("Resource_hkvxi")])
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7efqs"]
 shader = ExtResource("3_pyscs")
 
@@ -73,7 +73,7 @@ use_mocks = true
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("4_tqnrd")]
 spawn_path = NodePath("../SurvivalHero/Path2D/SpawnPath")
-configs_per_minute = Array[ExtResource("5_p7uwj")]([SubResource("Resource_ypa3r"), SubResource("Resource_qftyf"), SubResource("Resource_ii1cv")])
+configs_per_minute = Array[ExtResource("5_p7uwj")]([SubResource("Resource_qftyf"), SubResource("Resource_ii1cv"), SubResource("Resource_ypa3r")])
 
 [node name="MainParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://615ls04y8kws"]
 
 [ext_resource type="Script" path="res://enemies/survival_follower_enemy.gd" id="1_qqimq"]
-[ext_resource type="Resource" uid="uid://4cbhtrrylewu" path="res://enemies/resources/common_xp_drop.tres" id="2_eguye"]
+[ext_resource type="Resource" uid="uid://di03ohlammpwn" path="res://enemies/resources/uncommon_xp_drop.tres" id="2_efc1m"]
 [ext_resource type="PackedScene" uid="uid://dld5p1f2c3lmy" path="res://enemies/cosmetics/skull_enemy_cosmetics.tscn" id="4_5231p"]
 [ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="4_u3d8n"]
 [ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="5_gsejv"]
@@ -24,9 +24,9 @@ collision_layer = 8
 collision_mask = 201
 motion_mode = 1
 script = ExtResource("1_qqimq")
-max_hp = 100.0
+max_hp = 600.0
 speed = 300.0
-xp_drop = ExtResource("2_eguye")
+xp_drop = ExtResource("2_efc1m")
 area_attack_cooldown_sec = 0.5
 area_damage = 5.0
 cosmetics = NodePath("SkullEnemyCosmetics")
