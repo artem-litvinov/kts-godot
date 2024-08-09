@@ -9,5 +9,5 @@ Now, it's time to invite your first brave hero.
 """
 const TUTORIAL_BUTTON = "Invite"
 
-const SCAVENGE_MISSION_DESC = "Select a hero that will venture on a scavenge mission."
-const SURVIVAL_MISSION_DESC = "Select a hero that will venture on a survival mission."
+const SCAVENGE_MISSION_DESC = "Select a hero for the raid mission."
+const SURVIVAL_MISSION_DESC = "Select a hero who will venture on a survival mission."
