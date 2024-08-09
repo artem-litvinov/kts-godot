@@ -94,7 +94,6 @@ point_count = 5
 [node name="Surival" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_idlsi")
-use_mocks = true
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("4_tqnrd")]
 spawn_path = NodePath("../SurvivalHero/Path2D/SpawnPath")
