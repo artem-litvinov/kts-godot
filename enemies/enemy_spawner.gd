@@ -31,6 +31,9 @@ func _start_spawners():
 
 
 func _spawn_enemy(enemy_scene: PackedScene):
+	if not spawn_path:
+		return
+
 	var enemy_instance = enemy_scene.instantiate()
 	spawn_path.progress_ratio = randf()
 	enemy_instance.global_position = spawn_path.global_position

@@ -46,8 +46,10 @@ func _on_health_component_health_depleted() -> void:
 
 
 func _on_cosmetics_death_finished() -> void:
+	var camera_position = camera.global_position
 	remove_child(camera)
-	get_tree().root.add_child(camera)
+	get_parent().add_child(camera)
+	camera.global_position = camera_position
 	queue_free()
 
 

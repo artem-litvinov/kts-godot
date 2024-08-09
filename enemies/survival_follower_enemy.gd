@@ -45,7 +45,7 @@ func _physics_process(_delta: float):
 
 	var direction = Vector2.ZERO
 
-	if _player:
+	if _player != null and !_player.is_queued_for_deletion():
 		direction = global_position.direction_to(_player.global_position)
 
 	velocity = direction * speed + _knockback

@@ -6,7 +6,7 @@
 script = ExtResource("1_f7qkn")
 
 [node name="MinuteTimer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 11.0
 autostart = true
 
 [connection signal="timeout" from="MinuteTimer" to="." method="_on_minute_passed"]
