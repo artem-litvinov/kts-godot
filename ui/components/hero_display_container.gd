@@ -4,8 +4,6 @@ var _http_request: HTTPRequest
 var _avatar_url: String
 var _showing_chibi: bool = true
 
-const AVATAR_URL_PREFIX = "https://firebasestorage.googleapis.com/v0/b/kts-backend.appspot.com/o/styledAvatars%2F"
-const AVATAR_URL_POSTFIX = ".png?alt=media"
 
 func initialize(hero: Hero, compact: bool) -> void:
 	%Name.text = hero.name
@@ -21,9 +19,7 @@ func initialize(hero: Hero, compact: bool) -> void:
 	_http_request = HTTPRequest.new()
 	add_child(_http_request)
 	_http_request.request_completed.connect(_on_request_completed)
-
-	var url = AVATAR_URL_PREFIX + hero.sprite_id + AVATAR_URL_POSTFIX
-	download_image(url)
+	download_image(hero.avatar_url)
 
 	if compact:
 		%BioContainer.hide()

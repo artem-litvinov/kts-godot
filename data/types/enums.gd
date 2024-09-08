@@ -22,6 +22,6 @@ enum HeroTier {
 
 enum HeroType {
 	FIGHTER,
-	ASSASIN,
+	ASSASSIN,
 	MAGE,
 }
