@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnuk6uk65evcc"]
 
-[ext_resource type="PackedScene" uid="uid://bmpuxlsgbnklv" path="res://ui/components/event_participant.tscn" id="1_4h81a"]
-[ext_resource type="Script" path="res://ui/components/event_popup.gd" id="1_cpr5i"]
+[ext_resource type="PackedScene" uid="uid://bmpuxlsgbnklv" path="res://ui/components/village/event_participant.tscn" id="1_4h81a"]
+[ext_resource type="Script" path="res://ui/components/village/event_popup.gd" id="1_cpr5i"]
 [ext_resource type="Texture2D" uid="uid://cb7op8chmkplq" path="res://ui/assets/rpg_mmo_ui/Textures/Lobby/Hero Select/HeroSelect_Role_Offense.png" id="3_xqiv7"]
 [ext_resource type="Texture2D" uid="uid://d1tuvksi6y4xw" path="res://ui/assets/rpg_mmo_ui/Textures/General/General_Border_A.png" id="4_vtufg"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmpuxlsgbnklv"]
 
 [ext_resource type="Texture2D" uid="uid://cist0ghkl2xo4" path="res://ui/assets/rpg_mmo_ui/Textures/Unit Frames/Roles/UnitFrame_Role_Attack.png" id="1_mikcw"]
-[ext_resource type="Script" path="res://ui/components/event_participant.gd" id="1_notof"]
+[ext_resource type="Script" path="res://ui/components/village/event_participant.gd" id="1_notof"]
 [ext_resource type="Texture2D" uid="uid://cpij4883vah8q" path="res://ui/assets/rpg_mmo_ui/Textures/Unit Frames/Roles/UnitFrame_Role_Defense.png" id="2_dq32c"]
 
 [node name="EventParticipant" type="VBoxContainer"]

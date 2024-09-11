@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr5c7d8exltry"]
 
 [ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/assets/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_mgvvi"]
-[ext_resource type="Script" path="res://ui/components/event_option.gd" id="2_ftc7f"]
+[ext_resource type="Script" path="res://ui/components/village/event_option.gd" id="2_ftc7f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pv7de"]
 content_margin_left = 60.0

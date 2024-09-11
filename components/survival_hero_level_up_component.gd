@@ -1,13 +1,14 @@
 extends Node2D
 class_name SurvivalHeroLevelUpComponent
 
+const UI_LEVEL_UP_POPUP: PackedScene = preload("res://ui/components/survival/ui_hero_level_up_popup.tscn")
+
 @export var hud_layer: CanvasLayer
 @export var hero: SurvivalHero
 @export var leveling_component: SurvivalHeroLevelingComponent
 @export var weapons_component: SurvivalHeroWeaponsComponent
 @export var upgrades_component: SurvivalHeroUpgradesComponent
 
-var _ui_level_up_popup: PackedScene = preload("res://ui/components/ui_hero_level_up_popup.tscn")
 var _popup_instance: UIHeroLevelUpPopup
 
 
@@ -38,7 +39,7 @@ func _on_level_up(_level: int) -> void:
 		get_tree().paused = false
 		return
 
-	var popup: UIHeroLevelUpPopup = _ui_level_up_popup.instantiate()
+	var popup: UIHeroLevelUpPopup = UI_LEVEL_UP_POPUP.instantiate()
 	popup.initialize(upgrades)
 	popup.connect("selected", _on_upgrade_selected)
 	hud_layer.add_child(popup)

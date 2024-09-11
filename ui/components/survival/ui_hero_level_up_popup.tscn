@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bedro7dq5ytti"]
 
-[ext_resource type="Script" path="res://ui/components/ui_hero_level_up_popup.gd" id="1_11ek3"]
-[ext_resource type="PackedScene" uid="uid://025pshy40vv7" path="res://ui/components/ui_hero_upgrade_container.tscn" id="1_w0v41"]
-[ext_resource type="PackedScene" uid="uid://c8n23jephgpu" path="res://ui/components/ui_weapon_upgrade_container.tscn" id="3_1kyoa"]
+[ext_resource type="Script" path="res://ui/components/survival/ui_hero_level_up_popup.gd" id="1_11ek3"]
+[ext_resource type="PackedScene" uid="uid://025pshy40vv7" path="res://ui/components/survival/ui_hero_upgrade_container.tscn" id="1_w0v41"]
+[ext_resource type="PackedScene" uid="uid://c8n23jephgpu" path="res://ui/components/survival/ui_weapon_upgrade_container.tscn" id="3_1kyoa"]
 
 [node name="UIHeroLevelUpPopup" type="Control"]
 process_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgc6nui35ux0t"]
 
-[ext_resource type="Script" path="res://ui/components/village_hud_resource.gd" id="1_03rus"]
+[ext_resource type="Script" path="res://ui/components/village/village_hud_resource.gd" id="1_03rus"]
 [ext_resource type="Texture2D" uid="uid://c4611xu6nfpyq" path="res://ui/assets/icons/food.png" id="2_qm0is"]
 
 [node name="VillageHUDResource" type="HBoxContainer"]

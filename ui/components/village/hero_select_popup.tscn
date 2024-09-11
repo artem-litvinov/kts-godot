@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dlhrrp8eav5sw"]
 
-[ext_resource type="Script" path="res://ui/components/hero_select_popup.gd" id="1_gxtip"]
-[ext_resource type="PackedScene" uid="uid://b2nv7a00yb7ht" path="res://ui/components/hero_display_container.tscn" id="2_yaugk"]
+[ext_resource type="Script" path="res://ui/components/village/hero_select_popup.gd" id="1_gxtip"]
+[ext_resource type="PackedScene" uid="uid://b2nv7a00yb7ht" path="res://ui/components/village/hero_display_container.tscn" id="2_yaugk"]
 
 [node name="HeroSelectPopup" type="Control"]
 layout_mode = 3

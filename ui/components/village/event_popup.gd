@@ -2,7 +2,7 @@ extends Control
 
 signal option_selected(option)
 
-const EVENT_OPTION_SCENE = preload("res://ui/components/event_option.tscn")
+const EVENT_OPTION_SCENE = preload("res://ui/components/village/event_option.tscn")
 
 @export var use_mocks: bool
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1youji68oya3"]
 
-[ext_resource type="PackedScene" uid="uid://daq5hnt53bk5k" path="res://ui/components/board_mode_panel.tscn" id="1_bmyls"]
-[ext_resource type="Script" path="res://ui/components/board_popup.gd" id="1_mn7id"]
+[ext_resource type="PackedScene" uid="uid://daq5hnt53bk5k" path="res://ui/components/village/board_mode_panel.tscn" id="1_bmyls"]
+[ext_resource type="Script" path="res://ui/components/village/board_popup.gd" id="1_mn7id"]
 [ext_resource type="Texture2D" uid="uid://7sxfeix0kr5t" path="res://ui/assets/backgrounds/survival_2.png" id="2_vno5p"]
 
 [node name="BoardPopup" type="Control"]

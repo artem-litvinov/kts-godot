@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1hjryxfin3o7"]
 
-[ext_resource type="Script" path="res://ui/components/ui_hero_stat_change_container.gd" id="1_4qh7n"]
+[ext_resource type="Script" path="res://ui/components/survival/ui_hero_stat_change_container.gd" id="1_4qh7n"]
 
 [node name="UIHeroStatChangeContainer" type="HBoxContainer"]
 theme_override_constants/separation = 20

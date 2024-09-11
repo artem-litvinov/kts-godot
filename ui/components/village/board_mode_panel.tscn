@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://daq5hnt53bk5k"]
 
-[ext_resource type="Script" path="res://ui/components/board_mode_panel.gd" id="1_ry0wu"]
+[ext_resource type="Script" path="res://ui/components/village/board_mode_panel.gd" id="1_ry0wu"]
 [ext_resource type="Texture2D" uid="uid://d0hyyuc6ebhxg" path="res://ui/assets/backgrounds/scavenge.png" id="3_cat57"]
 
 [sub_resource type="Animation" id="Animation_1c8gi"]

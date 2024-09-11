@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://025pshy40vv7"]
+[gd_scene load_steps=3 format=3 uid="uid://c8n23jephgpu"]
 
-[ext_resource type="Script" path="res://ui/components/ui_hero_upgrade_container.gd" id="1_32nmv"]
-[ext_resource type="PackedScene" uid="uid://d1hjryxfin3o7" path="res://ui/components/ui_hero_stat_change_container.tscn" id="2_57ekp"]
+[ext_resource type="Script" path="res://ui/components/survival/ui_weapon_upgrade_container.gd" id="1_c1w55"]
+[ext_resource type="PackedScene" uid="uid://cmvatr5yqxka3" path="res://ui/components/survival/ui_weapon_stat_change_container.tscn" id="2_kdd2f"]
 
-[node name="UIHeroUpgradeContainer" type="PanelContainer"]
+[node name="UIWeaponUpgradeContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(600, 800)
-script = ExtResource("1_32nmv")
+script = ExtResource("1_c1w55")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -21,15 +21,17 @@ theme_override_constants/separation = 30
 [node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Name"
+text = "Weapon Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Description" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Increase something"
+text = "Weapon desctiption"
+autowrap_mode = 3
 
 [node name="StatChangesContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -37,10 +39,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="UIHeroStatChangeContainer" parent="MarginContainer/VBoxContainer/StatChangesContainer" instance=ExtResource("2_57ekp")]
+[node name="UIWeaponStatChangeContainer" parent="MarginContainer/VBoxContainer/StatChangesContainer" instance=ExtResource("2_kdd2f")]
 layout_mode = 2
 
-[node name="UIHeroStatChangeContainer2" parent="MarginContainer/VBoxContainer/StatChangesContainer" instance=ExtResource("2_57ekp")]
+[node name="UIWeaponStatChangeContainer2" parent="MarginContainer/VBoxContainer/StatChangesContainer" instance=ExtResource("2_kdd2f")]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]

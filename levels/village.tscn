@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://ccgn6hxiv4pab" path="res://environment/objects/stone_2.tscn" id="42_17jlu"]
 [ext_resource type="PackedScene" uid="uid://dn14dp0apf07u" path="res://environment/objects/street_lamp.tscn" id="43_g4glo"]
 [ext_resource type="PackedScene" path="res://environment/objects/road_tablet.tscn" id="44_i3sty"]
-[ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village_hud.tscn" id="44_sqnxk"]
+[ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village/village_hud.tscn" id="44_sqnxk"]
 [ext_resource type="Script" path="res://audio/sound_pool.gd" id="45_mx386"]
 [ext_resource type="Texture2D" uid="uid://dqant7wson5q2" path="res://ui/assets/backgrounds/event-background.png" id="45_sv7hc"]
 [ext_resource type="Texture2D" uid="uid://ct445k3bg4cow" path="res://ui/assets/backgrounds/village-event-background.png" id="46_m67c0"]

@@ -1,12 +1,12 @@
 extends Node2D
 
 const HERO_SCENE: PackedScene = preload("res://heroes/village_hero.tscn")
-const TEXT_POPUP_SCENE: PackedScene = preload("res://ui/components/text_popup.tscn")
-const NEW_HERO_POPUP_SCENE: PackedScene = preload("res://ui/components/new_hero_popup.tscn")
-const BOARD_POPUP_SCENE: PackedScene = preload("res://ui/components/board_popup.tscn")
-const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/hero_select_popup.tscn")
-const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/event_popup.tscn")
-const EVENT_RESULTS_POPUP_SCENE: PackedScene = preload("res://ui/components/event_results_popup.tscn")
+const TEXT_POPUP_SCENE: PackedScene = preload("res://ui/components/village/text_popup.tscn")
+const NEW_HERO_POPUP_SCENE: PackedScene = preload("res://ui/components/village/new_hero_popup.tscn")
+const BOARD_POPUP_SCENE: PackedScene = preload("res://ui/components/village/board_popup.tscn")
+const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/village/hero_select_popup.tscn")
+const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/village/event_popup.tscn")
+const EVENT_RESULTS_POPUP_SCENE: PackedScene = preload("res://ui/components/village/event_results_popup.tscn")
 
 @export var use_mocks: bool = false 
 

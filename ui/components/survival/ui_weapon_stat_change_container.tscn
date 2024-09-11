@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmvatr5yqxka3"]
 
-[ext_resource type="Script" path="res://ui/components/ui_weapon_stat_change_container.gd" id="1_c3cq4"]
+[ext_resource type="Script" path="res://ui/components/survival/ui_weapon_stat_change_container.gd" id="1_c3cq4"]
 
 [node name="UIWeaponStatChangeContainer" type="HBoxContainer"]
 theme_override_constants/separation = 20

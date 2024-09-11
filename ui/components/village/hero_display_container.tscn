@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2nv7a00yb7ht"]
 
-[ext_resource type="Script" path="res://ui/components/hero_display_container.gd" id="1_gxmu3"]
+[ext_resource type="Script" path="res://ui/components/village/hero_display_container.gd" id="1_gxmu3"]
 [ext_resource type="Texture2D" uid="uid://cdmktjrcwdpnp" path="res://ui/assets/rpg_mmo_ui/Textures/Lobby/Character Create/Frame/Lobby_CharacterCreate_Frame_Background.png" id="1_pecw1"]
 [ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://heroes/hero_cosmetics.tscn" id="2_lbfvb"]
 [ext_resource type="Texture2D" uid="uid://bgnirnu7unxnr" path="res://ui/assets/rpg_mmo_ui/Textures/Miscellaneous/Text Box Icons/Icon_Symbol.png" id="3_0ad0o"]
 [ext_resource type="Texture2D" uid="uid://d0ogk8bbowb0t" path="res://environment/assets/rpg_summer_tileset/PNG/bg.png" id="3_k0xvu"]
-[ext_resource type="PackedScene" uid="uid://ddwxf46xkoy44" path="res://ui/components/hero_stat_line.tscn" id="4_lrmwr"]
+[ext_resource type="PackedScene" uid="uid://ddwxf46xkoy44" path="res://ui/components/village/hero_stat_line.tscn" id="4_lrmwr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdmj7"]
 texture = ExtResource("1_pecw1")

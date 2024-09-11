@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cujgqt5wgx5ju"]
 
-[ext_resource type="Script" path="res://ui/components/evet_results_stat_change.gd" id="1_d1xqa"]
+[ext_resource type="Script" path="res://ui/components/village/evet_results_stat_change.gd" id="1_d1xqa"]
 [ext_resource type="Texture2D" uid="uid://b4a6pbu25geiq" path="res://ui/assets/icons/heart.png" id="1_y8wd3"]
 
 [node name="EventResultsStatChange" type="HBoxContainer"]

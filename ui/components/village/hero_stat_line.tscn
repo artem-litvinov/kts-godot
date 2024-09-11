@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddwxf46xkoy44"]
 
-[ext_resource type="Script" path="res://ui/components/hero_stat_line.gd" id="1_frogx"]
+[ext_resource type="Script" path="res://ui/components/village/hero_stat_line.gd" id="1_frogx"]
 
 [node name="HeroStatLine" type="HBoxContainer"]
 theme_override_constants/separation = 20

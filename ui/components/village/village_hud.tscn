@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dupuhti0gv485"]
 
-[ext_resource type="PackedScene" uid="uid://dgc6nui35ux0t" path="res://ui/components/village_hud_resource.tscn" id="1_bpjhl"]
-[ext_resource type="Script" path="res://ui/components/village_hud.gd" id="1_cib6b"]
+[ext_resource type="PackedScene" uid="uid://dgc6nui35ux0t" path="res://ui/components/village/village_hud_resource.tscn" id="1_bpjhl"]
+[ext_resource type="Script" path="res://ui/components/village/village_hud.gd" id="1_cib6b"]
 [ext_resource type="Texture2D" uid="uid://booforp8i1cpg" path="res://ui/assets/icons/morale.png" id="2_5n13e"]
 [ext_resource type="Texture2D" uid="uid://c4611xu6nfpyq" path="res://ui/assets/icons/food.png" id="2_bv313"]
 [ext_resource type="Texture2D" uid="uid://dlchp0sbxhqep" path="res://ui/assets/icons/supplies.png" id="3_o4wxa"]
