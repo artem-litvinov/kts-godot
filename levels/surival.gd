@@ -29,7 +29,6 @@ func _on_hero_death() -> void:
 
 
 func _on_exit() -> void:
-	var hp = %SurvivalStatsTracker.hero_hp
 	GameState.update_hero_by_id(GameState.get_selected_hero_id(), %SurvivalStatsTracker.hero_hp)
 	GameState.survival_ended()
 	SceneManager.goto_village()
