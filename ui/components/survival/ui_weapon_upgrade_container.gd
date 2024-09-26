@@ -3,7 +3,8 @@ class_name UIWeaponUpgradeContainer
 
 signal selected(weapon: SurvivalWeapon)
 
-var _weapon_stat_change_scene: PackedScene = preload("res://ui/components/ui_weapon_stat_change_container.tscn")
+@export var _weapon_stat_change_scene: PackedScene
+
 var _weapon: SurvivalWeapon
 
 func initialize(weapon: SurvivalWeapon):

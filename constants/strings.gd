@@ -11,3 +11,6 @@ const TUTORIAL_BUTTON = "Invite"
 
 const SCAVENGE_MISSION_DESC = "Select a hero for the raid mission."
 const SURVIVAL_MISSION_DESC = "Select a hero who will venture on a survival mission."
+
+const SURVIVAL_EXIT_HEADER_ALIVE = "You survived"
+const SURVIVAL_EXIT_HEADER_DEAD = "You died"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkart7gbsy685"]
+
+[ext_resource type="Script" path="res://data/survival_stats_tracker.gd" id="1_hdlfk"]
+
+[node name="SurvivalStatsTracker" type="Node"]
+script = ExtResource("1_hdlfk")

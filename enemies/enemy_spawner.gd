@@ -18,7 +18,8 @@ func _start_spawners():
 	if current_minute < configs_per_minute.size():
 		current_config = configs_per_minute[current_minute]
 	else:
-		current_config = configs_per_minute[configs_per_minute.size() - 1]  # Use the last config if beyond defined configs
+		# Use the last config if beyond defined configs
+		current_config = configs_per_minute[configs_per_minute.size() - 1]
 
 	for config in current_config.enemy_configs:
 		var interval = 1.0 / config.number_per_second

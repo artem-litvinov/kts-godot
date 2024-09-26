@@ -18,15 +18,15 @@ class_name SurvivalHero
 @onready var upgrades_component: SurvivalHeroUpgradesComponent = %SurvivalHeroUpgradesComponent
 
 
-func _ready() -> void:
-	xp_magnet_component.set_radius(xp_magnet_radius)
-
-
 func initialize(hero: Hero):
 	stats_component.initialize(hero)
 	health_component.initialize(hero.max_hp, hero.current_hp)
 	weapons_component.initialize(stats_component)
 	cosmetics.initialize(hero.sprite_id)
+
+
+func _ready() -> void:
+	xp_magnet_component.set_radius(xp_magnet_radius)
 
 
 func _physics_process(_delta: float):
@@ -38,6 +38,7 @@ func _physics_process(_delta: float):
 
 func _on_hitbox_component_got_hit(attack: Attack) -> void:
 	health_component.take_damage(attack.damage)
+	EventBus.HERO_HP_CHANGE.emit(health_component.get_health())
 	cosmetics.play_hurt()
 
 
@@ -50,6 +51,7 @@ func _on_cosmetics_death_finished() -> void:
 	remove_child(camera)
 	get_parent().add_child(camera)
 	camera.global_position = camera_position
+	EventBus.HERO_DEATH.emit()
 	queue_free()
 
 

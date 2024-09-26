@@ -8,7 +8,7 @@ const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/villag
 const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/village/event_popup.tscn")
 const EVENT_RESULTS_POPUP_SCENE: PackedScene = preload("res://ui/components/village/event_results_popup.tscn")
 
-@export var use_mocks: bool = false 
+@export var use_mocks: bool = false
 
 var _text_popup: Control
 var _new_hero_popup: Control
@@ -33,7 +33,8 @@ func _ready():
 	update_hud()
 
 	for hero in GameState.get_heroes():
-		_spawn_hero(hero, _get_spawn_point())
+		if hero.current_hp > 0:
+			_spawn_hero(hero, _get_spawn_point())
 
 	# SoundManager setup
 	if SoundManager.instance:
@@ -151,7 +152,9 @@ func _on_option_selected(option: Events.Option) -> void:
 	var results = option.results
 	GameState.update_world_state(results.food_delta, results.morale_delta, results.supplies_delta)
 	if results.hp_delta and GameState.get_selected_hero_id():
-		GameState.update_hero_by_id(GameState.get_selected_hero_id(), results.hp_delta)
+		var hero = GameState.get_hero_by_id(GameState.get_selected_hero_id())
+		var new_hp = hero.current_hp + results.hp_delta
+		GameState.update_hero_by_id(GameState.get_selected_hero_id(), new_hp)
 	_show_event_results_popup(
 		GameState.get_world_state(),
 		GameState.get_hero_by_id(GameState.get_selected_hero_id()),

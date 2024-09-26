@@ -54,9 +54,9 @@ func get_hero_by_id(id: String) -> Hero:
 	return _hero_by_id.get(id)
 
 
-func update_hero_by_id(id: String, hp_delta: int) -> void:
+func update_hero_by_id(id: String, current_hp: int) -> void:
 	var hero = _hero_by_id[id]
-	hero.current_hp += hp_delta
+	hero.current_hp = current_hp
 
 
 func village_event_started() -> void:
