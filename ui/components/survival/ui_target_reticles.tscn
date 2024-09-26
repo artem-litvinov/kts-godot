@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://pb6xm683tha8"]
+
+[ext_resource type="Script" path="res://ui/components/survival/ui_target_reticles.gd" id="1_0brlq"]
+[ext_resource type="Texture2D" uid="uid://eljyu7agh4gq" path="res://ui/assets/rpg_mmo_ui/Textures/Spell Book/Talents/Spec Icons/SpellBook_SpecTab_Arrow.png" id="2_ggd1r"]
+
+[node name="UITargetReticles" type="Node2D"]
+script = ExtResource("1_0brlq")
+
+[node name="OffscreenReticle" type="Node2D" parent="."]
+visible = false
+
+[node name="OffscreenReticleTexture" type="TextureRect" parent="OffscreenReticle"]
+z_index = 1000
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 96.0
+rotation = -1.5708
+texture = ExtResource("2_ggd1r")
