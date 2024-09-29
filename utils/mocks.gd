@@ -11,7 +11,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.S,
 		"Ben description",
 		"medieval_knight",
-		"https://firebasestorage.googleapis.com/v0/b/kts-backend.appspot.com/o/testImages%2FstyledAvatars_medieval_knight.png?alt=media",
+		"https://firebasestorage.googleapis.com/v0/b/kts-backend.appspot.com/o/styledAvatars%2Fmedieval_knight.jpg?alt=media&token=5f4a2c78-ca6e-4ded-a8bf-bba82bfa467f",
 		100,
 		200,
 		200
@@ -24,7 +24,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.A,
 		"Alice description",
 		"elf_archer_2",
-		"https://firebasestorage.googleapis.com/v0/b/kts-backend.appspot.com/o/testImages%2FstyledAvatars_elf_archer_2.png?alt=media",
+		"https://firebasestorage.googleapis.com/v0/b/kts-backend.appspot.com/o/styledAvatars%2Felf_archer_2.jpg?alt=media&token=f9557b1f-903e-4834-8652-da14a170826c",
 		100,
 		200,
 		200
@@ -37,7 +37,7 @@ var mock_heroes: Array[Hero] = [
 		Enums.HeroTier.B,
 		"Bob description",
 		"shamans_1",
-		"https://firebasestorage.googleapis.com/v0/b/kts-backend.appspot.com/o/testImages%2FstyledAvatars_shamans_1.png?alt=media",
+		"https://firebasestorage.googleapis.com/v0/b/kts-backend.appspot.com/o/styledAvatars%2Fshamans_1.jpg?alt=media&token=adcc0390-393b-4a5d-a28d-a53767cbc06f",
 		100,
 		200,
 		200

@@ -37,7 +37,7 @@ func _on_request_completed(_result, response_code, _headers, body):
 	if response_code == 200:
 		# Load the image from the downloaded data
 		var image = Image.new()
-		var error = image.load_png_from_buffer(body)
+		var error = image.load_jpg_from_buffer(body)
 		if error == OK:
 			# Create a texture from the image
 			var texture = ImageTexture.create_from_image(image)
