@@ -189,8 +189,6 @@ func generate_event(user_id: String, world: WorldState, hero: Hero, callback: Ca
 	else:
 		var body: Dictionary = {
 		  "userId": user_id,
-		  "food": world.food,
-		  "morale": world.morale,
 		  "supplies": world.supplies,
 		}
 		if hero:

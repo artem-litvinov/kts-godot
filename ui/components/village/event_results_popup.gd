@@ -22,8 +22,6 @@ func initialize(world: WorldState, hero: Hero, results: Events.OptionResults):
 	else:
 		%HeroChanges.hide()
 
-	%Food.initialize(world.food, results.food_delta)
-	%Morale.initialize(world.morale, results.morale_delta)
 	%Supplies.initialize(world.supplies, results.supplies_delta)
 
 

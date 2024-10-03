@@ -150,7 +150,7 @@ func _on_event_generated(event: Events.AIEvent, error: Error) -> void:
 func _on_option_selected(option: Events.Option) -> void:
 	_remove_event_popup()
 	var results = option.results
-	GameState.update_world_state(results.food_delta, results.morale_delta, results.supplies_delta)
+	GameState.update_world_state(results.supplies_delta)
 	if results.hp_delta and GameState.get_selected_hero_id():
 		var hero = GameState.get_hero_by_id(GameState.get_selected_hero_id())
 		var new_hp = hero.current_hp + results.hp_delta
@@ -173,7 +173,7 @@ func _on_event_results_confirmed() -> void:
 # --------------------------------------------------
 func update_hud() -> void:
 	var world_state = GameState.get_world_state()
-	%VillageHUD.update_resources(world_state.food, world_state.morale, world_state.supplies)
+	%VillageHUD.update_resources(world_state.supplies)
 
 
 func _spawn_hero(hero: Hero, hero_position: Vector2) -> void:

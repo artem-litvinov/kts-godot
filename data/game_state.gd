@@ -40,9 +40,7 @@ func initialize_heroes(heroes: Array[Hero]) -> void:
 		print(_hero_by_id[id].to_string())
 
 
-func update_world_state(food_delta: int, morale_delta: int, supplies_delta: int) -> void:
-	_world_state.food += food_delta
-	_world_state.morale += morale_delta
+func update_world_state(supplies_delta: int) -> void:
 	_world_state.supplies += supplies_delta
 
 
