@@ -17,8 +17,8 @@ func _ready() -> void:
 	var hero = GameState.get_hero_by_id(GameState.get_selected_hero_id())
 	%SurvivalHero.initialize(hero)
 
-	EventBus.HERO_DEATH.connect(_on_hero_death)
-	EventBus.EARLY_EXIT_PORTAL_ENTERED.connect(_on_early_exit_portal_entered)
+	SurvivalEventBus.HERO_DEATH.connect(_on_hero_death)
+	SurvivalEventBus.EARLY_EXIT_PORTAL_ENTERED.connect(_on_early_exit_portal_entered)
 
 
 func _process(delta: float) -> void:

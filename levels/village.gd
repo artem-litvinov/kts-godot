@@ -1,14 +1,13 @@
 extends Node2D
 
-const HERO_SCENE: PackedScene = preload("res://heroes/village_hero.tscn")
-const TEXT_POPUP_SCENE: PackedScene = preload("res://ui/components/village/text_popup.tscn")
-const NEW_HERO_POPUP_SCENE: PackedScene = preload("res://ui/components/village/new_hero_popup.tscn")
-const BOARD_POPUP_SCENE: PackedScene = preload("res://ui/components/village/board_popup.tscn")
-const HERO_SELECT_POPUP_SCENE: PackedScene = preload("res://ui/components/village/hero_select_popup.tscn")
-const EVENT_POPUP_SCENE: PackedScene = preload("res://ui/components/village/event_popup.tscn")
-const EVENT_RESULTS_POPUP_SCENE: PackedScene = preload("res://ui/components/village/event_results_popup.tscn")
-
 @export var use_mocks: bool = false
+@export var hero_scene: PackedScene
+@export var text_popup_scene: PackedScene
+@export var new_hero_popup_scene: PackedScene
+@export var board_popup_scene: PackedScene
+@export var hero_select_popup_scene: PackedScene
+@export var event_popup_scene: PackedScene
+@export var event_results_popup_scene: PackedScene
 
 var _text_popup: Control
 var _new_hero_popup: Control
@@ -177,7 +176,7 @@ func update_hud() -> void:
 
 
 func _spawn_hero(hero: Hero, hero_position: Vector2) -> void:
-	var new_hero = HERO_SCENE.instantiate()
+	var new_hero = hero_scene.instantiate()
 	new_hero.global_position = hero_position
 	new_hero.initialize(hero)
 	add_child(new_hero)
@@ -195,7 +194,7 @@ func _get_spawn_point() -> Vector2:
 # UI Helpers
 # --------------------------------------------------
 func _show_text_popup(header: String, body: String, button: String, callback: Callable) -> void:
-	_text_popup = TEXT_POPUP_SCENE.instantiate()
+	_text_popup = text_popup_scene.instantiate()
 	_text_popup.initialize(header, body, button)
 	%CanvasLayer.add_child(_text_popup)
 	_text_popup.connect("button_pressed", callback)
@@ -207,7 +206,7 @@ func _remove_text_popup() -> void:
 
 
 func _show_new_hero_popup(hero: Hero, callback: Callable) -> void:
-	_new_hero_popup = NEW_HERO_POPUP_SCENE.instantiate()
+	_new_hero_popup = new_hero_popup_scene.instantiate()
 	_new_hero_popup.initialize(hero)
 	%CanvasLayer.add_child(_new_hero_popup)
 	_new_hero_popup.connect("button_pressed", callback)
@@ -219,7 +218,7 @@ func _remove_new_hero_popup() -> void:
 
 
 func _show_board_popup() -> void:
-	_board_popup = BOARD_POPUP_SCENE.instantiate()
+	_board_popup = board_popup_scene.instantiate()
 	%CanvasLayer.add_child(_board_popup)
 	_board_popup.connect("scavenge_mode_selected", _on_scavenge_mode_selected)
 	_board_popup.connect("survival_mode_selected", _on_survival_mode_selected)
@@ -232,7 +231,7 @@ func _remove_board_popup() -> void:
 
 
 func _show_hero_select_popup(description: String, callback: Callable) -> void:
-	_hero_select_popup = HERO_SELECT_POPUP_SCENE.instantiate()
+	_hero_select_popup = hero_select_popup_scene.instantiate()
 	_hero_select_popup.initialize(description, GameState.get_heroes())
 	%CanvasLayer.add_child(_hero_select_popup)
 	_hero_select_popup.connect("hero_selected", callback)
@@ -244,7 +243,7 @@ func _remove_hero_select_popup() -> void:
 
 
 func _show_event_popup(hero: Hero, event: Events.AIEvent) -> void:
-	_event_popup = EVENT_POPUP_SCENE.instantiate()
+	_event_popup = event_popup_scene.instantiate()
 	_event_popup.initialize(hero, event)
 	%CanvasLayer.add_child(_event_popup)
 	_event_popup.connect("option_selected", _on_option_selected)
@@ -256,7 +255,7 @@ func _remove_event_popup() -> void:
 
 
 func _show_event_results_popup(world: WorldState, hero: Hero, results: Events.OptionResults) -> void:
-	_event_results_popup = EVENT_RESULTS_POPUP_SCENE.instantiate()
+	_event_results_popup = event_results_popup_scene.instantiate()
 	_event_results_popup.initialize(world, hero, results)
 	%CanvasLayer.add_child(_event_results_popup)
 	_event_results_popup.connect("button_pressed", _on_event_results_confirmed)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgloaalwpdrht"]
+
+[ext_resource type="Script" path="res://characters/heroes/village_hero.gd" id="1_ca2va"]
+[ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://characters/heroes/hero_cosmetics.tscn" id="3_ehlck"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ldsd"]
+height = 42.0
+
+[node name="VillageHero" type="CharacterBody2D"]
+collision_mask = 201
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_ca2va")
+
+[node name="HeroCosmetics" parent="." instance=ExtResource("3_ehlck")]
+unique_name_in_owner = true
+position = Vector2(0, -90)
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1ldsd")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
+path_desired_distance = 10.0
+target_desired_distance = 500.0
+path_max_distance = 10.0
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 20.0
+max_speed = 300.0
+debug_path_custom_point_size = 10.0
+debug_path_custom_line_width = 5.0
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

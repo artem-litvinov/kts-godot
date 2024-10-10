@@ -26,5 +26,5 @@ func set_pct_radius_modifier(pct_modifier: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is XPDropInstance:
+	if area is SurvivalXPDropInstance:
 		area.magnetize()

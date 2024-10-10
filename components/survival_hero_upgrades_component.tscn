@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://components/survival_hero_upgrades_component.gd" id="1_5hr3s"]
 [ext_resource type="Script" path="res://data/types/survival/survival_hero_upgrade.gd" id="2_df3t2"]
-[ext_resource type="Resource" uid="uid://db861xgbmbjx8" path="res://heroes/resources/cooldown_upgrade.tres" id="3_8tya6"]
-[ext_resource type="Resource" uid="uid://dfgh6v61g5uqo" path="res://heroes/resources/damage_upgrade.tres" id="4_lp2dt"]
-[ext_resource type="Resource" uid="uid://wxyhcpgrdw2f" path="res://heroes/resources/piercing_upgrade.tres" id="5_k5bry"]
-[ext_resource type="Resource" uid="uid://chh4spgmfwval" path="res://heroes/resources/speed_upgrade.tres" id="6_4gnat"]
+[ext_resource type="Resource" uid="uid://db861xgbmbjx8" path="res://characters/heroes/resources/cooldown_upgrade.tres" id="3_8tya6"]
+[ext_resource type="Resource" uid="uid://dfgh6v61g5uqo" path="res://characters/heroes/resources/damage_upgrade.tres" id="4_lp2dt"]
+[ext_resource type="Resource" uid="uid://wxyhcpgrdw2f" path="res://characters/heroes/resources/piercing_upgrade.tres" id="5_k5bry"]
+[ext_resource type="Resource" uid="uid://chh4spgmfwval" path="res://characters/heroes/resources/speed_upgrade.tres" id="6_4gnat"]
 
 [node name="SurvivalHeroUpgradesComponent" type="Node2D"]
 script = ExtResource("1_5hr3s")

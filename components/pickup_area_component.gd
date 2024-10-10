@@ -5,6 +5,6 @@ class_name PickupAreaComponent
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if leveling_component and area is XPDropInstance:
+	if leveling_component and area is SurvivalXPDropInstance:
 		leveling_component.add_xp(area.amount)
 		area.queue_free()

@@ -1,20 +1,27 @@
-[gd_scene load_steps=56 format=4 uid="uid://bf6xugnea62ii"]
+[gd_scene load_steps=63 format=4 uid="uid://bf6xugnea62ii"]
 
 [ext_resource type="Script" path="res://levels/village.gd" id="1_h64nn"]
+[ext_resource type="PackedScene" uid="uid://bgloaalwpdrht" path="res://characters/heroes/village_hero.tscn" id="2_xwgxo"]
 [ext_resource type="TileSet" uid="uid://8spsg6ca8qgu" path="res://tilesets/village_background_tileset.tres" id="2_y6koq"]
 [ext_resource type="Texture2D" uid="uid://dghy73qsi32vl" path="res://environment/assets/collision_tile.png" id="3_3l8cl"]
+[ext_resource type="PackedScene" uid="uid://bioi4uverc2i2" path="res://ui/components/village/text_popup.tscn" id="3_lgfbi"]
+[ext_resource type="PackedScene" uid="uid://dw46mkdiuilrn" path="res://ui/components/village/new_hero_popup.tscn" id="4_fst00"]
 [ext_resource type="Texture2D" uid="uid://ddq3gdwllk2vn" path="res://environment/assets/navigation_tile.png" id="4_sfiu8"]
-[ext_resource type="PackedScene" uid="uid://celmdwrxsc17c" path="res://environment/buildings/building_main.tscn" id="5_gq256"]
-[ext_resource type="PackedScene" uid="uid://cm7ip7afgrrx8" path="res://environment/buildings/building_missions_board.tscn" id="6_16f7x"]
-[ext_resource type="PackedScene" uid="uid://dicgtdt3cmbaa" path="res://environment/buildings/building_anvil.tscn" id="7_1us81"]
-[ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/buildings/building_sawmill.tscn" id="8_htw7l"]
-[ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/buildings/building_well.tscn" id="9_7p1od"]
-[ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/buildings/building_tavern.tscn" id="10_yca1e"]
-[ext_resource type="PackedScene" uid="uid://d36wxn4t87ivu" path="res://environment/buildings/building_house.tscn" id="11_y8w8b"]
-[ext_resource type="PackedScene" uid="uid://btyikipi2gc86" path="res://environment/buildings/building_bar.tscn" id="12_xy8jm"]
-[ext_resource type="PackedScene" uid="uid://di4c13w0crkie" path="res://environment/buildings/building_tower.tscn" id="13_g8sr5"]
-[ext_resource type="PackedScene" uid="uid://b7u6icsnqsvtt" path="res://environment/buildings/building_house_1.tscn" id="14_h6vth"]
-[ext_resource type="PackedScene" path="res://environment/buildings/building_house_2.tscn" id="15_ppwm3"]
+[ext_resource type="PackedScene" uid="uid://celmdwrxsc17c" path="res://environment/village/buildings/building_main.tscn" id="5_gq256"]
+[ext_resource type="PackedScene" uid="uid://d1youji68oya3" path="res://ui/components/village/board_popup.tscn" id="5_y8jsq"]
+[ext_resource type="PackedScene" uid="uid://cm7ip7afgrrx8" path="res://environment/village/buildings/building_missions_board.tscn" id="6_16f7x"]
+[ext_resource type="PackedScene" uid="uid://dlhrrp8eav5sw" path="res://ui/components/village/hero_select_popup.tscn" id="6_jj8o1"]
+[ext_resource type="PackedScene" uid="uid://dicgtdt3cmbaa" path="res://environment/village/buildings/building_anvil.tscn" id="7_1us81"]
+[ext_resource type="PackedScene" uid="uid://cnuk6uk65evcc" path="res://ui/components/village/event_popup.tscn" id="7_u34cv"]
+[ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/village/buildings/building_sawmill.tscn" id="8_htw7l"]
+[ext_resource type="PackedScene" uid="uid://b0tar1leffj46" path="res://ui/components/village/event_results_popup.tscn" id="8_ie280"]
+[ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/village/buildings/building_well.tscn" id="9_7p1od"]
+[ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/village/buildings/building_tavern.tscn" id="10_yca1e"]
+[ext_resource type="PackedScene" uid="uid://d36wxn4t87ivu" path="res://environment/village/buildings/building_house.tscn" id="11_y8w8b"]
+[ext_resource type="PackedScene" uid="uid://btyikipi2gc86" path="res://environment/village/buildings/building_bar.tscn" id="12_xy8jm"]
+[ext_resource type="PackedScene" uid="uid://di4c13w0crkie" path="res://environment/village/buildings/building_tower.tscn" id="13_g8sr5"]
+[ext_resource type="PackedScene" uid="uid://b7u6icsnqsvtt" path="res://environment/village/buildings/building_house_1.tscn" id="14_h6vth"]
+[ext_resource type="PackedScene" uid="uid://dt4cwnm5kon1h" path="res://environment/village/buildings/building_house_2.tscn" id="15_ppwm3"]
 [ext_resource type="Texture2D" uid="uid://bbny02ic84hb0" path="res://environment/assets/medieval_city/decor/decor_14.png" id="16_1yo2b"]
 [ext_resource type="Texture2D" uid="uid://b1helwm00wu1u" path="res://environment/assets/medieval_city/decor/decor_12.png" id="17_woe2x"]
 [ext_resource type="Texture2D" uid="uid://cic5mmfyvgvph" path="res://environment/assets/medieval_city/decor/decor_17.png" id="18_juhte"]
@@ -38,12 +45,12 @@
 [ext_resource type="Texture2D" uid="uid://ewhsdfg344n1" path="res://environment/assets/rpg_summer_tileset/PNG/decor_1.png" id="36_a5fyp"]
 [ext_resource type="Texture2D" uid="uid://c12ylhm1mw2s0" path="res://environment/assets/rpg_summer_tileset/PNG/decor_2.png" id="37_3m7sm"]
 [ext_resource type="Texture2D" uid="uid://bpd12v670fjha" path="res://environment/assets/rpg_summer_tileset/PNG/decor_16.png" id="38_uomby"]
-[ext_resource type="PackedScene" uid="uid://twdq5h2gv2jj" path="res://environment/objects/tree.tscn" id="39_xlp0o"]
-[ext_resource type="PackedScene" uid="uid://chijgcay8yi67" path="res://environment/objects/tree_2.tscn" id="40_8s6xq"]
-[ext_resource type="PackedScene" uid="uid://b6f4j2ipvf4j4" path="res://environment/objects/stone.tscn" id="41_e03uj"]
-[ext_resource type="PackedScene" uid="uid://ccgn6hxiv4pab" path="res://environment/objects/stone_2.tscn" id="42_17jlu"]
-[ext_resource type="PackedScene" uid="uid://dn14dp0apf07u" path="res://environment/objects/street_lamp.tscn" id="43_g4glo"]
-[ext_resource type="PackedScene" path="res://environment/objects/road_tablet.tscn" id="44_i3sty"]
+[ext_resource type="PackedScene" uid="uid://twdq5h2gv2jj" path="res://environment/village/objects/tree.tscn" id="39_xlp0o"]
+[ext_resource type="PackedScene" uid="uid://chijgcay8yi67" path="res://environment/village/objects/tree_2.tscn" id="40_8s6xq"]
+[ext_resource type="PackedScene" uid="uid://b6f4j2ipvf4j4" path="res://environment/village/objects/stone.tscn" id="41_e03uj"]
+[ext_resource type="PackedScene" uid="uid://ccgn6hxiv4pab" path="res://environment/village/objects/stone_2.tscn" id="42_17jlu"]
+[ext_resource type="PackedScene" uid="uid://dn14dp0apf07u" path="res://environment/village/objects/street_lamp.tscn" id="43_g4glo"]
+[ext_resource type="PackedScene" uid="uid://dkayee1x61lm" path="res://environment/village/objects/road_tablet.tscn" id="44_i3sty"]
 [ext_resource type="PackedScene" uid="uid://dupuhti0gv485" path="res://ui/components/village/village_hud.tscn" id="44_sqnxk"]
 [ext_resource type="Script" path="res://audio/sound_pool.gd" id="45_mx386"]
 [ext_resource type="Texture2D" uid="uid://dqant7wson5q2" path="res://ui/assets/backgrounds/event-background.png" id="45_sv7hc"]
@@ -80,6 +87,14 @@ sources/1 = SubResource("TileSetAtlasSource_mwq7x")
 [node name="Village" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_h64nn")
+use_mocks = true
+hero_scene = ExtResource("2_xwgxo")
+text_popup_scene = ExtResource("3_lgfbi")
+new_hero_popup_scene = ExtResource("4_fst00")
+board_popup_scene = ExtResource("5_y8jsq")
+hero_select_popup_scene = ExtResource("6_jj8o1")
+event_popup_scene = ExtResource("7_u34cv")
+event_results_popup_scene = ExtResource("8_ie280")
 
 [node name="TileMap" type="Node2D" parent="."]
 y_sort_enabled = true

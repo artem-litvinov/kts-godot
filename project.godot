@@ -25,7 +25,7 @@ BackendAPI="*res://utils/backend_api.gd"
 Mocks="*res://utils/mocks.gd"
 Strings="*res://constants/strings.gd"
 SoundManager="*res://audio/sound_manager.tscn"
-EventBus="*res://data/event_bus.gd"
+SurvivalEventBus="*res://data/survival_event_bus.gd"
 
 [display]
 

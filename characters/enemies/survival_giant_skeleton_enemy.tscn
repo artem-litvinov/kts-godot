@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://bu1ds8eo5hu3s"]
+
+[ext_resource type="Script" path="res://characters/enemies/survival_follower_enemy.gd" id="1_7qs5c"]
+[ext_resource type="Resource" uid="uid://4cbhtrrylewu" path="res://characters/enemies/resources/survival_common_xp_drop.tres" id="2_x1eti"]
+[ext_resource type="PackedScene" uid="uid://bdgvaet3fswlp" path="res://characters/enemies/survival_xp_drop_instance.tscn" id="3_2w1vf"]
+[ext_resource type="PackedScene" uid="uid://0647ia54hrdy" path="res://characters/enemies/cosmetics/giant_skeleton_enemy_cosmetics.tscn" id="3_qjn2a"]
+[ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="4_pppcs"]
+[ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="5_nq771"]
+[ext_resource type="PackedScene" uid="uid://crfgc7butkacm" path="res://components/damage_area_component.tscn" id="6_v8pqu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3334w"]
+radius = 17.0
+height = 174.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xels5"]
+radius = 16.0
+height = 170.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omakl"]
+radius = 15.0
+height = 166.0
+
+[node name="SurvivalGiantSkeletonEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cosmetics", "health_component", "hitbox_component", "damage_area_component")]
+collision_layer = 8
+collision_mask = 201
+motion_mode = 1
+script = ExtResource("1_7qs5c")
+max_hp = 1000.0
+speed = 300.0
+xp_drop = ExtResource("2_x1eti")
+xp_drop_scene = ExtResource("3_2w1vf")
+area_attack_cooldown_sec = 0.5
+area_damage = 5.0
+cosmetics = NodePath("GiantSkeletonEnemyCosmetics")
+health_component = NodePath("HealthComponent")
+hitbox_component = NodePath("HitboxComponent")
+damage_area_component = NodePath("DamageAreaComponent")
+
+[node name="GiantSkeletonEnemyCosmetics" parent="." instance=ExtResource("3_qjn2a")]
+position = Vector2(0, -189)
+scale = Vector2(0.9, 0.9)
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_pppcs")]
+unique_name_in_owner = true
+
+[node name="HitboxComponent" parent="." instance=ExtResource("5_nq771")]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3334w")
+debug_color = Color(0.954313, 0.21537, 0, 0.42)
+
+[node name="DamageAreaComponent" parent="." instance=ExtResource("6_v8pqu")]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAreaComponent"]
+position = Vector2(0, -9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xels5")
+debug_color = Color(0.547466, 0.403213, 1, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_omakl")
+
+[connection signal="death_finished" from="GiantSkeletonEnemyCosmetics" to="." method="_on_cosmetics_death_finished"]
+[connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
+[connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]

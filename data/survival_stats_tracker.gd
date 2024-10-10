@@ -5,7 +5,7 @@ var hero_hp: float
 
 
 func _ready() -> void:
-	EventBus.HERO_HP_CHANGE.connect(_on_hero_hp_change)
+	SurvivalEventBus.HERO_HP_CHANGE.connect(_on_hero_hp_change)
 
 
 func _on_hero_hp_change(hp):
