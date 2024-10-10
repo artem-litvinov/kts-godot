@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0tar1leffj46"]
+[gd_scene load_steps=4 format=3 uid="uid://b0tar1leffj46"]
 
 [ext_resource type="PackedScene" uid="uid://cujgqt5wgx5ju" path="res://ui/components/village/evet_results_stat_change.tscn" id="1_ho081"]
 [ext_resource type="Script" path="res://ui/components/village/event_results_popup.gd" id="1_yq20q"]
-[ext_resource type="Texture2D" uid="uid://c4611xu6nfpyq" path="res://ui/assets/icons/food.png" id="2_rkger"]
-[ext_resource type="Texture2D" uid="uid://booforp8i1cpg" path="res://ui/assets/icons/morale.png" id="3_5vj4o"]
 [ext_resource type="Texture2D" uid="uid://dlchp0sbxhqep" path="res://ui/assets/icons/supplies.png" id="4_l4vsl"]
 
 [node name="EventResultsPopup" type="Control"]
@@ -124,16 +122,6 @@ horizontal_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges"]
 layout_mode = 2
 theme_override_constants/separation = 30
-
-[node name="Food" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/HBoxContainer" instance=ExtResource("1_ho081")]
-unique_name_in_owner = true
-layout_mode = 2
-icon = ExtResource("2_rkger")
-
-[node name="Morale" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/HBoxContainer" instance=ExtResource("1_ho081")]
-unique_name_in_owner = true
-layout_mode = 2
-icon = ExtResource("3_5vj4o")
 
 [node name="Supplies" parent="PanelContainer/MarginContainer/VBoxContainer/Content/VBoxContainer/HBoxContainer/VillageChanges/HBoxContainer" instance=ExtResource("1_ho081")]
 unique_name_in_owner = true
