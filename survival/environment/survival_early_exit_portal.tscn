@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://4kiowjqm41ql"]
+
+[ext_resource type="Script" path="res://survival/environment/survival_early_exit_portal.gd" id="1_bpxg4"]
+[ext_resource type="Texture2D" uid="uid://c7ljxr3vjqbf8" path="res://environment/assets/teleport-red.png" id="2_wphgh"]
+[ext_resource type="PackedScene" uid="uid://pb6xm683tha8" path="res://ui/components/survival/ui_target_reticles.tscn" id="3_r8l5n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjgc1"]
+radius = 20.0
+height = 102.0
+
+[node name="SurvivalEarlyExitPortal" type="Node2D"]
+script = ExtResource("1_bpxg4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
+texture = ExtResource("2_wphgh")
+
+[node name="UITargetReticles" parent="." instance=ExtResource("3_r8l5n")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cjgc1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
