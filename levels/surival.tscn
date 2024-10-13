@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://615ls04y8kws" path="res://characters/enemies/survival_skull_enemy.tscn" id="7_hjiuc"]
 [ext_resource type="PackedScene" uid="uid://bu1ds8eo5hu3s" path="res://characters/enemies/survival_giant_skeleton_enemy.tscn" id="8_2lrpr"]
 [ext_resource type="PackedScene" uid="uid://dkart7gbsy685" path="res://data/survival_stats_tracker.tscn" id="14_oy3m4"]
-[ext_resource type="PackedScene" uid="uid://4kiowjqm41ql" path="res://environment/survival/survival_early_exit_portal.tscn" id="15_jdkc4"]
+[ext_resource type="PackedScene" uid="uid://xerdpywk23a2" path="res://environment/survival/survival_early_exit_spawner.tscn" id="17_acxsi"]
 
 [sub_resource type="Resource" id="Resource_nm5e3"]
 script = ExtResource("6_i8g11")
@@ -91,7 +91,7 @@ shader = ExtResource("3_vpirw")
 
 [sub_resource type="Curve2D" id="Curve2D_ib0fy"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2120, -1280, 0, 0, 0, 0, 2120, -1280, 0, 0, 0, 0, 2120, 1280, 0, 0, 0, 0, -2120, 1280, 0, 0, 0, 0, -2120, -1280)
+"points": PackedVector2Array(0, 0, 0, 0, -4240, -2560, 0, 0, 0, 0, 4240, -2560, 0, 0, 0, 0, 4240, 2564, 0, 0, 0, 0, -4240, 2560, 0, 0, 0, 0, -4240, -2560)
 }
 point_count = 5
 
@@ -103,8 +103,12 @@ exit_confirmation_popup = ExtResource("2_kxh0h")
 exit_popup = ExtResource("2_myd10")
 
 [node name="SurvivalEnemySpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("4_tqnrd")]
-spawn_path = NodePath("../SurvivalHero/Path2D/SpawnPath")
+spawn_path = NodePath("../SurvivalHero/Path2D/EnemySpawnPath")
 configs_per_minute = Array[ExtResource("5_p7uwj")]([SubResource("Resource_qftyf"), SubResource("Resource_ii1cv"), SubResource("Resource_ypa3r"), SubResource("Resource_fgdpq")])
+
+[node name="SurvivalEarlyExitSpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("17_acxsi")]
+spawn_path = NodePath("../SurvivalHero/Path2D2/ExitSpawnPath")
+portal_ttl_sec = 30
 
 [node name="MainParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -143,8 +147,14 @@ unique_name_in_owner = true
 [node name="Path2D" type="Path2D" parent="SurvivalHero"]
 curve = SubResource("Curve2D_ib0fy")
 
-[node name="SpawnPath" type="PathFollow2D" parent="SurvivalHero/Path2D"]
-position = Vector2(-2120, -1280)
+[node name="EnemySpawnPath" type="PathFollow2D" parent="SurvivalHero/Path2D"]
+position = Vector2(-4240, -2560)
+
+[node name="Path2D2" type="Path2D" parent="SurvivalHero"]
+curve = SubResource("Curve2D_ib0fy")
+
+[node name="ExitSpawnPath" type="PathFollow2D" parent="SurvivalHero/Path2D2"]
+position = Vector2(-4240, -2560)
 
 [node name="SurvivalStatsTracker" parent="." instance=ExtResource("14_oy3m4")]
 unique_name_in_owner = true
@@ -152,6 +162,3 @@ unique_name_in_owner = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 layer = 128
-
-[node name="SurvivalEarlyExitPortal" parent="." instance=ExtResource("15_jdkc4")]
-position = Vector2(3112, 931)

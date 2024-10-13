@@ -45,7 +45,6 @@ func _on_early_exit_option_selected(is_early_exit_selected: bool) -> void:
 		get_tree().paused = false
 
 
-
 func _on_exit() -> void:
 	GameState.update_hero_by_id(GameState.get_selected_hero_id(), %SurvivalStatsTracker.hero_hp)
 	GameState.survival_ended()
