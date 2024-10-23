@@ -16,7 +16,7 @@ func _ready() -> void:
 	leveling_component.leveled_up.connect(_on_level_up)
 
 
-func _on_level_up(_level: int) -> void:
+func _on_level_up(_level: int, _xp_to_next_level: int) -> void:
 	get_tree().paused = true
 
 	var possible_upgrades: Array[Resource] = []

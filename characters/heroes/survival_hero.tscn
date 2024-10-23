@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce0ehfno5oemd"]
+[gd_scene load_steps=19 format=3 uid="uid://ce0ehfno5oemd"]
 
 [ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://characters/heroes/hero_cosmetics.tscn" id="1_1iyqo"]
 [ext_resource type="Script" path="res://characters/heroes/survival_hero.gd" id="1_n1hig"]
+[ext_resource type="PackedScene" uid="uid://o1523504f7hc" path="res://components/progress_bar_component.tscn" id="3_tlt2u"]
 [ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="3_vc16f"]
 [ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="4_dym87"]
 [ext_resource type="PackedScene" uid="uid://ds6r72iincwyv" path="res://components/xp_magnet_component.tscn" id="5_axcmw"]
@@ -11,6 +12,22 @@
 [ext_resource type="PackedScene" uid="uid://cqmglawqks0x7" path="res://components/survival_hero_weapons_component.tscn" id="8_a0irb"]
 [ext_resource type="PackedScene" uid="uid://b4asdwogfs4jj" path="res://components/survival_hero_upgrades_component.tscn" id="11_dyowf"]
 [ext_resource type="PackedScene" uid="uid://chwviewl3o6pk" path="res://components/survival_hero_stats_component.tscn" id="12_kapue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2onx0"]
+bg_color = Color(0.778845, 0.79289, 0.244153, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7o4bv"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03gic"]
+bg_color = Color(0.86, 0.1634, 0.1634, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddhir"]
 radius = 18.0
@@ -40,6 +57,29 @@ unique_name_in_owner = true
 [node name="HeroHUDLayer" type="CanvasLayer" parent="Camera2D"]
 unique_name_in_owner = true
 layer = 128
+
+[node name="XPBarComponent" parent="Camera2D/HeroHUDLayer" instance=ExtResource("3_tlt2u")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 40)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+fill_style = SubResource("StyleBoxFlat_2onx0")
+
+[node name="HealthBarComponent" parent="." instance=ExtResource("3_tlt2u")]
+unique_name_in_owner = true
+offset_left = -50.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 40.0
+background_style = SubResource("StyleBoxFlat_7o4bv")
+fill_style = SubResource("StyleBoxFlat_03gic")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_vc16f")]
 unique_name_in_owner = true
@@ -96,6 +136,10 @@ unique_name_in_owner = true
 hero_stats_component = NodePath("../SurvivalHeroStatsComponent")
 
 [connection signal="death_finished" from="HeroCosmetics" to="." method="_on_cosmetics_death_finished"]
+[connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
+[connection signal="max_health_changed" from="HealthComponent" to="." method="_on_health_component_max_health_changed"]
 [connection signal="got_hit" from="HitboxComponent" to="." method="_on_hitbox_component_got_hit"]
 [connection signal="stats_changed" from="SurvivalHeroStatsComponent" to="." method="_on_stats_changed"]
+[connection signal="leveled_up" from="SurvivalHeroLevelingComponent" to="." method="_on_survival_hero_leveling_component_leveled_up"]
+[connection signal="xp_changed" from="SurvivalHeroLevelingComponent" to="." method="_on_survival_hero_leveling_component_xp_changed"]

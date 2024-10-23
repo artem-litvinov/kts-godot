@@ -1,10 +1,23 @@
 extends Node2D
 class_name HealthComponent
 
+signal max_health_changed(max_health: float)
+signal health_changed(current_health: float)
 signal health_depleted
 
-var _max_health: float
-var _health: float
+var _max_health: float:
+	get:
+		return _max_health
+	set(value):
+		_max_health = value
+		max_health_changed.emit(_max_health)
+
+var _health: float:
+	get:
+		return _health
+	set(value):
+		_health = clamp(value, 0, _max_health)
+		health_changed.emit(_health)
 
 
 func initialize(max_health: float, current_health: float) -> void:
