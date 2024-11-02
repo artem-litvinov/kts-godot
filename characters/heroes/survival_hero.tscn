@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://ce0ehfno5oemd"]
+[gd_scene load_steps=20 format=3 uid="uid://ce0ehfno5oemd"]
 
 [ext_resource type="PackedScene" uid="uid://dmlpki78nue5y" path="res://characters/heroes/hero_cosmetics.tscn" id="1_1iyqo"]
 [ext_resource type="Script" path="res://characters/heroes/survival_hero.gd" id="1_n1hig"]
-[ext_resource type="PackedScene" uid="uid://o1523504f7hc" path="res://components/progress_bar_component.tscn" id="3_tlt2u"]
+[ext_resource type="PackedScene" uid="uid://o1523504f7hc" path="res://ui/components/common/ui_progress_bar_component.tscn" id="3_tlt2u"]
 [ext_resource type="PackedScene" uid="uid://bflrqji1yudcy" path="res://components/health_component.tscn" id="3_vc16f"]
 [ext_resource type="PackedScene" uid="uid://dek1364s65d8f" path="res://components/hitbox_component.tscn" id="4_dym87"]
+[ext_resource type="PackedScene" uid="uid://c7cy2ee6s4out" path="res://ui/components/survival/ui_hero_lvl_label.tscn" id="4_uhpl8"]
 [ext_resource type="PackedScene" uid="uid://ds6r72iincwyv" path="res://components/xp_magnet_component.tscn" id="5_axcmw"]
 [ext_resource type="PackedScene" uid="uid://cwi6cfhc6ii6g" path="res://components/pickup_area_component.tscn" id="5_fslfd"]
 [ext_resource type="PackedScene" uid="uid://depd3kkwpjdgo" path="res://components/survival_hero_leveling_component.tscn" id="7_0eyy8"]
@@ -71,6 +72,21 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
 fill_style = SubResource("StyleBoxFlat_2onx0")
+
+[node name="UIHeroLvlLabel" parent="Camera2D/HeroHUDLayer" instance=ExtResource("4_uhpl8")]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -31.0
+offset_right = 43.5
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
 
 [node name="HealthBarComponent" parent="." instance=ExtResource("3_tlt2u")]
 unique_name_in_owner = true

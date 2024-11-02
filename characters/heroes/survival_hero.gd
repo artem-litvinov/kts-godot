@@ -8,12 +8,13 @@ class_name SurvivalHero
 @onready var camera: Camera2D = %Camera2D
 @onready var cosmetics: CharacterCosmetics = %HeroCosmetics
 @onready var health_component: HealthComponent = %HealthComponent
-@onready var health_bar_component: ProgressBarComponent = %HealthBarComponent
+@onready var health_bar_component: UIProgressBarComponent = %HealthBarComponent
 @onready var hitbox_component: HitboxComponent = %HitboxComponent
 @onready var xp_magnet_component: XPMagnetComponent = %XPMagnetComponent
 @onready var pickup_area_component: PickupAreaComponent = %PickupAreaComponent
 @onready var stats_component: SurvivalHeroStatsComponent = %SurvivalHeroStatsComponent
-@onready var xp_bar_component: ProgressBarComponent = %XPBarComponent
+@onready var xp_bar_component: UIProgressBarComponent = %XPBarComponent
+@onready var lvl_label_component: UIHeroLvlLabel = %UIHeroLvlLabel
 @onready var leveling_component: SurvivalHeroLevelingComponent = %SurvivalHeroLevelingComponent
 @onready var level_up_component: SurvivalHeroLevelUpComponent = %SurvivalHeroLevelUpComponent
 @onready var weapons_component: SurvivalHeroWeaponsComponent = %SurvivalHeroWeaponsComponent
@@ -25,6 +26,7 @@ func initialize(hero: Hero):
 	health_component.initialize(hero.max_hp, hero.current_hp)
 	health_bar_component.initialize(hero.max_hp, hero.current_hp)
 	xp_bar_component.initialize(leveling_component.get_xp_to_next_level(), leveling_component.get_current_xp())
+	lvl_label_component.set_level(leveling_component.get_current_level())
 	weapons_component.initialize(stats_component)
 	cosmetics.initialize(hero.sprite_id)
 
@@ -76,6 +78,7 @@ func _on_survival_hero_leveling_component_xp_changed(current_xp: int) -> void:
 func _on_survival_hero_leveling_component_leveled_up(current_level: int, xp_to_next_level: int) -> void:
 	SurvivalEventBus.HERO_LEVEL_UP.emit(current_level, xp_to_next_level)
 	xp_bar_component.set_max_value(xp_to_next_level)
+	lvl_label_component.set_level(current_level)
 
 
 func _on_stats_changed(stats: SurvivalHeroStatsComponent) -> void:

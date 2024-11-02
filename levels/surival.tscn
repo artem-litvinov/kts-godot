@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c7vls4wnn32mj"]
+[gd_scene load_steps=35 format=4 uid="uid://c7vls4wnn32mj"]
 
 [ext_resource type="Script" path="res://levels/surival.gd" id="1_idlsi"]
 [ext_resource type="PackedScene" uid="uid://tyiv78or6sig" path="res://ui/components/survival/ui_survival_early_exit_confirmation_popup.tscn" id="2_kxh0h"]
@@ -95,6 +95,12 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_s0nxo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2120, -1280, 0, 0, 0, 0, 2120, -1280, 0, 0, 0, 0, 2120, 1280, 0, 0, 0, 0, -2120, 1280, 0, 0, 0, 0, -2120, -1280)
+}
+point_count = 5
+
 [node name="Surival" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_idlsi")
@@ -103,11 +109,11 @@ exit_confirmation_popup = ExtResource("2_kxh0h")
 exit_popup = ExtResource("2_myd10")
 
 [node name="SurvivalEnemySpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("4_tqnrd")]
-spawn_path = NodePath("../SurvivalHero/Path2D/EnemySpawnPath")
+spawn_path = NodePath("../SurvivalHero/Path2D/ExitSpawnPath")
 configs_per_minute = Array[ExtResource("5_p7uwj")]([SubResource("Resource_qftyf"), SubResource("Resource_ii1cv"), SubResource("Resource_ypa3r"), SubResource("Resource_fgdpq")])
 
 [node name="SurvivalEarlyExitSpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("17_acxsi")]
-spawn_path = NodePath("../SurvivalHero/Path2D2/ExitSpawnPath")
+spawn_path = NodePath("../SurvivalHero/Path2D2/EnemySpawnPath")
 portal_ttl_sec = 30
 
 [node name="MainParallaxBackground" type="ParallaxBackground" parent="."]
@@ -147,14 +153,14 @@ unique_name_in_owner = true
 [node name="Path2D" type="Path2D" parent="SurvivalHero"]
 curve = SubResource("Curve2D_ib0fy")
 
-[node name="EnemySpawnPath" type="PathFollow2D" parent="SurvivalHero/Path2D"]
+[node name="ExitSpawnPath" type="PathFollow2D" parent="SurvivalHero/Path2D"]
 position = Vector2(-4240, -2560)
 
 [node name="Path2D2" type="Path2D" parent="SurvivalHero"]
-curve = SubResource("Curve2D_ib0fy")
+curve = SubResource("Curve2D_s0nxo")
 
-[node name="ExitSpawnPath" type="PathFollow2D" parent="SurvivalHero/Path2D2"]
-position = Vector2(-4240, -2560)
+[node name="EnemySpawnPath" type="PathFollow2D" parent="SurvivalHero/Path2D2"]
+position = Vector2(-2120, -1280)
 
 [node name="SurvivalStatsTracker" parent="." instance=ExtResource("14_oy3m4")]
 unique_name_in_owner = true

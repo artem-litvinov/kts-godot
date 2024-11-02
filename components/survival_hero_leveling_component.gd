@@ -27,6 +27,10 @@ func get_current_xp() -> int:
 	return _current_xp
 
 
+func get_current_level() -> int:
+	return _current_level
+
+
 func add_xp(amount: int):
 	_current_xp += amount
 	while _current_xp >= _next_level_xp:

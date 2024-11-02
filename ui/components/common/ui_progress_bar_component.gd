@@ -1,5 +1,5 @@
 extends ProgressBar
-class_name ProgressBarComponent
+class_name UIProgressBarComponent
 
 @export var background_style: StyleBoxFlat
 @export var fill_style: StyleBoxFlat
