@@ -19,10 +19,16 @@ func _ready() -> void:
 
 	SurvivalEventBus.HERO_DEATH.connect(_on_hero_death)
 	SurvivalEventBus.EARLY_EXIT_PORTAL_ENTERED.connect(_on_early_exit_portal_entered)
+	SurvivalEventBus.GAME_TIMER_REACHED_ZERO.connect(_on_game_timer_reached_zero)
 
 
 func _process(delta: float) -> void:
 	%MistParallaxBackground.scroll_base_offset -= Vector2(100, 0) * delta
+
+
+func _on_game_timer_reached_zero() -> void:
+	get_tree().paused = true
+	_show_exit_window(true)
 
 
 func _on_early_exit_portal_entered() -> void:

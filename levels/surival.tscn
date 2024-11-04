@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://c7vls4wnn32mj"]
+[gd_scene load_steps=36 format=4 uid="uid://c7vls4wnn32mj"]
 
 [ext_resource type="Script" path="res://levels/surival.gd" id="1_idlsi"]
 [ext_resource type="PackedScene" uid="uid://tyiv78or6sig" path="res://ui/components/survival/ui_survival_early_exit_confirmation_popup.tscn" id="2_kxh0h"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bu1ds8eo5hu3s" path="res://characters/enemies/survival_giant_skeleton_enemy.tscn" id="8_2lrpr"]
 [ext_resource type="PackedScene" uid="uid://dkart7gbsy685" path="res://data/survival_stats_tracker.tscn" id="14_oy3m4"]
 [ext_resource type="PackedScene" uid="uid://xerdpywk23a2" path="res://environment/survival/survival_early_exit_spawner.tscn" id="17_acxsi"]
+[ext_resource type="PackedScene" uid="uid://cg25onp8dcx12" path="res://components/survival/survival_game_timer.tscn" id="17_gi3qn"]
 
 [sub_resource type="Resource" id="Resource_nm5e3"]
 script = ExtResource("6_i8g11")
@@ -109,11 +110,11 @@ exit_confirmation_popup = ExtResource("2_kxh0h")
 exit_popup = ExtResource("2_myd10")
 
 [node name="SurvivalEnemySpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("4_tqnrd")]
-spawn_path = NodePath("../SurvivalHero/Path2D/ExitSpawnPath")
+spawn_path = NodePath("../SurvivalHero/Path2D2/EnemySpawnPath")
 configs_per_minute = Array[ExtResource("5_p7uwj")]([SubResource("Resource_qftyf"), SubResource("Resource_ii1cv"), SubResource("Resource_ypa3r"), SubResource("Resource_fgdpq")])
 
 [node name="SurvivalEarlyExitSpawner" parent="." node_paths=PackedStringArray("spawn_path") instance=ExtResource("17_acxsi")]
-spawn_path = NodePath("../SurvivalHero/Path2D2/EnemySpawnPath")
+spawn_path = NodePath("../SurvivalHero/Path2D/ExitSpawnPath")
 portal_ttl_sec = 30
 
 [node name="MainParallaxBackground" type="ParallaxBackground" parent="."]
@@ -164,6 +165,9 @@ position = Vector2(-2120, -1280)
 
 [node name="SurvivalStatsTracker" parent="." instance=ExtResource("14_oy3m4")]
 unique_name_in_owner = true
+
+[node name="SurvivalGameTimer" parent="." instance=ExtResource("17_gi3qn")]
+time_till_end_sec = 600
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
