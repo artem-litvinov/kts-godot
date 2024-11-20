@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4asdwogfs4jj"]
 
-[ext_resource type="Script" path="res://components/survival_hero_upgrades_component.gd" id="1_5hr3s"]
+[ext_resource type="Script" path="res://components/survival/survival_hero_upgrades_component.gd" id="1_5hr3s"]
 [ext_resource type="Script" path="res://data/types/survival/survival_hero_upgrade.gd" id="2_df3t2"]
 [ext_resource type="Resource" uid="uid://db861xgbmbjx8" path="res://characters/heroes/resources/cooldown_upgrade.tres" id="3_8tya6"]
 [ext_resource type="Resource" uid="uid://dfgh6v61g5uqo" path="res://characters/heroes/resources/damage_upgrade.tres" id="4_lp2dt"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqmglawqks0x7"]
 
-[ext_resource type="Script" path="res://components/survival_hero_weapons_component.gd" id="1_j1hfr"]
+[ext_resource type="Script" path="res://components/survival/survival_hero_weapons_component.gd" id="1_j1hfr"]
 [ext_resource type="Script" path="res://data/types/survival/survival_weapon.gd" id="2_bdvbi"]
 [ext_resource type="Resource" uid="uid://dc0sj304v7yr4" path="res://weapons/resources/magic_wand.tres" id="3_k3gwh"]
 
