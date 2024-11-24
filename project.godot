@@ -26,6 +26,7 @@ Mocks="*res://utils/mocks.gd"
 Strings="*res://constants/strings.gd"
 SoundManager="*res://audio/sound_manager.tscn"
 SurvivalEventBus="*res://data/survival_event_bus.gd"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 [display]
 
@@ -39,6 +40,10 @@ window/stretch/mode="canvas_items"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
 
 [gui]
 
