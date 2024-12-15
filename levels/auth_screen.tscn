@@ -1,26 +1,31 @@
 [gd_scene load_steps=2 format=3 uid="uid://by2cjl1u4adxh"]
 
-[ext_resource type="Script" path="res://levels/login_screen.gd" id="1_wobmj"]
+[ext_resource type="Script" path="res://levels/auth_screen.gd" id="1_pp1tq"]
 
-[node name="LoginScreen" type="Control"]
+[node name="AuthScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wobmj")
+script = ExtResource("1_pp1tq")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -174.0
+offset_right = -32.0
+offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 0.91
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
@@ -55,22 +60,33 @@ custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/LoginContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 20
-
-[node name="UsernameInput" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/LoginContainer/MarginContainer"]
+[node name="EmailInput" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/LoginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
-placeholder_text = "USERNAME"
+placeholder_text = "EMAIL"
 alignment = 1
 caret_blink = true
+
+[node name="PasswordInput" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/LoginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "PASSWORD"
+alignment = 1
+secret = true
 
 [node name="LoginButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/LoginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "LOGIN"
 
-[connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/LoginContainer/MarginContainer/UsernameInput" to="." method="_on_username_input_text_submitted"]
+[node name="RegisterButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/LoginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "REGISTER
+"
+
+[connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/LoginContainer/EmailInput" to="." method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/LoginContainer/PasswordInput" to="." method="_on_input_text_submitted"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/LoginContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/LoginContainer/RegisterButton" to="." method="_on_register_button_pressed"]

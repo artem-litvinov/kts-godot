@@ -62,7 +62,7 @@ func _on_building_bar_clicked() -> void:
 func _on_tutorial_button_pressed() -> void:
 	_text_popup.disconnect("button_pressed", _on_tutorial_button_pressed)
 	_text_popup.disable_button()
-	BackendAPI.generate_hero(GameState.get_user().id, _on_tutorial_hero_generated)
+	BackendAPI.generate_hero(_on_tutorial_hero_generated)
 
 
 func _on_tutorial_hero_generated(hero: Hero, error: Error) -> void:

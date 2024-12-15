@@ -87,7 +87,7 @@ sources/1 = SubResource("TileSetAtlasSource_mwq7x")
 [node name="Village" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_h64nn")
-use_mocks = true
+use_mocks = null
 hero_scene = ExtResource("2_xwgxo")
 text_popup_scene = ExtResource("3_lgfbi")
 new_hero_popup_scene = ExtResource("4_fst00")

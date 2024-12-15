@@ -2,7 +2,7 @@ extends Node
 
 const USE_MOCK_API = false
 
-var _on_login_callback: Callable
+var _on_get_user_data_callback: Callable
 var _on_get_world_state_callback: Callable
 var _on_get_heroes_callback: Callable
 var _on_generate_hero_callback: Callable
@@ -17,9 +17,9 @@ func _make_http_request(
 ) -> Error:
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
-	http_request.connect("request_completed", callback)
-
-	var headers = []
+	http_request.request_completed.connect(callback)
+	
+	var headers = ["Authorization: Bearer %s" % Firebase.Auth.auth.idtoken]
 	if method == HTTPClient.METHOD_POST:
 		headers.append("Content-Type: application/json")
 	return http_request.request(url, headers, method, body)
@@ -47,33 +47,27 @@ func _parse_request(_result, response_code, _headers, body) -> Array:
 	var parse_err = ERR_PARSE_ERROR if json_obj == null else OK
 	return [json_obj, parse_err]
 
-
-func login(username: String, callback: Callable) -> Error:
-	_on_login_callback = callback
+func get_user_data(callback: Callable) -> Error:
+	_on_get_user_data_callback = callback
 	return _make_http_request(
-		Constants.LOGIN_ENDPOINT_ADDR,
-		_on_login_completed,
-		HTTPClient.METHOD_POST,
-		JSON.stringify({ "username": username }),
+		Constants.GET_USER_DATA_ENDPOINT_ADDR,
+		_on_get_user_data_completed,
 	)
 
-
-func _on_login_completed(result, response_code, headers, body):
+func _on_get_user_data_completed(result, response_code, headers, body):
 	var parse_res = _parse_request(result, response_code, headers, body)
 	var json_obj = parse_res[0]
 	var parse_err = parse_res[1]
 	if parse_err != OK:
-		_on_login_callback.call(null, parse_err)
+		_on_get_user_data_callback.call(null, parse_err)
 
-	var user_json = json_obj.get("user", {})
-
-	var user = User.from_json(user_json)
+	var user = User.from_json(json_obj)
 	if user == null:
 		parse_err = ERR_PARSE_ERROR
-	_on_login_callback.call(user, parse_err)
+	_on_get_user_data_callback.call(user, parse_err)
 
 
-func get_world_state(user_id: String, callback: Callable) -> Error:
+func get_world_state(callback: Callable) -> Error:
 	_on_get_world_state_callback = callback
 
 	if USE_MOCK_API:
@@ -82,8 +76,6 @@ func get_world_state(user_id: String, callback: Callable) -> Error:
 		return _make_http_request(
 			Constants.GET_WORLD_STATE_ENDPOINT_ADDR,
 			_on_get_world_state_completed,
-			HTTPClient.METHOD_POST,
-			JSON.stringify({ "userId": user_id }),
 		)
 
 
@@ -106,14 +98,14 @@ func _on_get_world_state_completed_mock():
 	_on_get_world_state_callback.call(Mocks.mock_world_state, OK)
 
 
-func get_heroes(user_id: String, callback: Callable) -> Error:
+func get_heroes(callback: Callable) -> Error:
 	_on_get_heroes_callback = callback
 
 	if USE_MOCK_API:
 		return _make_mock_http_request(_on_get_heroes_completed_mock)
 	else:
 		return _make_http_request(
-			Constants.GET_HEROES_ENDPOINT_ADDR + '/?userId=' + user_id,
+			Constants.GET_HEROES_ENDPOINT_ADDR,
 			_on_get_heroes_completed,
 			HTTPClient.METHOD_GET,
 		)
@@ -149,7 +141,7 @@ func _on_get_heroes_completed_mock():
 		_on_get_heroes_callback.call(Mocks.mock_heroes, OK)
 
 
-func generate_hero(user_id: String, callback: Callable) -> Error:
+func generate_hero(callback: Callable) -> Error:
 	_on_generate_hero_callback = callback
 
 	if USE_MOCK_API:
@@ -158,8 +150,6 @@ func generate_hero(user_id: String, callback: Callable) -> Error:
 		return _make_http_request(
 			Constants.GENERATE_HERO_ENDPOINT_ADDR,
 			_on_generate_hero_completed,
-			HTTPClient.METHOD_POST,
-			JSON.stringify({ "userId": user_id }),
 		)
 
 

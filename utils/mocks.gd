@@ -1,6 +1,6 @@
 extends Node
 
-var mock_user: User = User.from_params("12345abcde", "Bob")
+var mock_user: User = User.from_params("Bob")
 var mock_world_state: WorldState = WorldState.from_params(100, false)
 var mock_heroes: Array[Hero] = [
 	Hero.from_params(
