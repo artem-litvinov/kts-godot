@@ -172,13 +172,12 @@ func _on_generate_hero_completed_mock():
 	_on_generate_hero_callback.call(Mocks.mock_heroes.pick_random(), OK)
 
 
-func generate_event(user_id: String, world: WorldState, hero: Hero, callback: Callable) -> Error:
+func generate_event(world: WorldState, hero: Hero, callback: Callable) -> Error:
 	_on_generate_event_callback = callback
 	if USE_MOCK_API:
 		return _make_mock_http_request(_on_generate_event_completed_mock)
 	else:
 		var body: Dictionary = {
-		  "userId": user_id,
 		  "supplies": world.supplies,
 		}
 		if hero:

@@ -85,7 +85,6 @@ func _on_building_tavern_clicked() -> void:
 	%VillageEventBackground.show()
 	GameState.village_event_started()
 	BackendAPI.generate_event(
-		GameState.get_user().id,
 		GameState.get_world_state(),
 		null,
 		_on_village_event_generated,
@@ -122,7 +121,6 @@ func _on_board_popup_close() -> void:
 func _on_scavenge_hero_selected(hero_id: String) -> void:
 	GameState.scavenge_started(hero_id)
 	BackendAPI.generate_event(
-		GameState.get_user().id,
 		GameState.get_world_state(),
 		GameState.get_hero_by_id(hero_id),
 		_on_event_generated,
