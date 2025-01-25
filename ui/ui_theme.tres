@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://c74sku6bm6yq4"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://c74sku6bm6yq4"]
 
 [ext_resource type="Texture2D" uid="uid://b12c5846t4438" path="res://ui/assets/rpg_mmo_ui/Textures/Buttons/Rectangular/Button_RL_Background.png" id="1_n4orv"]
 [ext_resource type="Texture2D" uid="uid://r72do1rmifut" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Focus.png" id="2_dg1u7"]
@@ -53,6 +53,13 @@ texture = ExtResource("4_y378u")
 texture = ExtResource("5_s8cub")
 modulate_color = Color(0.784314, 0, 0, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l5eom"]
+texture = ExtResource("2_dg1u7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l01sv"]
+texture = ExtResource("3_4f7fa")
+modulate_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
 [resource]
 default_font = ExtResource("6_cnq8k")
 default_font_size = 60
@@ -66,3 +73,5 @@ LineEdit/styles/normal = SubResource("StyleBoxTexture_pnpy0")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_81dms")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_2i48y")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_m70em")
+TextEdit/styles/focus = SubResource("StyleBoxTexture_l5eom")
+TextEdit/styles/normal = SubResource("StyleBoxTexture_l01sv")

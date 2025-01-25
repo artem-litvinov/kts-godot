@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb4gsgdef4fql"]
+
+[ext_resource type="Script" path="res://ui/components/common/chat_bubble.gd" id="1_0dd5q"]
+[ext_resource type="Texture2D" uid="uid://gln7tj0u688w" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Background.png" id="2_av2c4"]
+
+[node name="ChatBubble" type="HBoxContainer"]
+offset_right = 504.0
+offset_bottom = 100.0
+script = ExtResource("1_0dd5q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_av2c4")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test1"
