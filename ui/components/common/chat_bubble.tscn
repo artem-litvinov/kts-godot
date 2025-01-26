@@ -1,20 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb4gsgdef4fql"]
+[gd_scene load_steps=4 format=3 uid="uid://bb4gsgdef4fql"]
 
 [ext_resource type="Script" path="res://ui/components/common/chat_bubble.gd" id="1_0dd5q"]
-[ext_resource type="Texture2D" uid="uid://gln7tj0u688w" path="res://ui/assets/rpg_mmo_ui/Textures/Input Fields/Input_Background.png" id="2_av2c4"]
+[ext_resource type="Texture2D" uid="uid://bfjeoc5fobmnc" path="res://ui/assets/rpg_mmo_ui/Textures/General/General_Square.png" id="2_6c2ri"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0v5n"]
+texture = ExtResource("2_6c2ri")
+modulate_color = Color(0.506247, 0.456616, 0.388806, 1)
 
 [node name="ChatBubble" type="HBoxContainer"]
 offset_right = 504.0
 offset_bottom = 100.0
+size_flags_horizontal = 3
 script = ExtResource("1_0dd5q")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BubbleTexture" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_av2c4")
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j0v5n")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="BubbleTexture"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

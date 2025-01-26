@@ -1,34 +1,24 @@
 extends Control
 
-@export var alignment: String = "left"  # "left" for AI, "right" for user
+const EXPAND_SHRINK_END: int = 10
+const EXPAND_SHRINK_BEGIN: int = 2
+
+var _message_text: String
+var _own_message: bool
+
 @onready var label = %Label
-@onready var texture_rect = %TextureRect
-var message_text: String
+@onready var bubble_texture: PanelContainer = %BubbleTexture
+
 
 func _ready():
-	adjust_alignment()
-	%Label.text = message_text
-
-func set_message(message: String):
-	message_text = message
-	
-	if label:
-		label.text = message  # Ensure the label is not null before setting text
+	%Label.text = _message_text
+	if _own_message:
+		bubble_texture.set_h_size_flags(EXPAND_SHRINK_END)
+		#bubble_texture.set_h_size_flags(Control.SIZE_EXPAND)
 	else:
-		print("Label node is missing or not assigned.")
+		bubble_texture.set_h_size_flags(EXPAND_SHRINK_BEGIN)
+		#bubble_texture.set_h_size_flags(Control.SIZE_EXPAND)
 
-func adjust_alignment():
-	if alignment == "right":
-		# Align the chat bubble to the right
-		texture_rect.anchor_left = 1.0
-		texture_rect.anchor_right = 1.0
-		texture_rect.offset_left = -1000  # Adjust offset for bubble width
-		texture_rect.offset_right = 0
-		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	else:
-		# Align the chat bubble to the left
-		texture_rect.anchor_left = 0.0
-		texture_rect.anchor_right = 0.0
-		texture_rect.offset_left = 0
-		texture_rect.offset_right = 1000  # Adjust offset for bubble width
-		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+func initialize(message: String, own_message: bool):
+	_message_text = message
+	_own_message = own_message
