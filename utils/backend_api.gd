@@ -7,6 +7,7 @@ var _on_get_world_state_callback: Callable
 var _on_get_heroes_callback: Callable
 var _on_generate_hero_callback: Callable
 var _on_generate_event_callback: Callable
+var _on_chat_with_hero_callback: Callable
 
 
 func _make_http_request(
@@ -22,6 +23,13 @@ func _make_http_request(
 	var headers = ["Authorization: Bearer %s" % Firebase.Auth.auth.idtoken]
 	if method == HTTPClient.METHOD_POST:
 		headers.append("Content-Type: application/json")
+	
+	print("Making HTTP request:")  # Debug prints
+	print("- URL: ", url)
+	print("- Method: ", method)
+	print("- Headers: ", headers)
+	print("- Body: ", body)
+	
 	return http_request.request(url, headers, method, body)
 
 
@@ -208,3 +216,55 @@ func _on_generate_event_completed(result, response_code, headers, body):
 	if event == null:
 		parse_err = ERR_PARSE_ERROR
 	_on_generate_event_callback.call(event, parse_err)
+
+
+func chat_with_hero(hero_id: String, message: String, callback: Callable) -> Error:
+	_on_chat_with_hero_callback = callback
+	
+	if USE_MOCK_API:
+		return _make_mock_http_request(_on_chat_with_hero_completed_mock)
+	
+	var trimmed_hero_id = hero_id.strip_edges()
+	var trimmed_message = message.strip_edges()
+	
+	if trimmed_hero_id.is_empty() or trimmed_message.is_empty():
+		_on_chat_with_hero_callback.call(null, ERR_INVALID_DATA)
+		return ERR_INVALID_DATA
+	
+	var body_dict = {
+		"heroId": trimmed_hero_id,
+		"message": trimmed_message
+	}
+	
+	return _make_http_request(
+		Constants.CHAT_WITH_HERO_ENDPOINT_ADDR,
+		_on_chat_with_hero_completed,
+		HTTPClient.METHOD_POST,
+		JSON.stringify(body_dict)
+	)
+
+func _on_chat_with_hero_completed(result, response_code, _headers, body):
+	if result != OK or response_code != 200:
+		_on_chat_with_hero_callback.call(null, ERR_INVALID_DATA)
+		return
+	
+	var json = JSON.new()
+	var parse_err = json.parse(body.get_string_from_utf8())
+	if parse_err != OK:
+		_on_chat_with_hero_callback.call(null, parse_err)
+		return
+		
+	var response = json.get_data()
+	if not response is Dictionary:
+		_on_chat_with_hero_callback.call(null, ERR_INVALID_DATA)
+		return
+		
+	var message = response.get("response", response.get("message", null))
+	if message == null:
+		_on_chat_with_hero_callback.call(null, ERR_INVALID_DATA)
+		return
+		
+	_on_chat_with_hero_callback.call(str(message), OK)
+
+func _on_chat_with_hero_completed_mock():
+	_on_chat_with_hero_callback.call("This is a mock response from the hero!", OK)

@@ -8,6 +8,7 @@ extends Node2D
 @export var hero_select_popup_scene: PackedScene
 @export var event_popup_scene: PackedScene
 @export var event_results_popup_scene: PackedScene
+@export var chat_hero_popup_scene: PackedScene
 
 var _text_popup: Control
 var _new_hero_popup: Control
@@ -15,6 +16,7 @@ var _board_popup: Control
 var _hero_select_popup: Control
 var _event_popup: Control
 var _event_results_popup: Control
+var _chat_popup: Control
 
 var _spawn_points: Array[Node]
 var _spawn_index: int = 0
@@ -166,6 +168,18 @@ func _on_event_results_confirmed() -> void:
 	update_hud()
 
 
+func _on_building_well_clicked() -> void:
+	var available_heroes = GameState.get_heroes()
+	if available_heroes.is_empty():
+		print("No heroes available")  # Debug print
+		return
+		
+	# Pick a random hero from the available pool
+	var random_hero = available_heroes.pick_random()
+	print("Selected hero for chat: ", random_hero.id)  # Debug print
+	_show_chat_popup(random_hero.id)
+
+
 # Helpers
 # --------------------------------------------------
 func update_hud() -> void:
@@ -262,3 +276,15 @@ func _show_event_results_popup(world: WorldState, hero: Hero, results: Events.Op
 func _remove_event_results_popup() -> void:
 	%CanvasLayer.remove_child(_event_results_popup)
 	_event_results_popup = null
+
+
+func _show_chat_popup(hero_id: String) -> void:
+	_chat_popup = chat_hero_popup_scene.instantiate()
+	_chat_popup.initialize(hero_id)
+	%CanvasLayer.add_child(_chat_popup)
+
+
+func _remove_chat_popup() -> void:
+	if _chat_popup:
+		%CanvasLayer.remove_child(_chat_popup)
+		_chat_popup = null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://bf6xugnea62ii"]
+[gd_scene load_steps=64 format=4 uid="uid://bf6xugnea62ii"]
 
 [ext_resource type="Script" path="res://levels/village.gd" id="1_h64nn"]
 [ext_resource type="PackedScene" uid="uid://bgloaalwpdrht" path="res://characters/heroes/village_hero.tscn" id="2_xwgxo"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cnuk6uk65evcc" path="res://ui/components/village/event_popup.tscn" id="7_u34cv"]
 [ext_resource type="PackedScene" uid="uid://c40h4vd5sj7m2" path="res://environment/village/buildings/building_sawmill.tscn" id="8_htw7l"]
 [ext_resource type="PackedScene" uid="uid://b0tar1leffj46" path="res://ui/components/village/event_results_popup.tscn" id="8_ie280"]
+[ext_resource type="PackedScene" uid="uid://b3onn1kuotq7n" path="res://ui/components/common/chat_hero_popup.tscn" id="9_6wuwq"]
 [ext_resource type="PackedScene" uid="uid://dwr0r2bikdrbn" path="res://environment/village/buildings/building_well.tscn" id="9_7p1od"]
 [ext_resource type="PackedScene" uid="uid://lypdtbkktjbj" path="res://environment/village/buildings/building_tavern.tscn" id="10_yca1e"]
 [ext_resource type="PackedScene" uid="uid://d36wxn4t87ivu" path="res://environment/village/buildings/building_house.tscn" id="11_y8w8b"]
@@ -94,6 +95,7 @@ board_popup_scene = ExtResource("5_y8jsq")
 hero_select_popup_scene = ExtResource("6_jj8o1")
 event_popup_scene = ExtResource("7_u34cv")
 event_results_popup_scene = ExtResource("8_ie280")
+chat_hero_popup_scene = ExtResource("9_6wuwq")
 
 [node name="TileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -635,5 +637,6 @@ stream = ExtResource("48_1dh30")
 volume_db = -5.0
 
 [connection signal="clicked" from="Buildings/BuildingMissionsBoard" to="." method="_on_building_missions_board_clicked"]
+[connection signal="clicked" from="Buildings/BuildingWell" to="." method="_on_building_well_clicked"]
 [connection signal="clicked" from="Buildings/BuildingTavern" to="." method="_on_building_tavern_clicked"]
 [connection signal="clicked" from="Buildings/BuildingBar" to="." method="_on_building_bar_clicked"]
